@@ -10,16 +10,12 @@ void sumcalculation (int& roll1, int& roll2, int& total);
 int main (){
 	char name[20];
 	string cont = "y";
-	int count = 1;
 	int die1, die2, sum;
 	int wins = 0;
-	bool wonOrLost;
 	cout << "What is your name? ";
 	cin >> name;	    
 		while(cont == "y"){
-		wonOrLost = false;
-		count = 0;
-		for (int count = 1; count < 6; count++){
+		for (int i = 1; i < 6; i++){
 			sumcalculation(die1, die2, sum);
 			cout << "rolling dice..." << endl;
 			cout << name << " you rolled a " << die1 << " and a " << die2 << endl;
@@ -27,7 +23,7 @@ int main (){
 			if (sum == 2 || sum == 3 || sum == 7 || sum == 11 || sum == 12){
 					break;
 				}
-			else {
+			else if (i != 5) {
 				cout << "re-roll dice." << endl;
 			}	
 		} 
