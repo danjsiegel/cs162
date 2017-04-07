@@ -18,7 +18,7 @@ int main (){
 			for (int i = 1; i < 6; i++){
 				//Function which rolls the dice, passes the values back by reference
 				sumcalculation(die1, die2, sum);
-				cout << "rolling dice..." << endl;
+				cout << "\nrolling dice...\n" << endl;
 				cout << name << " you rolled a " << die1 << " and a " << die2 << endl;
 				cout << "For a total of " << sum << endl;
 				sleep(1);
@@ -28,7 +28,7 @@ int main (){
 					}
 				//if not a winning or losing value and the script hasn't gone through 5 iterations	
 				else if (i != 5) {
-					cout << "re-roll dice." << endl;
+					cout << "\nre-roll dice." << endl;
 				}	
 			} 
 			//Values have been returned, either it has a winning or losing value or it ran 5times with a bad ending value
