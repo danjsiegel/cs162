@@ -1,3 +1,5 @@
+//Dan Siegel
+//Project 1
 #include <cstdlib>
 #include <iostream>
 #include <ctime>
