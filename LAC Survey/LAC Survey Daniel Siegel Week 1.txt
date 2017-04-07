@@ -1,0 +1,13 @@
+Name: Dan Siegel
+Assignment: LAC Survey
+
+1. How would you model the individual item?
+I would model individual with a unique product ID. In that product ID, I would code in 2 metadata fields, Category and Sub Category and unique product id. 
+IE 555-333-12345 555=category, 333=sub category, 12345 = unique ID; That product ID would be the key field, with the bar code and item description and price.
+
+2. How would you model a collection of items?
+A collection of Items would just be a list of the product ID and the quantity. UX teams would determine what information is queried and displayed based on the product ID Key.
+3. When scanning the bar code, you should be able to retrieve the item description and price. How would you model that inventory?
+
+4. The inventory is potentially big. How would you speed up the retrieval
+process?
