@@ -28,18 +28,19 @@ int main (){
 			}	
 		} 
 		if (sum == 11 || sum == 7) {
-			wins++; 
-			cout << name << " wins one point earned" << endl;
+			wins= wins + 3; 
+			cout << name << " wins three points earned" << endl;
 		} else if (sum == 2 || sum == 3 || sum == 12){
 			cout << name << " lost" << endl;
 		} else {
 			wins++; 
 			cout << name << " draws one point earned" << endl;
 		}
-		cout << "wins earned " << wins << endl;
+		cout << "END GAME " << endl;
 		cout << "Continue? " << endl;
 		cin >> cont;
 		}
+		cout << name << "'s wins earned: " << wins << endl;
 	return 0;
 	
 
@@ -50,4 +51,3 @@ void sumcalculation (int& roll1, int& roll2, int& total){
 	total = roll1 + roll2;
 	
 }
-
