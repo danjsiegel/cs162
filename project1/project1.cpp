@@ -7,24 +7,28 @@
 #include <string.h>
 
 using namespace std;
-void sumcalculation (int& roll1, int& roll2, int& total);
-
+//void function to roll dice 
+void sumcalculation (int& roll1, int& roll2, int& total){
+	roll1 = (rand() % 6) + 1;
+	roll2 = (rand() % 6) + 1;
+	total = roll1 + roll2;
+}
 int main (){
+	srand((unsigned)time(0));
 	string name;
 	string cont = "y";
 	int die1, die2, sum;
 	int wins = 0;
-	cout << "What is your name? ";
+	cout << "&&&&& SIMPLE DICE GAME &&&&&&&&" << "\nWhat is your name? ";
 	cin >> name;	    
 		while(cont == "y"){
+			//Game will run at most for a total of 5 sessions. If a winning or losing value is achieved, the loop will break.
 			for (int i = 1; i < 6; i++){
-				//Function which rolls the dice, passes the values back by reference
 				sumcalculation(die1, die2, sum);
 				cout << "\nrolling dice...\n" << endl;
 				cout << name << " you rolled a " << die1 << " and a " << die2 << endl;
 				cout << "For a total of " << sum << endl;
 				sleep(1);
-				//If the values are winning or losing end the for loop
 				if (sum == 2 || sum == 3 || sum == 7 || sum == 11 || sum == 12){
 						break;
 					}
@@ -33,14 +37,13 @@ int main (){
 					cout << "\nre-roll dice." << endl;
 				}	
 			} 
-			//Values have been returned, either it has a winning or losing value or it ran 5times with a bad ending value
-			//winning values
-			if (sum == 11 || sum == 7) {
+			//Values have been returned to the sum and dice variables. Next step is to check the values to see if you won or lost. Winning and losing have specific numbers tied to them, all other values are draw.  
+			if (sum == 11 || sum == 7) { //winning values
 				wins= wins + 3; 
 				cout << name << " Wins! Three points earned" << endl;
 			} else if (sum == 2 || sum == 3 || sum == 12){ //losing values
 				cout << name << " lost the game. No points." << endl;
-			} else { //if not a winner or loser, it's a draw
+			} else { //draw - all other values 
 				wins++; 
 				cout << name << " draws. One point earned" << endl;
 			}
@@ -48,15 +51,9 @@ int main (){
 			cout << name << ", do you want to play again? (y or n)" << endl;
 			cin >> cont;
 		}
-	cout << name << "'s wins earned: " << wins << endl;
+	cout << "=======>" << name << "'s total score is: " << wins <<"\nGOODBYE!" <<endl;
 	return 0;
 	
 
 }
-void sumcalculation (int& roll1, int& roll2, int& total){
-	srand((unsigned)time(0));
-	roll1 = (rand() % 6) + 1;
-	roll2 = (rand() % 6) + 1;
-	total = roll1 + roll2;
-	
-}
+
