@@ -1,0 +1,46 @@
+Script started on Sat 08 Apr 2017 12:39:58 PM PDT
+daniel.siegel@syccuxas01:~/cs162/project1> cim pre[Koject1.cpp 
+If 'cim' is not a typo you can use command-not-found to lookup the package that contains it, like this:
+    cnf cim
+daniel.siegel@syccuxas01:~/cs162/project1> vim project1.cpp 
+[?1h=[1;24r[m[m[0m[H[J[24;1H"project1.cpp" 59L, 1948C[1;1H[1m//Dan Siegel
+//Project 1[0m
+[4m#include <cstdlib>
+#include <iostream>
+#include <ctime>
+#include <unistd.h>
+#include <string.h>[m
+
+[1musing[0m [4mnamespace[m std;
+[1m//void function to roll dice [0m
+[4mvoid[m sumcalculation ([4mint[m& roll1, [4mint[m& roll2, [4mint[m& total){[12;9Hroll1 = (rand() % [4m6[m) + [4m1[m;[13;9Hroll2 = (rand() % [4m6[m) + [4m1[m;[14;9Htotal = roll1 + roll2;
+}
+[4mint[m main (){[17;9Hsrand(([4munsigned[m)time([4m0[m));[18;9Hstring name;[19;9Hstring cont = [4m"y"[m;[20;9H[4mint[m die1, die2, sum;[21;9H[4mint[m wins = [4m0[m;[22;9Hcout << [4m"&&&&& SIMPLE DICE GAME &&&&&&&&"[m << [4m"[m[1m\n[0m[4mWhat is your name? "[m;[23;9Hcin >> name;[24;63H21,14-21      Top[21;21H
+
+
+[?1l>[24;1H[K[24;1Hdaniel.siegel@syccuxas01:~/cs162/project1> g++ -o proj1 project1.cpp 
+daniel.siegel@syccuxas01:~/cs162/project1> ./a[K[p[K[Kproj1 
+&&&&& SIMPLE DICE GAME &&&&&&&&
+What is your name? Dan
+
+rolling dice...
+
+Dan you rolled a 4 and a 1
+For a total of 5
+
+re-roll dice.
+
+rolling dice...
+
+Dan you rolled a 1 and a 2
+For a total of 3
+Dan lost the game. No points.
++++END GAME+++
+Dan, do you want to play again? (y or n)
+n
+=======>Dan's total score is: 0
+GOODBYE!
+daniel.siegel@syccuxas01:~/cs162/project1> exit
+exit
+
+Script done on Sat 08 Apr 2017 12:40:51 PM PDT
