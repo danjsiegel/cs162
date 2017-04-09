@@ -19,18 +19,18 @@ int main (){
 	
 	char cont;
 	int chosenPlanet;
-	double userWeight = 0;
+	double userWeight;
 	
 	do {
 		//Gets users weight. Validates that the input is both a valid input, and a double. If not, clears the input. 
-		while (userWeight <= 0) {
+		cout << "Please enter your weight on Earth: " << endl;
+		cin >> userWeight;
+		while (!cin || (userWeight <= 0)) {
+			cout << "Invalid weight. Please re-enter" << endl;
+			cin.clear();
+			cin.ignore(100, '\n');
 			cout << "Please enter your weight on Earth: " << endl;
 			cin >> userWeight;
-			if (userWeight < 0 || !userWeight){
-				cout << "Invalid weight. Please re-enter" << endl;
-				cin.clear();
-				cin.ignore(100, '\n');
-			} 
 		}
 		cout << "Chose a planet:\n" << "1 - Moon\n" << "2 - Mars\n" << "3 - Neptune\n" << "4 - Jupiter\n";
 		//Switch through the different planets. 
@@ -56,9 +56,6 @@ int main (){
 		}	
 		cout << "Would you like to continue(y or no): " << endl;
 		cin >> cont;
-		if (cont == 'y' || cont == 'Y'){
-			userWeight = 0;
-		}
 	} while (cont == 'y' || cont == 'Y');
 	return 0;
 }
