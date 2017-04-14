@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <cstring>
+#include <sstream>
 
 using namespace std;
 
@@ -17,20 +18,25 @@ struct book {
 
 int main() {
 	int numOfBooks, action, tempID;
+	char line[250];
 	ifstream bookList("library.txt");
 
 	bookList >> numOfBooks;
-	struct book s[numOfBooks];
+	struct book s[numOfBooks];//reading from lines is not triggering next line. Need to move bookList >> s[i].id to a getline and put bach in as sstream. 
 	for (int i = 0; i < numOfBooks; i++){
-		bookList >> s[i].id;
-		getline(bookList, s[i].title);
-		getline(bookList, s[i].author);
+		bookList.getline(line, 250, '\n');
+		istringstream iss(line);
+		iss >> s[i].id;
+		cout << s[i].id << endl;
+		bookList.getline(s[i].title, 250, '\n');
+		cout << s[i].title << endl;
+		bookList.getline(s[i].author,250, 'n');
 		bookList >> s[i].copies;
 		bookList >> s[i].checkOuts;
 		bookList >> s[i].holds;	
 	}
-
-	do {
+ /*
+	do {i
 		cout <<"*"  << "Main Menu" << "*" << endl;
 		cout << "1 - Print Catalog\n" << "2 - Search by Title\n" << "3 - Search by Author\n" << "4 - Do Action\n" << "5 - Quit\n" << "Enter choice: " << endl;
 		cin >> action;
@@ -60,7 +66,7 @@ int main() {
 
 	} while (action != 5);
 
-	
+*/	
 	bookList.close();
 	return 0;
 }
