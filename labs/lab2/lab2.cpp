@@ -8,11 +8,12 @@ using namespace std;
 
 
 int main() {
-	int numOfBooks, action;
+	int numOfBooks, action, tempID;
 	ifstream bookList("library.txt");
 
-	bookList >> numOfBooks;	
-		struct book[numOfBooks] {
+	bookList >> numOfBooks;
+	
+	struct book {
 		int id;
 		char title[250];
 		char author[250];
@@ -21,12 +22,14 @@ int main() {
 		int holds;
 	};
 	for (int i = 0; i < numOfBooks; i++){
-		bookList >> book[i].id; 
-		getline(bookList, book[i].title;
-		getline(bookList, book[i].author;
-		bookList >> book[i].copies;
-		bookList >> book[i].checkOuts;
-		bookList >> book[i].holds;	
+		bookList >> tempID;
+		book tempID;
+		book[tempID].id = tempID; 
+		getline(bookList, book[tempID].title);
+		getline(bookList, book[tempID].author);
+		bookList >> book[tempID].copies;
+		bookList >> book[tempID].checkOuts;
+		bookList >> book[tempID].holds;	
 	}
 
 	do {
