@@ -4,20 +4,22 @@
 
 using namespace std;
 
-struct book {
-	int id;
-	char title[250];
-	char author[250];
-	int copies;
-	int checkOuts;
-	int holds;
-};
+
+
 
 int main() {
 	int numOfBooks, action;
 	ifstream bookList("library.txt");
 
 	bookList >> numOfBooks;	
+		struct book[numOfBooks] {
+		int id;
+		char title[250];
+		char author[250];
+		int copies;
+		int checkOuts;
+		int holds;
+	};
 	for (int i = 0; i < numOfBooks; i++){
 		bookList >> book[i].id; 
 		getline(bookList, book[i].title;
