@@ -4,6 +4,14 @@
 
 using namespace std;
 
+struct book {
+		int id;
+		char title[250];
+		char author[250];
+		int copies;
+		int checkOuts;
+		int holds;
+	};
 
 
 
@@ -12,24 +20,14 @@ int main() {
 	ifstream bookList("library.txt");
 
 	bookList >> numOfBooks;
-	
-	struct book {
-		int id;
-		char title[250];
-		char author[250];
-		int copies;
-		int checkOuts;
-		int holds;
-	};
+	struct book s[numOfBooks];
 	for (int i = 0; i < numOfBooks; i++){
-		bookList >> tempID;
-		book tempID;
-		book[tempID].id = tempID; 
-		getline(bookList, book[tempID].title);
-		getline(bookList, book[tempID].author);
-		bookList >> book[tempID].copies;
-		bookList >> book[tempID].checkOuts;
-		bookList >> book[tempID].holds;	
+		bookList >> s[i].id;
+		getline(bookList, s[i].title);
+		getline(bookList, s[i].author);
+		bookList >> s[i].copies;
+		bookList >> s[i].checkOuts;
+		bookList >> s[i].holds;	
 	}
 
 	do {
