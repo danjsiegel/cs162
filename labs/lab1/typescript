@@ -1,0 +1,56 @@
+Script started on Sat 08 Apr 2017 01:53:18 PM PDT
+daniel.siegel@syccuxas01:~/cs162/lab1> vim lab1.cpp 
+[?1h=[1;63r[m[m[0m[H[J[63;1H"lab1.cpp" 65L, 1548C[1;1H[1m//Dan Siegel
+//Lab1[0m
+[4m#include <iostream>[m
+
+[1musing[0m [4mnamespace[m std;
+
+[4mvoid[m weightCalc([4mdouble[m earthWeight, [4mdouble[m planetGravity){[8;9H[4mconst[m [4mdouble[m earth = [4m9.81[m;[9;9H[4mdouble[m weight;[10;9Hweight = earthWeight * (planetGravity/earth);[11;9Hcout << [4m"your weight is: "[m << weight << endl;
+}
+
+[4mint[m main (){[15;9H[4mconst[m [4mdouble[m moon = [4m1.622[m;[16;9H[4mconst[m [4mdouble[m mars = [4m3.71[m;[17;9H[4mconst[m [4mdouble[m neptune = [4m11.15[m;[18;9H[4mconst[m [4mdouble[m jupiter = [4m24.79[m;[20;9H[4mchar[m cont;[21;9H[4mint[m chosenPlanet;[22;9H[4mdouble[m userWeight = [4m0[m;[24;9H[1mdo[0m {[25;17H[1m//Gets users weight. Validates that the input is both a valid input, and a double. If not, clears the input. [26;17Hwhile[0m (userWeight <= [4m0[m) {[27;25Hcout << [4m"Please enter your weight on Earth: "[m << endl;[28;25Hcin >> userWeight;[29;25H[1mif[0m (userWeight < [4m0[m || !userWeight){[30;33Hcout << [4m"Invalid weight. Please re-enter"[m << endl;[31;33Hcin.clear();[32;33Hcin.ignore([4m100[m, [1m'\n'[0m);[33;25H}[34;17H}[35;17Hcout << [4m"Chose a planet:[m[1m\n[0m[4m"[m << [4m"1 - Moon[m[1m\n[0m[4m"[m << [4m"2 - Mars[m[1m\n[0m[4m"[m << [4m"3 - Neptune[m[1m\n[0m[4m"[m << [4m"4 - Jupiter[m[1m\n[0m[4m"[m;[36;17H[1m//Switch through the different planets. [0m[37;17Hcin >> chosenPlanet;[38;17H[1mswitch[0m(chosenPlanet){[39;25H[1mcase[0m [4m1[m:[40;33HweightCalc(userWeight, moon);[41;33H[1mbreak[0m;[42;25H[1mcase[0m [4m2[m:[43;33HweightCalc(userWeight, mars);[44;33H[1mbreak[0m;[45;25H[1mcase[0m [4m3[m:[46;33HweightCalc(userWeight, neptune);[47;33H[1mbreak[0m;[48;25H[1mcase[0m [4m4[m:[49;33HweightCalc(userWeight, jupiter);[50;33H[1mbreak[0m;[51;25H[1mdefault[0m:[52;33Hcout << [4m"not a vaid selection"[m << endl;[53;33Hcin.clear();[54;33Hcin.ignore([4m100[m, [1m'\n'[0m);[55;33H[1mbreak[0m;[56;17H}[57;17Hcout << [4m"Would you like to continue(y or no): "[m << endl;[58;17Hcin >> cont;[59;17H[1mif[0m (cont == [4m'y'[m || cont == [4m'Y'[m){[60;25HuserWeight = [4m0[m;[61;17H}[62;9H} [1mwhile[0m (cont == [4m'y'[m || cont == [4m'Y'[m);[63;220H1,1[11CTop[1;1H[63;1H[?1l>[63;1H[K[63;1Hdaniel.siegel@syccuxas01:~/cs162/lab1> g++ -o lab1 lab1.cpp 
+daniel.siegel@syccuxas01:~/cs162/lab1> ./lab1 
+Please enter your weight on Earth: 
+100
+Chose a planet:
+1 - Moon
+2 - Mars
+3 - Neptune
+4 - Jupiter
+4
+your weight is: 252.701
+Would you like to continue(y or no): 
+y
+Please enter your weight on Earth: 
+-4
+Invalid weight. Please re-enter
+Please enter your weight on Earth: 
+sd
+Invalid weight. Please re-enter
+Please enter your weight on Earth: 
+100
+Chose a planet:
+1 - Moon
+2 - Mars
+3 - Neptune
+4 - Jupiter
+bad input
+not a vaid selection
+Would you like to continue(y or no): 
+y
+Please enter your weight on Earth: 
+100
+Chose a planet:
+1 - Moon
+2 - Mars
+3 - Neptune
+4 - Jupiter
+4 2
+your weight is: 37.8186
+Would you like to continue(y or no): 
+n
+daniel.siegel@syccuxas01:~/cs162/lab1> exit
+exit
+
+Script done on Sat 08 Apr 2017 01:54:11 PM PDT
