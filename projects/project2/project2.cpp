@@ -1,3 +1,5 @@
+//Dan Siegel
+//Project 2
 #include <iostream>
 #include <fstream>
 #include <cstring>
@@ -21,6 +23,18 @@ int lineRecognition(char getLineData[250]){
 	return lineDataAsInt;
 }
 
+void displayCatalog (int bookNumber){
+	cout << "%%%%%%% Book Catalog %%%%%%%" << endl;
+	for (int i = 0; i < bookNumber; i++){
+		cout << "-----" << s[i].id << "-----" << endl;							
+		cout << "Title: " << s[i].title << endl;
+		cout << "Author: " << s[i].author << endl;
+		cout << "Number of Copies: " << s[i].copies << endl;
+		cout << "Number Checked out: " << s[i].checkOuts << endl;
+		cout << "Number of Holds: " << s[i].holds << endl;				
+	}
+
+}
 int main() {
 	int numOfBooks, action, tempID, foundIteration;
 	char line[250], compare[250];
@@ -53,15 +67,7 @@ int main() {
 		cin >> action;
 		switch (action){
 		case 1:
-			cout << "%%%%%%% Book Catalog %%%%%%%" << endl;
-			for (int i = 0; i < numOfBooks; i++){
-				cout << "-----" << s[i].id << "-----" << endl;							
-				cout << "Title: " << s[i].title << endl;
-				cout << "Author: " << s[i].author << endl;
-				cout << "Number of Copies: " << s[i].copies << endl;
-				cout << "Number Checked out: " << s[i].checkOuts << endl;
-				cout << "Number of Holds: " << s[i].holds << endl;				
-			}
+			displayCatalog (numOfBooks);
 			break;
 		case 2:
 			cin.clear();
