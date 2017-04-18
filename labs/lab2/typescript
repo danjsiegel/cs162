@@ -1,0 +1,46 @@
+Script started on Mon 17 Apr 2017 07:16:08 PM PDT
+]0;pi@pi-machine: ~/Documents/cs162/labs/lab2pi@pi-machine:~/Documents/cs162/labs/lab2$ vim lab2.cpp 
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;57r[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[57;1H"lab2.cpp" 61L, 1474C[>c[1;1H[34m//Dan Siegel
+//Lab2[m
+[35m#include [m[31m<iostream>[m
+[35m#include [m[31m<cstdlib>[m
+[35m#include [m[31m<cstring>[m
+
+[33musing[m [32mnamespace[m std;
+[32mchar[m letterSorter([32mchar[m userInput[], [32mint[m length){[9;9H[33mfor[m ([32mint[m i = [31m0[m; i < length; i++){[10;25H[32mint[m smallest = userInput[i];[11;25H[32mint[m smallestIndex = i;[12;25H[33mfor[m ([32mint[m j = i; j < length; j++){[13;33H[33mif[m (userInput[j] < smallest){[14;41Hsmallest = userInput[j];[15;41HsmallestIndex = j;[16;33H}[17;25H}[18;17Hswap(userInput[i], userInput[smallestIndex]);[19;17H}
+}
+[34m//checks length of the array. Not necessary for program to work. [m
+[32mint[m arrayLength([32mchar[m wordInput[]){[23;9H[32mint[m count = [31m0[m;[24;9H[33mwhile[m(wordInput[count] != [35m'\0'[m){[25;17Hcount++;[26;17H}[27;9H[33mreturn[m count;
+}
+
+[32mint[m main (){[32;9H[32mchar[m cont, firstWord[[31m20[m], secondWord[[31m20[m];[33;9H[32mint[m firstLen, secondLen, equal;[34;9H[33mdo[m {[36;17Hcout << [31m"Enter the first word: "[m;[37;17Hcin >> firstWord;[38;17Hcout << [31m"Enter the second word: "[m;[39;17Hcin >> secondWord;[41;17HfirstLen = arrayLength(firstWord);[42;17HsecondLen = arrayLength(secondWord);[44;17H[33mif[m (firstLen != secondLen){ [34m//checks if the length is the same[m[45;25Hcout << [31m"The words are NOT anagrams of each other"[m << endl;[46;17H} [33melse[m {[47;25HletterSorter(firstWord, firstLen);[48;25HletterSorter(secondWord, secondLen);[49;25Hequal = strcmp(firstWord, secondWord);[50;33H[33mif[m (equal == [31m0[m){[51;41Hcout << [31m"The words are anagrams of each other"[m << endl;[52;33H} [33melse[m {[53;41Hcout << [31m"The words are NOT anagrams of each other"[m << endl;[54;33H}[55;17H}[56;17Hcout << [31m"Do you want to continue? (y or n)"[m << endl;[57;87H1,1[11CTop]2;lab2.cpp (~/Documents/cs162/labs/lab2) - VIM]1;lab2.cpp[1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[57;1H]2;pi@pi-machine: ~/Documents/cs162/labs/lab2]1;pi@pi-machine: ~/Documents/cs162/labs/lab2[57;1H[K[57;1H[?1l>[?1049l]0;pi@pi-machine: ~/Documents/cs162/labs/lab2pi@pi-machine:~/Documents/cs162/labs/lab2$ g++ -o lab2 lab2.cpp 
+]0;pi@pi-machine: ~/Documents/cs162/labs/lab2pi@pi-machine:~/Documents/cs162/labs/lab2$ ./lab2 
+Enter the first word: pit
+Enter the second word: tip
+The words are anagrams of each other
+Do you want to continue? (y or n)
+y
+Enter the first word: skin
+Enter the second word: kins
+The words are anagrams of each other
+Do you want to continue? (y or n)
+y
+Enter the first word: jump
+Enter the second word: pump
+The words are NOT anagrams of each other
+Do you want to continue? (y or n)
+y
+Enter the first word: house
+Enter the second word: home
+The words are NOT anagrams of each other
+Do you want to continue? (y or n)
+y
+Enter the first word: see
+Enter the second word: ees
+The words are anagrams of each other
+Do you want to continue? (y or n)
+n
+]0;pi@pi-machine: ~/Documents/cs162/labs/lab2pi@pi-machine:~/Documents/cs162/labs/lab2$ exit
+exit
+
+Script done on Mon 17 Apr 2017 07:17:20 PM PDT
