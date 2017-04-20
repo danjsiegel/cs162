@@ -23,7 +23,7 @@ int lineRecognition(char getLineData[250]){
 	return lineDataAsInt;
 }
 
-void displayCatalog (int bookNumber){
+void displayCatalog (int bookNumber, struct books[]){
 	cout << "%%%%%%% Book Catalog %%%%%%%" << endl;
 	for (int i = 0; i < bookNumber; i++){
 		cout << "-----" << s[i].id << "-----" << endl;							
@@ -67,7 +67,7 @@ int main() {
 		cin >> action;
 		switch (action){
 		case 1:
-			displayCatalog (numOfBooks);
+			displayCatalog (numOfBooks, s[]);
 			break;
 		case 2:
 			cin.clear();
