@@ -1,8 +1,8 @@
-//Dan Siegel
-//Lab2
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
+#include <stdio.h>
+#include <ctype.h>
 
 using namespace std;
 char letterSorter(char userInput[], int length){
@@ -27,6 +27,11 @@ int arrayLength(char wordInput[]){
 	return count;
 }
 
+void lowerCase (int lengthOfChar, char toMakeLowerCase[]){
+    for (int i=0; i< lengthOfChar; i++){
+         toMakeLowerCase[i]=tolower(toMakeLowerCase[i]);
+         }
+    }
 int main (){
 	
 	char cont, firstWord[20], secondWord[20];
@@ -38,9 +43,12 @@ int main (){
 		cout << "Enter the second word: ";
 		cin >> secondWord;
 		
+
 		firstLen = arrayLength(firstWord);
-		secondLen = arrayLength(secondWord);			
-		
+		secondLen = arrayLength(secondWord);		
+		lowerCase (firstLen, firstWord);
+		lowerCase (secondLen, secondWord);
+      
 		if (firstLen != secondLen){ //checks if the length is the same
 			cout << "The words are NOT anagrams of each other" << endl;		
 		} else {
@@ -58,4 +66,3 @@ int main (){
 	} while (cont == 'y' || cont == 'Y');
 	return 0;
 }
-
