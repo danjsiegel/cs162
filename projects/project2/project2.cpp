@@ -23,20 +23,9 @@ int lineRecognition(char getLineData[250]){
 	return lineDataAsInt;
 }
 
-void displayCatalog (int bookNumber, struct books[]){
-	cout << "%%%%%%% Book Catalog %%%%%%%" << endl;
-	for (int i = 0; i < bookNumber; i++){
-		cout << "-----" << s[i].id << "-----" << endl;							
-		cout << "Title: " << s[i].title << endl;
-		cout << "Author: " << s[i].author << endl;
-		cout << "Number of Copies: " << s[i].copies << endl;
-		cout << "Number Checked out: " << s[i].checkOuts << endl;
-		cout << "Number of Holds: " << s[i].holds << endl;				
-	}
-
-}
 int main() {
-	int numOfBooks, action, tempID, foundIteration;
+	int numOfBooks, action, tempID, numberFound, actionToBook, updateToBook;
+	int foundIteration[numberFound];
 	char line[250], compare[250];
 	bool found = false;
 	ifstream bookList("library.txt");
@@ -66,44 +55,129 @@ int main() {
 		
 		cin >> action;
 		switch (action){
-		case 1:
-			displayCatalog (numOfBooks, s[]);
-			break;
-		case 2:
-			cin.clear();
-			cin.ignore();
-			found = false; 
-			cout << "Title of Book? " <<endl;
-			cin.getline(compare, 250, '\n');
-			for (int i = 0; i < numOfBooks; i++){
-				int equal;				
-				equal = strcmp(compare, s[i].title);
-				cout << s[i].title << endl;
-				cout << compare << endl;
-				if (equal == 0){
-				found = true;
-				foundIteration = i;
+		case 1: //Print Catalog
+			cout << "%%%%%%% Book Catalog %%%%%%%" << endl;
+				for (int i = 0; i < numOfBooks; i++){
+					cout << "-----" << s[i].id << "-----" << endl;							
+					cout << "Title: " << s[i].title << endl;
+					cout << "Author: " << s[i].author << endl;
+					cout << "Number of Copies: " << s[i].copies << endl;
+					cout << "Number Checked out: " << s[i].checkOuts << endl;
+					cout << "Number of Holds: " << s[i].holds << endl;	
 				}
-			}
-			if (found == true){
-				cout << "-----" << s[foundIteration].id << "-----" << endl;							
-				cout << "Title: " << s[foundIteration].title << endl;
-				cout << "Author: " << s[foundIteration].author << endl;
-				cout << "Number of Copies: " << s[foundIteration].copies << endl;
-				cout << "Number Checked out: " << s[foundIteration].checkOuts << endl;
-				cout << "Number of Holds: " << s[foundIteration].holds << endl;	
-			} else {
-				cout << "Book Not Found" << endl;
-			}
 			break;
-		case 3:
-			cin.clear();
-			cin.ignore();
-			cout << "case3" << endl;
-			break;
+		case 2: //Search by Title. Stops after title is found. 
+				cin.clear();
+				cin.ignore();
+				found = false; 
+				cout << "Name of Book? " <<endl;
+				cin.getline(compare, 250, '\n');
+				for (int i = 0; i < numOfBooks; i++){
+					int equal;				
+					equal = strcmp(compare, s[i].title);
+					if (equal == 0){
+						found = true;
+						foundIteration[0] = i;
+						break;
+					}
+				}
+				if (found == true){
+					cout << "-----" << s[foundIteration[0]].id << "-----" << endl;							
+					cout << "Title: " << s[foundIteration[0]].title << endl;
+					cout << "Author: " << s[foundIteration[0]].author << endl;
+					cout << "Number of Copies: " << s[foundIteration[0]].copies << endl;
+					cout << "Number Checked out: " << s[foundIteration[0]].checkOuts << endl;
+					cout << "Number of Holds: " << s[foundIteration[0]].holds << endl;	
+				} else {
+					cout << "Book " << compare << " Not Found" << endl;
+				}
+				break;
+
+		case 3: // Search by Author. Must check all author names. 
+				cin.clear();
+				cin.ignore();
+				found = false;
+			 	numberFound = 0;
+				cout << "Name of Author? " <<endl;
+				cin.getline(compare, 250, '\n');
+				for (int i = 0; i < numOfBooks; i++){
+					int equal;				
+					equal = strcmp(compare, s[i].author);
+					if (equal == 0){
+						found = true;
+						foundIteration[numberFound] = i;
+						numberFound++;
+					}
+				}
+				if (found == true){
+					for (int i = 0; i < numberFound; i++){
+						cout << "-----" << s[i].id << "-----" << endl;							
+						cout << "Title: " << s[i].title << endl;
+						cout << "Author: " << s[i].author << endl;
+						cout << "Number of Copies: " << s[i].copies << endl;
+						cout << "Number Checked out: " << s[i].checkOuts << endl;
+						cout << "Number of Holds: " << s[i].holds << endl;	
+					}
+				} else {
+					cout << "Book by Author " << compare << " Not Found" << endl;
+				}
+				break;
 		case 4:
-			cout << "case4" << endl;
-			break;
+			cout << "Enter id of Book or -1 to display all books: " << endl;
+			//cin.clear();
+			//cin.ignore();	
+			cin >> actionToBook;
+			if (actionToBook == -1){			
+					cout << "%%%%%%% Book Catalog %%%%%%%" << endl;
+					int count = 0;
+					while (count < numOfBooks){
+						cout << "-----" << s[count].id << "-----" << endl;							
+						cout << "Title: " << s[count].title << endl;
+						cout << "Author: " << s[count].author << endl;
+						cout << "Number of Copies: " << s[count].copies << endl;
+						cout << "Number Checked out: " << s[count].checkOuts << endl;
+						cout << "Number of Holds: " << s[count].holds << endl;	
+						count++;
+					}	
+				cout << "Enter id of Book" << endl;	
+				cin >> actionToBook;
+				} 
+			//	found = false;	
+			/*	if (actionToBook > 0) {			
+					for (int i = 0; i < numOfBooks; i++){			
+						if (actionToBook == s[i].id){
+							found = true;
+							numberFound = i;
+							break;
+						}
+					}
+				}	*/
+				if (found == true){				
+					cout << "What would you like to do?\n 1-Checkout Book\n 2-Return Book\n 3-Hold Book\n 4-Remove Hold" << endl;
+					cin >> updateToBook; 
+					switch (updateToBook) {
+						case 1:
+							if (s[numberFound].copies <= s[numberFound].checkOuts){
+								s[numberFound].checkOuts = 	s[numberFound].checkOuts + 1;		
+							} else {
+								cout << "All copies checked out" << endl;
+							}
+							break;
+						case 2:
+						case 3:
+						case 4:
+						default:
+							cout << "Invalid selection" << endl;
+							cin.clear();
+							cin.ignore(100, '\n'); 
+							break; 
+						}		
+				} else {
+					cin.clear();
+					cin.ignore(100, '\n');
+					cout << "Invalid entry" << endl;
+				}
+				break;
 		case 5: 
 			cout << "goodbye" << endl;
 			break;
