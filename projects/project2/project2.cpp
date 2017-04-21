@@ -128,22 +128,20 @@ int main() {
 			//cin.ignore();	
 			cin >> actionToBook;
 			if (actionToBook == -1){			
-					cout << "%%%%%%% Book Catalog %%%%%%%" << endl;
-					int count = 0;
-					while (count < numOfBooks){
-						cout << "-----" << s[count].id << "-----" << endl;							
-						cout << "Title: " << s[count].title << endl;
-						cout << "Author: " << s[count].author << endl;
-						cout << "Number of Copies: " << s[count].copies << endl;
-						cout << "Number Checked out: " << s[count].checkOuts << endl;
-						cout << "Number of Holds: " << s[count].holds << endl;	
-						count++;
-					}	
+				cout << "%%%%%%% Book Catalog %%%%%%%" << endl;
+				for (int i = 0; i < numOfBooks; i++){
+					cout << "-----" << s[i].id << "-----" << endl;							
+					cout << "Title: " << s[i].title << endl;
+					cout << "Author: " << s[i].author << endl;
+					cout << "Number of Copies: " << s[i].copies << endl;
+					cout << "Number Checked out: " << s[i].checkOuts << endl;
+					cout << "Number of Holds: " << s[i].holds << endl;
+				}	
 				cout << "Enter id of Book" << endl;	
 				cin >> actionToBook;
 				} 
-			//	found = false;	
-			/*	if (actionToBook > 0) {			
+				found = false;	
+				if (actionToBook > 0) {			
 					for (int i = 0; i < numOfBooks; i++){			
 						if (actionToBook == s[i].id){
 							found = true;
@@ -151,7 +149,7 @@ int main() {
 							break;
 						}
 					}
-				}	*/
+				}	
 				if (found == true){				
 					cout << "What would you like to do?\n 1-Checkout Book\n 2-Return Book\n 3-Hold Book\n 4-Remove Hold" << endl;
 					cin >> updateToBook; 
