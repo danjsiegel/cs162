@@ -155,15 +155,33 @@ int main() {
 					cin >> updateToBook; 
 					switch (updateToBook) {
 						case 1:
-							if (s[numberFound].copies <= s[numberFound].checkOuts){
-								s[numberFound].checkOuts = 	s[numberFound].checkOuts + 1;		
+							if (s[numberFound].copies >= s[numberFound].checkOuts){
+								s[numberFound].checkOuts = 	s[numberFound].checkOuts + 1;
+								cout << "Book checked out" << endl;		
 							} else {
 								cout << "All copies checked out" << endl;
 							}
 							break;
 						case 2:
+							if (s[numberFound].checkOuts >= 1){
+								s[numberFound].checkOuts--;	
+								cout << "Book returned" << endl;						
+							} else {
+								cout << "Double check that you still have teh book checked out" << endl;
+							}
+							breakl
 						case 3:
+							s[numberFound].holds++;
+							cout << "Hold Added" << endl;
+							break;
 						case 4:
+							if (s[numberFound].holds >= 1){							
+								s[numberFound].holds--;
+								cout << "Hold Removed" << endl;
+							} else {
+								cout << "No holds to remove" << endl;
+							}
+							break;
 						default:
 							cout << "Invalid selection" << endl;
 							cin.clear();
