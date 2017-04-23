@@ -96,7 +96,6 @@ int main() {
 		case 3: // Search by Author. Must check all author names. 
 				cin.clear();
 				cin.ignore();
-				found = false;
 			 	numberFound = 0;
 				cout << "Name of Author? " <<endl;
 				cin.getline(compare, 250, '\n');
@@ -104,19 +103,18 @@ int main() {
 					int equal;				
 					equal = strcmp(compare, s[i].author);
 					if (equal == 0){
-						found = true;
 						foundIteration[numberFound] = i;
-						numberFound++;
+						numberFound = numberFound + 1;
 					}
 				}
-				if (found == true){
+				if (numberFound > 0){
 					for (int i = 0; i < numberFound; i++){
-						cout << "-----" << s[i].id << "-----" << endl;							
-						cout << "Title: " << s[i].title << endl;
-						cout << "Author: " << s[i].author << endl;
-						cout << "Number of Copies: " << s[i].copies << endl;
-						cout << "Number Checked out: " << s[i].checkOuts << endl;
-						cout << "Number of Holds: " << s[i].holds << endl;	
+						cout << "-----" << s[foundIteration[i]].id << "-----" << endl;							
+						cout << "Title: " << s[foundIteration[i]].title << endl;
+						cout << "Author: " << s[foundIteration[i]].author << endl;
+						cout << "Number of Copies: " << s[foundIteration[i]].copies << endl;
+						cout << "Number Checked out: " << s[foundIteration[i]].checkOuts << endl;
+						cout << "Number of Holds: " << s[foundIteration[i]].holds << endl;	
 					}
 				} else {
 					cout << "Book by Author " << compare << " Not Found" << endl;
