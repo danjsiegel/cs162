@@ -1,40 +1,155 @@
-Script started on Sat 22 Apr 2017 02:41:43 PM PDT
+Script started on Sun 23 Apr 2017 02:45:09 PM PDT
 daniel.siegel@syccuxas01:~/cs162/projects/project2> vim project2.cpp 
-[?1h=[1;63r[m[m[0m[H[J[63;1HE325: ATTENTION
-Found a swap file by the name ".project2.cpp.swp"
-[10Cowned by: daniel.siegel   dated: Thu Apr 20 19:42:42 2017
-[9Cfile name: ~pi/Documents/cs162/projects/project2/project2.cpp
-[10Cmodified: no
-[9Cuser name: pi   host name: pi-machine
-[8Cprocess ID: 31175
-[9C[not usable on this computer]
-While opening file "project2.cpp"
-[13Cdated: Thu Apr 20 19:57:00 2017
-      NEWER than swap file!
-
-(1) Another program may be editing the same file.  If this is the case,
-    be careful not to end up with two different instances of the same
-    file when making changes.  Quit, or continue with caution.
-(2) An edit session for this file crashed.
-    If this is the case, use ":recover" or "vim -r project2.cpp"
-    to recover the changes (see ":help recovery").
-    If you did this already, delete the swap file ".project2.cpp.swp"
-    to avoid this message.
-
-Swap file ".project2.cpp.swp" already exists!
-[O]pen Read-Only, (E)dit anyway, (R)ecover, (D)elete it, (Q)uit, (A)bort:[63;1H[K[63;1H"project2.cpp" 211L, 6290C[1;25H[1m//cin.ignore(); [0m[2;25Hcin >> actionToBook;[3;25H[1mif[0m (actionToBook == -[4m1[m){[4;33Hcout << [4m"[m[1m%%%%%%[0m[4m% Book Catalog [m[1m%%%%%%[0m[4m%"[m << endl;[5;33H[1mfor[0m ([4mint[m i = [4m0[m; i < numOfBooks; i++){[6;41Hcout << [4m"-----"[m << s[i].id << [4m"-----"[m << endl;[7;41Hcout << [4m"Title: "[m << s[i].title << endl;[8;41Hcout << [4m"Author: "[m << s[i].author << endl;[9;41Hcout << [4m"Number of Copies: "[m << s[i].copies << endl;[10;41Hcout << [4m"Number Checked out: "[m << s[i].checkOuts << endl;[11;41Hcout << [4m"Number of Holds: "[m << s[i].holds << endl;[12;33H}[13;33Hcout << [4m"Enter id of Book"[m << endl;[14;33Hcin >> actionToBook;[15;33H}[16;33Hfound = [4mfalse[m;[17;33H[1mif[0m (actionToBook > [4m0[m) {[18;41H[1mfor[0m ([4mint[m i = [4m0[m; i < numOfBooks; i++){[19;49H[1mif[0m (actionToBook == s[i].id){[20;57Hfound = [4mtrue[m;[21;57HnumberFound = i;[22;57H[1mbreak[0m;[23;49H}[24;41H}[25;33H}[26;33H[1mif[0m (found == [4mtrue[m){[27;41Hcout << [4m"What would you like to do?[m[1m\n[0m[4m 1-Checkout Book[m[1m\n[0m[4m 2-Return Book[m[1m\n[0m[4m 3-Hold Book[m[1m\n[0m[4m 4-Remove Hold"[m << endl;[28;41Hcin >> updateToBook;[29;41H[1mswitch[0m (updateToBook) {[30;49H[1mcase[0m [4m1[m:[31;57H[1mif[0m (s[numberFound].copies > s[numberFound].checkOuts){[32;65Hs[numberFound].checkOuts =      s[numberFound].checkOuts + [4m1[m;[33;65Hcout << [4m"Book checked out"[m << endl;[34;57H} [1melse[0m {[35;65Hcout << [4m"All copies checked out"[m << endl;[36;57H}[37;57H[1mbreak[0m;[38;49H[1mcase[0m [4m2[m:[39;57H[1mif[0m (s[numberFound].checkOuts >= [4m1[m){[40;65Hs[numberFound].checkOuts--;
-               [49Ccout << [4m"Book returned"[m << endl;
-                                                 [7C} [1melse[0m {[43;11H                                                      cout << [4m"Double check that you still have teh book checked out"[m << endl;[44;10H                                               }[44;58H[K[45;11H            [34C[1mbreak[0m;[46;10H                                       [1mcase[0m [4m3[m:[47;9H                 [31Cs[numberFound].holds++;[48;10H                             [18Ccout << [4m"Hold Added"[m << endl;
-                                 [23C[1mbreak[0m;[50;14H                                   [1mcase[0m [4m4[m:[51;7H                     [29C[1mif[0m (s[numberFound].holds >= [4m1[m){[52;65Hs[numberFound].holds--;
-                                                                cout << [4m"Hold Removed"[m << endl;
-                                                        } [1melse[0m {[54;66H[K[55;5H                                                            cout << [4m"No holds to remove"[m << endl;
-                                          [14C}
-                                                        [1mbreak[0m;[57;63H[K[58;5H                                            [1mdefault[0m:
-                                                        cout << [4m"Invalid selection"[m << endl;
-                          [30Ccin.clear();[61;57Hcin.ignore([4m100[m, [1m'\n'[0m);
-                                             [11C[1mbreak[0m;[63;220H158,34-83     85%[31;83H[63;222H7,13-55[30;55H[63;222H6,28-63[29;63H[63;222H5,26-61[28;61H[63;222H4,48-83[27;83H[63;222H3,27-80[26;80H[63;222H2,6-40 [25;40H[63;222H1,6-41[24;41H[63;222H0,7-49[23;49H[63;221H49,13-62[22;62H[63;222H8,23-7[21;72H[63;222H7,20-69[20;69H[63;222H6,35-77[19;77H[63;222H5,44-88[18;88H[63;222H4,30-72[17;72H[63;222H3,19-48[16;48H[63;222H2,6-34 [15;34H[63;222H1,24-52[14;52H[63;222H0,40-7[13;72H[63;221H39,6-40 [12;40H[63;222H8,48-83[11;83H[63;222H7[10;83H[63;222H6[9;83H[63;222H5,47-82[8;82H[63;222H4,45-80[7;80H[63;222H3,48-83[6;83H[63;222H2,41-69[5;69H[63;222H1,51-7[4;79H[63;222H0,30-72[3;72H[63;221H29,23-44[2;44H[63;222H8,19-40[1;40H[1;62r[1;1HM[1;63r[1;25H[1m//cin.clear();[0m[63;1H[K[63;220H127,17-38     84%[1;38H[1;62r[1;1HM[1;63r[1;25Hcout << [4m"Enter id of Book or -1 to display all books: "[m << endl;[63;220H[K[63;220H126,62-83     83%[1;83H[1;62r[1;1HM[1;63r[1;17H[1mcase[0m [4m4[m:[63;220H[K[63;220H125,9-23      83%[1;23H[1;62r[1;1HM[1;63r[1;33H[1mbreak[0m;[63;220H[K[63;220H124,10-38     82%[1;38H[1;62r[1;1HM[1;63r[1;33H}[63;220H[K[63;220H123,5-33      81%[1;33H[1;62r[1;1HM[1;63r[1;41Hcout << [4m"Book by Author "[m << compare << [4m" Not Found"[m << endl;[63;220H[K[63;220H122,48-83     81%[1;83H[1;62r[1;1HM[1;63r[1;33H} [1melse[0m {[63;220H[K[63;220H121,12-40     80%[1;40H[1;62r[1;1HM[1;63r[1;41H}[63;220H[K[63;220H120,6-41      79%[1;41H[1;62r[1;1HM[1;63r[1;49Hcout << [4m"Number of Holds: "[m << s[i].holds << endl;[63;220H[K[63;220H119,41-83     79%[1;83H[1;62r[1;1HM[1;63r[1;49Hcout << [4m"Number Checked out: "[m << s[i].checkOuts << endl;[63;220H[K[63;220H118,41-83     78%[1;83H[1;62r[1;1HM[1;63r[1;49Hcout << [4m"Number of Copies: "[m << s[i].copies << endl;[63;220H[K[63;220H117,41-83     77%[1;83H[1;62r[1;1HM[1;63r[1;49Hcout << [4m"Author: "[m << s[i].author << endl;[63;220H[K[63;220H116,41-83     77%[1;83H[1;62r[1;1HM[1;63r[1;49Hcout << [4m"Title: "[m << s[i].title << endl;[63;220H[K[63;220H115,41-83     76%[1;83H[1;62r[1;1HM[1;63r[1;49Hcout << [4m"-----"[m << s[i].id << [4m"-----"[m << endl;[63;220H[K[63;220H114,41-83     75%[1;83H[1;62r[1;1HM[1;63r[1;41H[1mfor[0m ([4mint[m i = [4m0[m; i < numberFound; i++){[63;220H[K[63;220H113,43-78     75%[1;78H[1;62r[1;1HM[1;63r[1;33H[1mif[0m (found == [4mtrue[m){[63;220H[K[63;220H112,23-51     74%[1;51H[1;62r[1;1HM[1;63r[1;33H}[63;220H[K[63;220H111,5-33      73%[1;33H[1;62r[1;1HM[1;63r[1;41H}[63;220H[K[63;220H110,6-41      73%[1;41H[1;62r[1;1HM[1;63r[1;49HnumberFound++;[63;220H[K[63;220H109,20-62     72%[1;62H[1;62r[1;1HM[1;63r[1;49HfoundIteration[numberFound] = i;[63;220H[K[63;220H108,38-80     71%[1;80H[1;62r[1;1HM[1;63r[1;49Hfound = [4mtrue[m;[63;220H[K[63;220H107,19-61     71%[1;61H[1;62r[1;1HM[1;63r[1;41H[1mif[0m (equal == [4m0[m){[63;220H[K[63;220H106,21-56     70%[1;56H[1;62r[1;1HM[1;63r[1;41Hequal = strcmp(compare, s[i].author);[63;220H[K[63;220H105,42-77     69%[1;77H[1;62r[1;1HM[1;63r[1;41H[4mint[m equal;[63;220H[K[63;220H104,19-80     69%[1;80H[1;62r[1;1HM[1;63r[1;33H[1mfor[0m ([4mint[m i = [4m0[m; i < numOfBooks; i++){[63;220H[K[63;220H103,41-69     68%[1;69H[1;62r[1;1HM[1;63r[1;33Hcin.getline(compare, [4m250[m, [1m'\n'[0m);[63;220H[K[63;220H102,36-64     67%[1;64H[1;62r[1;1HM[1;63r[1;33Hcout << [4m"Name of Author? "[m <<endl;[63;220H[K[63;220H101,38-66     67%[1;66H[1;62r[1;1HM[1;63r[1;33HnumberFound = [4m0[m;[63;220H[K[63;220H100,21-48     66%[1;48H[1;62r[1;1HM[1;63r[1;33Hfound = [4mfalse[m;[63;220H[K[63;220H99,18-46      65%[1;46H[1;62r[1;1HM[1;63r[1;33Hcin.ignore();[63;220H[K[63;220H98,17-45      65%[1;45H[1;62r[1;1HM[1;63r[1;33Hcin.clear();[63;220H[K[63;220H97,16-44      64%[1;44H[1;62r[1;1HM[1;63r[1;17H[1mcase[0m [4m3[m: [1m// Search by Author. Must check all author names. [0m[63;220H[K[63;220H96,60-74      63%[1;74H[1;62r[1;1HM[1;63r[63;220H[K[63;220H95,0-1[8C63%[1;1H[1;62r[1;1HM[1;63r[1;33H[1mbreak[0m;[63;220H[K[63;220H94,10-38      62%[1;38H[1;62r[1;1HM[1;63r[1;33H}[63;220H[K[63;220H93,5-33[7C61%[1;33H[1;62r[1;1HM[1;63r[1;41Hcout << [4m"Book "[m << compare << [4m" Not Found"[m << endl;[63;220H[K[63;220H92,48-83      61%[1;83H[1;62r[1;1HM[1;63r[1;33H} [1melse[0m {[63;220H[K[63;220H91,12-40      60%[1;40H[1;62r[1;1HM[1;63r[1;41Hcout << [4m"Number of Holds: "[m << s[foundIteration[[4m0[m]].holds << endl;[63;220H[K[63;220H90,48-83      59%[1;83H[1;62r[1;1HM[1;63r[1;41Hcout << [4m"Number Checked out: "[m << s[foundIteration[[4m0[m]].checkOuts << endl;[63;220H[K[63;220H89,48-83      59%[1;83H[1;62r[1;1HM[1;63r[1;41Hcout << [4m"Number of Copies: "[m << s[foundIteration[[4m0[m]].copies << endl;[63;220H[K[63;220H88,48-83      58%[1;83H[1;62r[1;1HM[1;63r[1;41Hcout << [4m"Author: "[m << s[foundIteration[[4m0[m]].author << endl;[63;220H[K[63;220H87,48-83      57%[1;83H[1;62r[1;1HM[1;63r[1;41Hcout << [4m"Title: "[m << s[foundIteration[[4m0[m]].title << endl;[63;220H[K[63;220H86,48-83      57%[1;83H[1;62r[1;1HM[1;63r[1;41Hcout << [4m"-----"[m << s[foundIteration[[4m0[m]].id << [4m"-----"[m << endl;[63;220H[K[63;220H85,48-83      56%[1;83H[1;62r[1;1HM[1;63r[1;33H[1mif[0m (found == [4mtrue[m){[63;220H[K[63;220H84,23-51      55%[1;51H[1;62r[1;1HM[1;63r[1;33H}[63;220H[K[63;220H83,5-33[7C55%[1;33H[1;62r[1;1HM[1;63r[1;41H}[63;220H[K[63;220H82,6-41[7C54%[1;41H[1;62r[1;1HM[1;63r[1;49H[1mbreak[0m;[63;220H[K[63;220H81,12-54      53%[1;54H[1;62r[1;1HM[1;63r[1;49HfoundIteration[[4m0[m] = i;[63;220H[K[63;220H80,28-70      53%[1;70H[1;62r[1;1HM[1;63r[1;49Hfound = [4mtrue[m;[63;220H[K[63;220H79,19-61      52%[1;61H[1;62r[1;1HM[1;63r[1;41H[1mif[0m (equal == [4m0[m){[63;220H[K[63;220H78,21-56      51%[1;56H[1;62r[1;1HM[1;63r[1;41Hequal = strcmp(compare, s[i].title);[63;220H[K[63;220H77,41-76      51%[1;76H[1;62r[1;1HM[1;63r[1;41H[4mint[m equal;[63;220H[K[63;220H76,19-80      50%[1;80H[1;62r[1;1HM[1;63r[1;33H[1mfor[0m ([4mint[m i = [4m0[m; i < numOfBooks; i++){[63;220H[K[63;220H75,41-69      49%[1;69H[1;62r[1;1HM[1;63r[1;33Hcin.getline(compare, [4m250[m, [1m'\n'[0m);[63;220H[K[63;220H74,36-64      48%[1;64H[1;62r[1;1HM[1;63r[1;33Hcout << [4m"Name of Book? "[m <<endl;[63;220H[K[63;220H73,36-64      48%[1;64H[1;62r[1;1HM[1;63r[1;33Hfound = [4mfalse[m;[63;220H[K[63;220H72,19-47      47%[1;47H[1;62r[1;1HM[1;63r[1;33Hcin.ignore();[63;220H[K[63;220H71,17-45      46%[1;45H[1;62r[1;1HM[1;63r[1;33Hcin.clear();[63;220H[K[63;220H70,16-44      46%[1;44H[1;62r[1;1HM[1;63r[1;17H[1mcase[0m [4m2[m: [1m//Search by Title. Stops after title is found. [0m[63;220H[K[63;220H69,57-71      45%[1;71H[1;62r[1;1HM[1;63r[1;25H[1mbreak[0m;[63;220H[K[63;220H68,9-30[7C44%[1;30H[1;62r[1;1HM[1;63r[1;33H}[63;220H[K[63;220H67,5-33[7C44%[1;33H[1;62r[1;1HM[1;63r[1;41Hcout << [4m"Number of Holds: "[m << s[i].holds << endl;[63;220H[K[63;220H66,48-83      43%[1;83H[1;62r[1;1HM[1;63r[1;41Hcout << [4m"Number Checked out: "[m << s[i].checkOuts << endl;[63;220H[K[63;220H65,48-83      42%[1;83H[1;62r[1;1HM[1;63r[1;41Hcout << [4m"Number of Copies: "[m << s[i].copies << endl;[63;220H[K[63;220H64,48-83      42%[1;83H[1;62r[1;1HM[1;63r[1;41Hcout << [4m"Author: "[m << s[i].author << endl;[63;220H[K[63;220H63,47-82      41%[1;82H[1;62r[1;1HM[1;63r[1;41Hcout << [4m"Title: "[m << s[i].title << endl;[63;220H[K[63;220H62,45-80      40%[1;80H[1;62r[1;1HM[1;63r[1;41Hcout << [4m"-----"[m << s[i].id << [4m"-----"[m << endl;[63;220H[K[63;220H61,48-83      40%[1;83H[1;62r[1;1HM[1;63r[1;33H[1mfor[0m ([4mint[m i = [4m0[m; i < numOfBooks; i++){[63;220H[K[63;220H60,41-69      39%[1;69H[1;62r[1;1HM[1;63r[1;25Hcout << [4m"[m[1m%%%%%%[0m[4m% Book Catalog [m[1m%%%%%%[0m[4m%"[m << endl;[63;220H[K[63;220H59,50-71      38%[1;71H[1;62r[1;1HM[1;63r[1;17H[1mcase[0m [4m1[m: [1m//Print Catalog[0m[63;220H[K[63;220H58,25-39      38%[1;39H[1;62r[1;1HM[1;63r[1;17H[1mswitch[0m (action){[63;220H[K[63;220H57,18-32      37%[1;32H[1;62r[1;1HM[1;63r[1;17Hcin >> action;[63;220H[K[63;220H56,16-30      36%[1;30H[1;62r[1;1HM[1;63r[63;220H[K[63;220H55,2-16[7C36%[1;16H[1;62r[1;1HM[1;63r[1;17Hcout << [4m"1 - Print Catalog[m[1m\n[0m[4m"[m << [4m"2 - Search by Title[m[1m\n[0m[4m"[m << [4m"3 - Search by Author[m[1m\n[0m[4m"[m << [4m"4 - Do Action[m[1m\n[0m[4m"[m << [4m"5 - Quit[m[1m\n[0m[4m"[m << [4m"Enter choice: "[m << endl;[63;220H[K[63;220H54,69-83      35%[1;83H[1;62r[1;1HM[1;63r[1;17Hcout << [4m"[m[1m\n[0m[4m*********"[m  << [4m"Main Menu"[m << [4m"*********"[m << endl;[63;220H[K[63;220H53,63-77      34%[1;77H[1;62r[1;1HM[1;63r[1;9H[1mdo[0m {[63;220H[K[63;220H52,5-12[7C34%[1;12H[1;62r[1;1HM[1;63r[63;220H[K[63;220H51,0-1[8C33%[1;1H[1;62r[1;1HM[1;63r[1;9H}[63;220H[K[63;220H50,2-9[8C32%[1;9H[1;62r[1;1HM[1;63r[1;17Hs[i].holds = lineRecognition(line);[63;220H[K[63;220H49,37-51      32%[1;51H[1;62r[1;1HM[1;63r[1;17HbookList.getline(line, [4m250[m, [1m'\n'[0m);[1m//holds[0m[63;220H[K[63;220H48,43-57      31%[1;57H[1;62r[1;1HM[1;63r[1;17Hs[i].checkOuts = lineRecognition(line);[63;220H[K[63;220H47,41-55      30%[1;55H[1;62r[1;1HM[1;63r[1;17HbookList.getline(line, [4m250[m, [1m'\n'[0m);[1m//checkouts[0m[63;220H[K[63;220H46,47-61      30%[1;61H[1;62r[1;1HM[1;63r[1;17Hs[i].copies = lineRecognition(line);[63;220H[K[63;220H45,38-52      29%[1;52H[1;62r[1;1HM[1;63r[1;17HbookList.getline(line, [4m250[m, [1m'\n'[0m);[1m//copies[0m[63;220H[K[63;220H44,44-58      28%[1;58H[1;62r[1;1HM[1;63r[1;17HbookList.getline(s[i].author, [4m250[m, [1m'\n'[0m);[63;220H[K[63;220H43,43-57      28%[1;57H[1;62r[1;1HM[1;63r[1;17HbookList.getline(s[i].title, [4m250[m, [1m'\n'[0m);[63;220H[K[63;220H42,42-56      27%[1;56H[1;62r[1;1HM[1;63r[1;17Hs[i].id = lineRecognition(line);[63;220H[K[63;220H41,34-48      26%[1;48H[1;62r[1;1HM[1;63r[1;17HbookList.getline(line, [4m250[m, [1m'\n'[0m);[63;220H[K[63;220H40,36-50      26%[1;50H[1;62r[1;1HM[1;63r[1;9H[1mfor[0m ([4mint[m i = [4m0[m; i < numOfBooks; i++){[63;220H[K[63;220H39,38-45      25%[1;45H[1;62r[1;1HM[1;63r[63;220H[K[63;220H38,0-1[8C24%[1;1H[1;62r[1;1HM[1;63r[63;220H[K[63;220H37,0-1[8C24%[1;1H[1;62r[1;1HM[1;63r[1;9H[4mstruct[m book s[numOfBooks];[1m//reading from lines is not triggering next line. Need to move bookList >> s[i].id to a getline and put bach in as sstream. [0m[63;220H[K[63;220H36,76-83      23%[1;83H[1;62r[1;1HM[1;63r[1;9Hiss >> numOfBooks;[63;220H[K[63;220H35,20-27      22%[1;27H[1;62r[1;1HM[1;63r[1;9Histringstream iss(line);[63;220H[K[63;220H34,25-32      22%[1;32H[1;62r[1;1HM[1;63r[1;9HbookList.getline(line, [4m250[m, [1m'\n'[0m);[63;220H[K[63;220H33,35-42      21%[1;42H[1;62r[1;1HM[1;63r[63;220H[K[63;220H32,0-1[8C20%[1;1H[1;62r[1;1HM[1;63r[1;9Hifstream bookList([4m"library.txt"[m);[63;220H[K[63;220H31,34-41      20%[1;41H[1;62r[1;1HM[1;63r[1;9H[4mbool[m found = [4mfalse[m;[63;220H[K[63;220H30,20-27      19%[1;27H[1;62r[1;1HM[1;63r[1;9H[4mchar[m line[[4m250[m], compare[[4m250[m];[63;220H[K[63;220H29,30-37      18%[1;37H[1;62r[1;1HM[1;63r[1;9H[4mint[m foundIteration[numberFound];[63;220H[K[63;220H28,33-40      18%[1;40H[1;62r[1;1HM[1;63r[1;9H[4mint[m numOfBooks, action, tempID, numberFound, actionToBook, updateToBook;[63;220H[K[63;220H27,73-80      17%[1;80H[1;62r[1;1HM[1;63r[1;1H[4mint[m main() {[63;220H[K[63;220H26,12[9C16%[1;12H[1;62r[1;1HM[1;63r[63;220H[K[63;220H25,0-1[8C16%[1;1H[63;1H[?1l>[63;220H[K[63;1Hdaniel.siegel@syccuxas01:~/cs162/projects/project2> clear
-[H[Jdaniel.siegel@syccuxas01:~/cs162/projects/project2> g++ o[K-o project 2 project2.cpp 2 project2.cpp [K[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-daniel.siegel@syccuxas01:~/cs162/projects/project2> ./project2 
+[?1h=[1;63r[m[m[0m[H[J[63;1H"project2.cpp" 209L, 6365C[1;41Hcout << [4m"Author: "[m << s[foundIteration[[4m0[m]].author << endl;[2;41Hcout << [4m"Number of Copies: "[m << s[foundIteration[[4m0[m]].copies << endl;[3;41Hcout << [4m"Number Checked out: "[m << s[foundIteration[[4m0[m]].checkOuts << endl;[4;41Hcout << [4m"Number of Holds: "[m << s[foundIteration[[4m0[m]].holds << endl;[5;33H} [1melse[0m {[6;41Hcout << [4m"Book "[m << compare << [4m" Not Found"[m << endl;[7;33H}[8;33H[1mbreak[0m;[10;17H[1mcase[0m [4m3[m: [1m// Search by Author. Must check all author names. [0m[11;33Hcin.clear();[12;33Hcin.ignore();[13;33HnumberFound = [4m0[m;[14;33Hcout << [4m"Name of Author? "[m <<endl;[15;33Hcin.getline(compare, [4m250[m, [1m'\n'[0m);[16;33H[1mfor[0m ([4mint[m i = [4m0[m; i < numOfBooks; i++){[17;41H[4mint[m equal;[18;41Hequal = strcmp(compare, s[i].author);[19;41H[1mif[0m (equal == [4m0[m){[20;49HfoundIteration[numberFound] = i;[21;49HnumberFound = numberFound + [4m1[m;[22;41H}[23;33H}[24;33H[1mif[0m (numberFound > [4m0[m){[25;41H[1mfor[0m ([4mint[m i = [4m0[m; i < numberFound; i++){[26;49Hcout << [4m"-----"[m << s[foundIteration[i]].id << [4m"-----"[m << endl;[27;49Hcout << [4m"Title: "[m << s[foundIteration[i]].title << endl;[28;49Hcout << [4m"Author: "[m << s[foundIteration[i]].author << endl;[29;49Hcout << [4m"Number of Copies: "[m << s[foundIteration[i]].copies << endl;[30;49Hcout << [4m"Number Checked out: "[m << s[foundIteration[i]].checkOuts << endl;[31;49Hcout << [4m"Number of Holds: "[m << s[foundIteration[i]].holds << endl;[32;41H}[33;33H} [1melse[0m {[34;41Hcout << [4m"Book by Author "[m << compare << [4m" Not Found"[m << endl;[35;33H}[36;33H[1mbreak[0m;[37;17H[1mcase[0m [4m4[m:[38;25Hcout << [4m"Enter id of Book or -1 to display all books: "[m << endl;[39;25H[1m//cin.clear();[40;25H//cin.ignore(); [0m[41;25Hcin >> actionToBook;[42;25H[1mif[0m (actionToBook == -[4m1[m){[43;33Hcout << [4m"[m[1m%%%%%%[0m[4m% Book Catalog [m[1m%%%%%%[0m[4m%"[m << endl;[44;33H[1mfor[0m ([4mint[m i = [4m0[m; i < numOfBooks; i++){[45;41Hcout << [4m"-----"[m << s[i].id << [4m"-----"[m << endl;[46;41Hcout << [4m"Title: "[m << s[i].title << endl;[47;41Hcout << [4m"Author: "[m << s[i].author << endl;[48;41Hcout << [4m"Number of Copies: "[m << s[i].copies << endl;[49;41Hcout << [4m"Number Checked out: "[m << s[i].checkOuts << endl;[50;41Hcout << [4m"Number of Holds: "[m << s[i].holds << endl;[51;33H}[52;33Hcout << [4m"Enter id of Book"[m << endl;[53;33Hcin >> actionToBook;[54;33H}[55;33Hfound = [4mfalse[m;[56;33H[1mif[0m (actionToBook > [4m0[m) {[57;41H[1mfor[0m ([4mint[m i = [4m0[m; i < numOfBooks; i++){[58;49H[1mif[0m (actionToBook == s[i].id){[59;57Hfound = [4mtrue[m;[60;57HnumberFound = i;[61;57H[1mbreak[0m;[62;49H}[63;220H117,56-98     58%[31;98H[63;222H6[30;98H[63;222H5[29;98H[63;222H4[28;98H[63;222H3[27;98H[63;222H2[26;98H[63;222H1,43-7[25;78H[63;222H0,25-53[24;53H[63;221H09,5-33 [23;33H[63;222H8,6-41[22;41H[63;222H7,36-78[21;78H[63;222H6,38-80[20;80H[63;222H5,21-56[19;56H[63;222H4,42-77[18;77H[63;222H3,19-80[17;80H[63;222H2,41-69[16;69H[63;222H1,36-64[15;64H[63;222H0,38-66[14;66H[63;220H99,21-48 [13;48H[63;221H8,17-45[12;45H[63;221H7,16-44[11;44H[63;221H6,60-7[10;74H[63;221H5,0-1  [9;1H[63;221H4,10-38[8;38H[63;221H3,5-33 [7;33H[63;221H2,56-91[6;91H[63;221H1,12-40[5;40H[63;221H0,63-98[4;98H[63;220H89[3;98H[63;221H8[2;98H[63;221H7[1;98H[1;62r[1;1HM[1;63r[1;41Hcout << [4m"Title: "[m << s[foundIteration[[4m0[m]].title << endl;[63;1H[K[63;220H86,61-96      57%[1;96H[1;62r[1;1HM[1;63r[1;41Hcout << [4m"-----"[m << s[foundIteration[[4m0[m]].id << [4m"-----"[m << endl;[63;220H[K[63;220H85,63-98      57%[1;98H[1;62r[1;1HM[1;63r[1;33H[1mif[0m (found == [4mtrue[m){[63;220H[K[63;220H84,23-51      56%[1;51H[1;62r[1;1HM[1;63r[1;33H}[63;220H[K[63;220H83,5-33[7C55%[1;33H[1;62r[1;1HM[1;63r[1;41H}[63;220H[K[63;220H82,6-41[7C55%[1;41H[1;62r[1;1HM[1;63r[1;49H[1mbreak[0m;[63;220H[K[63;220H81,12-54      54%[1;54H[1;62r[1;1HM[1;63r[1;49HfoundIteration[[4m0[m] = i;[63;220H[K[63;220H80,28-70      53%[1;70H[1;62r[1;1HM[1;63r[1;49Hfound = [4mtrue[m;[63;220H[K[63;220H79,19-61      53%[1;61H[1;62r[1;1HM[1;63r[1;41H[1mif[0m (equal == [4m0[m){[63;220H[K[63;220H78,21-56      52%[1;56H[1;62r[1;1HM[1;63r[1;41Hequal = strcmp(compare, s[i].title);[63;220H[K[63;220H77,41-76      51%[1;76H[1;62r[1;1HM[1;63r[1;41H[4mint[m equal;[63;220H[K[63;220H76,19-80      51%[1;80H[1;62r[1;1HM[1;63r[1;33H[1mfor[0m ([4mint[m i = [4m0[m; i < numOfBooks; i++){[63;220H[K[63;220H75,41-69      50%[1;69H[1;62r[1;1HM[1;63r[1;33Hcin.getline(compare, [4m250[m, [1m'\n'[0m);[63;220H[K[63;220H74,36-64      49%[1;64H[1;62r[1;1HM[1;63r[1;33Hcout << [4m"Name of Book? "[m <<endl;[63;220H[K[63;220H73,36-64      48%[1;64H[1;62r[1;1HM[1;63r[1;33Hfound = [4mfalse[m;[63;220H[K[63;220H72,19-47      48%[1;47H[1;62r[1;1HM[1;63r[1;33Hcin.ignore();[63;220H[K[63;220H71,17-45      47%[1;45H[1;62r[1;1HM[1;63r[1;33Hcin.clear();[63;220H[K[63;220H70,16-44      46%[1;44H[1;62r[1;1HM[1;63r[1;17H[1mcase[0m [4m2[m: [1m//Search by Title. Stops after title is found. [0m[63;220H[K[63;220H69,57-71      46%[1;71H[1;62r[1;1HM[1;63r[1;25H[1mbreak[0m;[63;220H[K[63;220H68,9-30[7C45%[1;30H[1;62r[1;1HM[1;63r[1;33H}[63;220H[K[63;220H67,5-33[7C44%[1;33H[1;62r[1;1HM[1;63r[1;41Hcout << [4m"Number of Holds: "[m << s[i].holds << endl;[63;220H[K[63;220H66,56-96      44%[1;96H[1;62r[1;1HM[1;63r[1;41Hcout << [4m"Number Checked out: "[m << s[i].checkOuts << endl;[63;220H[K[63;220H65,62-97      43%[1;97H[1;62r[1;1HM[1;63r[1;41Hcout << [4m"Number of Copies: "[m << s[i].copies << endl;[63;220H[K[63;220H64,57-92      42%[1;92H[1;62r[1;1HM[1;63r[1;41Hcout << [4m"Author: "[m << s[i].author << endl;[63;220H[K[63;220H63,47-82      42%[1;82H[1;62r[1;1HM[1;63r[1;41Hcout << [4m"Title: "[m << s[i].title << endl;[63;220H[K[63;220H62,45-80      41%[1;80H[1;62r[1;1HM[1;63r[1;41Hcout << [4m"-----"[m << s[i].id << [4m"-----"[m << endl;[63;220H[K[63;220H61,54-104     40%[1;104H[1;62r[1;1HM[1;63r[1;33H[1mfor[0m ([4mint[m i = [4m0[m; i < numOfBooks; i++){[63;220H[K[63;220H60,41-69      40%[1;69H[1;62r[1;1HM[1;63r[1;25Hcout << [4m"[m[1m%%%%%%[0m[4m% Book Catalog [m[1m%%%%%%[0m[4m%"[m << endl;[63;220H[K[63;220H59,50-71      39%[1;71H[1;62r[1;1HM[1;63r[1;17H[1mcase[0m [4m1[m: [1m//Print Catalog[0m[63;220H[K[63;220H58,25-39      38%[1;39H[1;62r[1;1HM[1;63r[1;17H[1mswitch[0m (action){[63;220H[K[63;220H57,18-32      38%[1;32H[1;62r[1;1HM[1;63r[1;17Hcin >> action;[63;220H[K[63;220H56,16-30      37%[1;30H[1;62r[1;1HM[1;63r[63;220H[K[63;220H55,2-16[7C36%[1;16H[1;62r[1;1HM[1;63r[1;17Hcout << [4m"1 - Print Catalog[m[1m\n[0m[4m"[m << [4m"2 - Search by Title[m[1m\n[0m[4m"[m << [4m"3 - Search by Author[m[1m\n[0m[4m"[m << [4m"4 - Do Action[m[1m\n[0m[4m"[m << [4m"5 - Quit[m[1m\n[0m[4m"[m << [4m"Enter choice: "[m << endl;[63;220H[K[63;220H54,84-98      36%[1;98H[1;62r[1;1HM[1;63r[1;17Hcout << [4m"[m[1m\n[0m[4m*********"[m  << [4m"Main Menu"[m << [4m"*********"[m << endl;[63;220H[K[63;220H53,63-77      35%[1;77H[1;62r[1;1HM[1;63r[1;9H[1mdo[0m {[63;220H[K[63;220H52,5-12[7C34%[1;12H[1;62r[1;1HM[1;63r[63;220H[K[63;220H51,0-1[8C34%[1;1H[1;62r[1;1HM[1;63r[1;9H}[63;220H[K[63;220H50,2-9[8C33%[1;9H[1;62r[1;1HM[1;63r[1;17Hs[i].holds = lineRecognition(line);[63;220H[K[63;220H49,37-51      32%[1;51H[1;62r[1;1HM[1;63r[1;17HbookList.getline(line, [4m250[m, [1m'\n'[0m);[1m//holds[0m[63;220H[K[63;220H48,43-57      31%[1;57H[1;62r[1;1HM[1;63r[1;17Hs[i].checkOuts = lineRecognition(line);[63;220H[K[63;220H47,41-55      31%[1;55H[1;62r[1;1HM[1;63r[1;17HbookList.getline(line, [4m250[m, [1m'\n'[0m);[1m//checkouts[0m[63;220H[K[63;220H46,47-61      30%[1;61H[1;62r[1;1HM[1;63r[1;17Hs[i].copies = lineRecognition(line);[63;220H[K[63;220H45,38-52      29%[1;52H[1;62r[1;1HM[1;63r[1;17HbookList.getline(line, [4m250[m, [1m'\n'[0m);[1m//copies[0m[63;220H[K[63;220H44,44-58      29%[1;58H[1;62r[1;1HM[1;63r[1;17HbookList.getline(s[i].author, [4m250[m, [1m'\n'[0m);[63;220H[K[63;220H43,43-57      28%[1;57H[1;62r[1;1HM[1;63r[1;17HbookList.getline(s[i].title, [4m250[m, [1m'\n'[0m);[63;220H[K[63;220H42,42-56      27%[1;56H[1;62r[1;1HM[1;63r[1;17Hs[i].id = lineRecognition(line);[63;220H[K[63;220H41,34-48      27%[1;48H[1;62r[1;1HM[1;63r[1;17HbookList.getline(line, [4m250[m, [1m'\n'[0m);[63;220H[K[63;220H40,36-50      26%[1;50H[1;62r[1;1HM[1;63r[1;9H[1mfor[0m ([4mint[m i = [4m0[m; i < numOfBooks; i++){[63;220H[K[63;220H39,38-45      25%[1;45H[1;62r[1;1HM[1;63r[63;220H[K[63;220H38,0-1[8C25%[1;1H[1;62r[1;1HM[1;63r[63;220H[K[63;220H37,0-1[8C24%[1;1H[1;62r[1;1HM[1;63r[1;9H[4mstruct[m book s[numOfBooks];[1m//reading from lines is not triggering next line. Need to move bookList >> s[i].id to a getline and put bach in as sstream. [0m[63;220H[K[63;220H36,91-98      23%[1;98H[1;62r[1;1HM[1;63r[1;9Hiss >> numOfBooks;[63;220H[K[63;220H35,20-27      23%[1;27H[1;62r[1;1HM[1;63r[1;9Histringstream iss(line);[63;220H[K[63;220H34,25-32      22%[1;32H[1;62r[1;1HM[1;63r[1;9HbookList.getline(line, [4m250[m, [1m'\n'[0m);[63;220H[K[63;220H33,35-42      21%[1;42H[1;62r[1;1HM[1;63r[63;220H[K[63;220H32,0-1[8C21%[1;1H[1;62r[1;1HM[1;63r[1;9Hifstream bookList([4m"library.txt"[m);[63;220H[K[63;220H31,34-41      20%[1;41H[1;62r[1;1HM[1;63r[1;9H[4mbool[m found = [4mfalse[m;[63;220H[K[63;220H30,20-27      19%[1;27H[1;62r[1;1HM[1;63r[1;9H[4mchar[m line[[4m250[m], compare[[4m250[m];[63;220H[K[63;220H29,30-37      19%[1;37H[1;62r[1;1HM[1;63r[1;9H[4mint[m foundIteration[numberFound];[63;220H[K[63;220H28,33-40      18%[1;40H[1;62r[1;1HM[1;63r[1;9H[4mint[m numOfBooks, action, tempID, numberFound, actionToBook, updateToBook;[63;220H[K[63;220H27,73-80      17%[1;80H[1;62r[1;1HM[1;63r[1;1H[4mint[m main() {[63;220H[K[63;220H26,12[9C17%[1;12H[1;62r[1;1HM[1;63r[63;220H[K[63;220H25,0-1[8C16%[1;1H[1;62r[1;1HM[1;63r[1;1H}[63;220H[K[63;220H24,1[10C15%[1;1H[1;62r[1;1HM[1;63r[1;9H[1mreturn[0m lineDataAsInt;[63;220H[K[63;220H23,22-29      14%[1;29H[1;62r[1;1HM[1;63r[1;9Hiss >> lineDataAsInt;[63;220H[K[63;220H22,22-29      14%[1;29H[1;62r[1;1HM[1;63r[1;9Histringstream iss(getLineData);[63;220H[K[63;220H21,32-39      13%[1;39H[1;62r[1;1HM[1;63r[1;9H[4mint[m lineDataAsInt;[63;220H[K[63;220H20,20-32      12%[1;32H[1;62r[1;1HM[1;63r[1;1H[4mint[m lineRecognition([4mchar[m getLineData[[4m250[m]){[63;220H[K[63;220H19,43[9C12%[1;43H[1;62r[1;1HM[1;63r[63;220H[K[63;220H18,0-1[8C11%[1;1H[1;62r[1;1HM[1;63r[1;9H};[63;220H[K[63;220H17,3-10[7C10%[1;10H[1;62r[1;1HM[1;63r[1;17H[4mint[m holds;[63;220H[K[63;220H16,12-26      10%[1;26H[1;62r[1;1HM[1;63r[1;17H[4mint[m checkOuts;[63;220H[K[63;220H15,16-30[7C9%[1;30H[1;62r[1;1HM[1;63r[1;17H[4mint[m copies;[63;220H[K[63;220H14,13-27[7C8%[1;27H[1;62r[1;1HM[1;63r[1;17H[4mchar[m author[[4m250[m];[63;220H[K[63;220H13,19-33[7C8%[1;33H[1;62r[1;1HM[1;63r[1;17H[4mchar[m title[[4m250[m];[63;220H[K[63;220H12,18-32[7C7%[1;32H[1;62r[1;1HM[1;63r[1;17H[4mint[m id;[63;220H[K[63;220H11,9-23[8C6%[1;23H[1;62r[1;1HM[1;63r[1;1H[4mstruct[m book {[63;220H[K[63;220H10,13[10C6%[1;13H[1;62r[1;1HM[1;63r[63;220H[K[63;220H9,0-1[10C5%[1;1H[1;62r[1;1HM[1;63r[1;1H[1musing[0m [4mnamespace[m std;[63;220H[K[63;220H8,20[11C4%[1;20H[1;62r[1;1HM[1;63r[63;220H[K[63;220H7,0-1[10C4%[1;1H[1;62r[1;1HM[1;63r[1;1H[4m#include <sstream>[m[63;220H[K[63;220H6,18[11C3%[1;18H[1;62r[1;1HM[1;63r[1;1H[4m#include <cstring>[m[63;220H[K[63;220H5,18[11C2%[1;18H[1;62r[1;1HM[1;63r[1;1H[4m#include <fstream>[m[63;220H[K[63;220H4,18[11C2%[1;18H[1;62r[1;1HM[1;63r[1;1H[4m#include <iostream>[m[63;220H[K[63;220H3,19[11C1%[1;19H[1;62r[1;1HM[1;63r[1;1H[1m//Project 2[0m[63;220H[K[63;220H2,11[11C0%[1;11H[1;62r[1;1HM[1;63r[1;1H[1m//Dan Siegel[0m[63;220H[K[63;220H1,12[10CTop[1;12H[63;220H2,11[2;11H[63;220H3,19[3;19H[63;220H4,18[4;18H[63;220H5[5;18H[63;220H6[6;18H[63;220H7,0-1[7;1H[63;220H8,20 [8;20H[63;220H9,0-1[9;1H[63;220H10,13[10;13H[63;221H1,9-23[11;23H[63;221H2,18-32[12;32H[63;221H3,19-33[13;33H[63;221H4,13-27[14;27H[63;221H5,16-30[15;30H[63;221H6,12-26[16;26H[63;221H7,3-10 [17;10H[63;221H8,0-1 [18;1H[63;221H9,43 [19;43H[63;220H20,20-32[20;32H[63;221H1,32-39[21;39H[63;221H2,22-2[22;29H[63;221H3[23;29H[63;221H4,1    [24;1H[63;221H5,0-1[25;1H[63;221H6,12 [26;12H[63;221H7,73-80[27;80H[63;221H8,33-4[28;40H[63;221H9,30-37[29;37H[63;220H30,20-2[30;27H[63;221H1,34-41[31;41H[63;221H2,0-1  [32;1H[63;221H3,35-42[33;42H[63;221H4,25-3[34;32H[63;221H5,20-27[35;27H[63;221H6,91-98[36;98H[63;221H7,0-1  [37;1H[63;221H8[38;1H[63;221H9,38-45[39;45H[63;220H40,36-50[40;50H[63;221H1,34-48[41;48H[63;221H2,42-56[42;56H[63;221H3,43-57[43;57H[63;221H4,44-58[44;58H[63;221H5,38-52[45;52H[63;221H6,47-61[46;61H[63;221H7,41-55[47;55H[63;221H8,43-57[48;57H[63;221H9,37-51[49;51H[63;220H50,2-9  [50;9H[63;221H1,0-1[51;1H[63;221H2,5-12[52;12H[63;221H3,63-77[53;77H[63;221H4,84-98[54;98H[63;221H5,2-16 [55;16H[63;221H6,16-30[56;30H[63;221H7,18-32[57;32H[63;221H8,25-39[58;39H[63;221H9,50-71[59;71H[63;220H60,41-69[60;69H[63;221H1,54-104[61;104H[63;221H2,45-80 [62;80H[1;62r[62;1H
+[1;63r[62;41Hcout << [4m"Author: "[m << s[i].author << endl;[63;220H[K[63;220H63,47-82[7C0%[62;82H[1;62r[62;1H
+[1;63r[62;41Hcout << [4m"Number of Copies: "[m << s[i].copies << endl;[63;220H[K[63;220H64,57-92[7C1%[62;92H[1;62r[62;1H
+[1;63r[62;41Hcout << [4m"Number Checked out: "[m << s[i].checkOuts << endl;[63;220H[K[63;220H65,62-97[7C2%[62;97H[1;62r[62;1H
+[1;63r[62;41Hcout << [4m"Number of Holds: "[m << s[i].holds << endl;[63;220H[K[63;220H66,56-96[7C2%[62;96H[1;62r[62;1H
+[1;63r[62;33H}[63;220H[K[63;220H67,5-33[8C3%[62;33H[1;62r[62;1H
+[1;63r[62;25H[1mbreak[0m;[63;220H[K[63;220H68,9-30[8C4%[62;30H[1;62r[62;1H
+[1;63r[62;17H[1mcase[0m [4m2[m: [1m//Search by Title. Stops after title is found. [0m[63;220H[K[63;220H69,57-71[7C4%[62;71H[1;62r[62;1H
+[1;63r[62;33Hcin.clear();[63;220H[K[63;220H70,16-44[7C5%[62;44H[1;62r[62;1H
+[1;63r[62;33Hcin.ignore();[63;220H[K[63;220H71,17-45[7C6%[62;45H[1;62r[62;1H
+[1;63r[62;33Hfound = [4mfalse[m;[63;220H[K[63;220H72,19-47[7C6%[62;47H[1;62r[62;1H
+[1;63r[62;33Hcout << [4m"Name of Book? "[m <<endl;[63;220H[K[63;220H73,36-64[7C7%[62;64H[1;62r[62;1H
+[1;63r[62;33Hcin.getline(compare, [4m250[m, [1m'\n'[0m);[63;220H[K[63;220H74,36-64[7C8%[62;64H[1;62r[62;1H
+[1;63r[62;33H[1mfor[0m ([4mint[m i = [4m0[m; i < numOfBooks; i++){[63;220H[K[63;220H75,41-69[7C8%[62;69H[1;62r[62;1H
+[1;63r[62;41H[4mint[m equal;[63;220H[K[63;220H76,19-80[7C9%[62;80H[1;62r[62;1H
+[1;63r[62;41Hequal = strcmp(compare, s[i].title);[63;220H[K[63;220H77,41-76      10%[62;76H[1;62r[62;1H
+[1;63r[62;41H[1mif[0m (equal == [4m0[m){[63;220H[K[63;220H78,21-56      10%[62;56H[1;62r[62;1H
+[1;63r[62;49Hfound = [4mtrue[m;[63;220H[K[63;220H79,19-61      11%[62;61H[1;62r[62;1H
+[1;63r[62;49HfoundIteration[[4m0[m] = i;[63;220H[K[63;220H80,28-70      12%[62;70H[1;62r[62;1H
+[1;63r[62;49H[1mbreak[0m;[63;220H[K[63;220H81,12-54      12%[62;54H[1;62r[62;1H
+[1;63r[62;41H}[63;220H[K[63;220H82,6-41[7C13%[62;41H[1;62r[62;1H
+[1;63r[62;33H}[63;220H[K[63;220H83,5-33[7C14%[62;33H[1;62r[62;1H
+[1;63r[62;33H[1mif[0m (found == [4mtrue[m){[63;220H[K[63;220H84,23-51      14%[62;51H[1;62r[62;1H
+[1;63r[62;41Hcout << [4m"-----"[m << s[foundIteration[[4m0[m]].id << [4m"-----"[m << endl;[63;220H[K[63;220H85,63-98      15%[62;98H[1;62r[62;1H
+[1;63r[62;41Hcout << [4m"Title: "[m << s[foundIteration[[4m0[m]].title << endl;[63;220H[K[63;220H86,61-96      16%[62;96H[1;62r[62;1H
+[1;63r[62;41Hcout << [4m"Author: "[m << s[foundIteration[[4m0[m]].author << endl;[63;220H[K[63;220H87,63-98      17%[62;98H[1;62r[62;1H
+[1;63r[62;41Hcout << [4m"Number of Copies: "[m << s[foundIteration[[4m0[m]].copies << endl;[63;220H[K[63;220H88,63-98      17%[62;98H[1;62r[62;1H
+[1;63r[62;41Hcout << [4m"Number Checked out: "[m << s[foundIteration[[4m0[m]].checkOuts << endl;[63;220H[K[63;220H89,63-98      18%[62;98H[1;62r[62;1H
+[1;63r[62;41Hcout << [4m"Number of Holds: "[m << s[foundIteration[[4m0[m]].holds << endl;[63;220H[K[63;220H90,63-98      19%[62;98H[1;62r[62;1H
+[1;63r[62;33H} [1melse[0m {[63;220H[K[63;220H91,12-40      19%[62;40H[1;62r[62;1H
+[1;63r[62;41Hcout << [4m"Book "[m << compare << [4m" Not Found"[m << endl;[63;220H[K[63;220H92,56-91      20%[62;91H[1;62r[62;1H
+[1;63r[62;33H}[63;220H[K[63;220H93,5-33[7C21%[62;33H[1;62r[62;1H
+[1;63r[62;33H[1mbreak[0m;[63;220H[K[63;220H94,10-38      21%[62;38H[1;62r[62;1H
+[1;63r[63;220H[K[63;220H95,0-1[8C22%[62;1H[1;62r[62;1H
+[1;63r[62;17H[1mcase[0m [4m3[m: [1m// Search by Author. Must check all author names. [0m[63;220H[K[63;220H96,60-74      23%[62;74H[1;62r[62;1H
+[1;63r[62;33Hcin.clear();[63;220H[K[63;220H97,16-44      23%[62;44H[1;62r[62;1H
+[1;63r[62;33Hcin.ignore();[63;220H[K[63;220H98,17-45      24%[62;45H[1;62r[62;1H
+[1;63r[62;33HnumberFound = [4m0[m;[63;220H[K[63;220H99,21-48      25%[62;48H[1;62r[62;1H
+[1;63r[62;33Hcout << [4m"Name of Author? "[m <<endl;[63;220H[K[63;220H100,38-66     25%[62;66H[1;62r[62;1H
+[1;63r[62;33Hcin.getline(compare, [4m250[m, [1m'\n'[0m);[63;220H[K[63;220H101,36-64     26%[62;64H[1;62r[62;1H
+[1;63r[62;33H[1mfor[0m ([4mint[m i = [4m0[m; i < numOfBooks; i++){[63;220H[K[63;220H102,41-69     27%[62;69H[1;62r[62;1H
+[1;63r[62;41H[4mint[m equal;[63;220H[K[63;220H103,19-80     27%[62;80H[1;62r[62;1H
+[1;63r[62;41Hequal = strcmp(compare, s[i].author);[63;220H[K[63;220H104,42-77     28%[62;77H[1;62r[62;1H
+[1;63r[62;41H[1mif[0m (equal == [4m0[m){[63;220H[K[63;220H105,21-56     29%[62;56H[1;62r[62;1H
+[1;63r[62;49HfoundIteration[numberFound] = i;[63;220H[K[63;220H106,38-80     29%[62;80H[1;62r[62;1H
+[1;63r[62;49HnumberFound = numberFound + [4m1[m;[63;220H[K[63;220H107,36-78     30%[62;78H[1;62r[62;1H
+[1;63r[62;41H}[63;220H[K[63;220H108,6-41      31%[62;41H[1;62r[62;1H
+[1;63r[62;33H}[63;220H[K[63;220H109,5-33      31%[62;33H[1;62r[62;1H
+[1;63r[62;33H[1mif[0m (numberFound > [4m0[m){[63;220H[K[63;220H110,25-53     32%[62;53H[1;62r[62;1H
+[1;63r[62;41H[1mfor[0m ([4mint[m i = [4m0[m; i < numberFound; i++){[63;220H[K[63;220H111,43-78     33%[62;78H[1;62r[62;1H
+[1;63r[62;49Hcout << [4m"-----"[m << s[foundIteration[i]].id << [4m"-----"[m << endl;[63;220H[K[63;220H112,56-98     34%[62;98H[1;62r[62;1H
+[1;63r[62;49Hcout << [4m"Title: "[m << s[foundIteration[i]].title << endl;[63;220H[K[63;220H113,56-98     34%[62;98H[1;62r[62;1H
+[1;63r[62;49Hcout << [4m"Author: "[m << s[foundIteration[i]].author << endl;[63;220H[K[63;220H114,56-98     35%[62;98H[1;62r[62;1H
+[1;63r[62;49Hcout << [4m"Number of Copies: "[m << s[foundIteration[i]].copies << endl;[63;220H[K[63;220H115,56-98     36%[62;98H[1;62r[62;1H
+[1;63r[62;49Hcout << [4m"Number Checked out: "[m << s[foundIteration[i]].checkOuts << endl;[63;220H[K[63;220H116,56-98     36%[62;98H[1;62r[62;1H
+[1;63r[62;49Hcout << [4m"Number of Holds: "[m << s[foundIteration[i]].holds << endl;[63;220H[K[63;220H117,56-98     37%[62;98H[1;62r[62;1H
+[1;63r[62;41H}[63;220H[K[63;220H118,6-41      38%[62;41H[1;62r[62;1H
+[1;63r[62;33H} [1melse[0m {[63;220H[K[63;220H119,12-40     38%[62;40H[1;62r[62;1H
+[1;63r[62;41Hcout << [4m"Book by Author "[m << compare << [4m" Not Found"[m << endl;[63;220H[K[63;220H120,63-98     39%[62;98H[1;62r[62;1H
+[1;63r[62;33H}[63;220H[K[63;220H121,5-33      40%[62;33H[1;62r[62;1H
+[1;63r[62;33H[1mbreak[0m;[63;220H[K[63;220H122,10-38     40%[62;38H[1;62r[62;1H
+[1;63r[62;17H[1mcase[0m [4m4[m:[63;220H[K[63;220H123,9-23      41%[62;23H[1;62r[62;1H
+[1;63r[62;25Hcout << [4m"Enter id of Book or -1 to display all books: "[m << endl;[63;220H[K[63;220H124,67-88     42%[62;88H[1;62r[62;1H
+[1;63r[62;25H[1m//cin.clear();[0m[63;220H[K[63;220H125,17-38     42%[62;38H[1;62r[62;1H
+[1;63r[62;25H[1m//cin.ignore(); [0m[63;220H[K[63;220H126,19-40     43%[62;40H[1;62r[62;1H
+[1;63r[62;25Hcin >> actionToBook;[63;220H[K[63;220H127,23-44     44%[62;44H[1;62r[62;1H
+[1;63r[62;25H[1mif[0m (actionToBook == -[4m1[m){[63;220H[K[63;220H128,30-72     44%[62;72H[1;62r[62;1H
+[1;63r[62;33Hcout << [4m"[m[1m%%%%%%[0m[4m% Book Catalog [m[1m%%%%%%[0m[4m%"[m << endl;[63;220H[K[63;220H129,51-79     45%[62;79H[1;62r[62;1H
+[1;63r[62;33H[1mfor[0m ([4mint[m i = [4m0[m; i < numOfBooks; i++){[63;220H[K[63;220H130,41-69     46%[62;69H[1;62r[62;1H
+[1;63r[62;41Hcout << [4m"-----"[m << s[i].id << [4m"-----"[m << endl;[63;220H[K[63;220H131,54-104    46%[62;104H[1;62r[62;1H
+[1;63r[62;41Hcout << [4m"Title: "[m << s[i].title << endl;[63;220H[K[63;220H132,45-80     47%[62;80H[1;62r[62;1H
+[1;63r[62;41Hcout << [4m"Author: "[m << s[i].author << endl;[63;220H[K[63;220H133,47-82     48%[62;82H[1;62r[62;1H
+[1;63r[62;41Hcout << [4m"Number of Copies: "[m << s[i].copies << endl;[63;220H[K[63;220H134,57-92     48%[62;92H[1;62r[62;1H
+[1;63r[62;41Hcout << [4m"Number Checked out: "[m << s[i].checkOuts << endl;[63;220H[K[63;220H135,62-97     49%[62;97H[1;62r[62;1H
+[1;63r[62;41Hcout << [4m"Number of Holds: "[m << s[i].holds << endl;[63;220H[K[63;220H136,55-90     50%[62;90H[1;62r[62;1H
+[1;63r[62;33H}[63;220H[K[63;220H137,6-40      51%[62;40H[1;62r[62;1H
+[1;63r[62;33Hcout << [4m"Enter id of Book"[m << endl;[63;220H[K[63;220H138,40-72     51%[62;72H[1;62r[62;1H
+[1;63r[62;33Hcin >> actionToBook;[63;220H[K[63;220H139,24-52     52%[62;52H[1;62r[62;1H
+[1;63r[62;33H}[63;220H[K[63;220H140,6-34      53%[62;34H[1;62r[62;1H
+[1;63r[62;33Hfound = [4mfalse[m;[63;220H[K[63;220H141,19-48     53%[62;48H[1;62r[62;1H
+[1;63r[62;33H[1mif[0m (actionToBook > [4m0[m) {[63;220H[K[63;220H142,30-72     54%[62;72H[1;62r[62;1H
+[1;63r[62;41H[1mfor[0m ([4mint[m i = [4m0[m; i < numOfBooks; i++){[63;220H[K[63;220H143,45-96     55%[62;96H[1;62r[62;1H
+[1;63r[62;49H[1mif[0m (actionToBook == s[i].id){[63;220H[K[63;220H144,35-77     55%[62;77H[1;62r[62;1H
+[1;63r[62;57Hfound = [4mtrue[m;[63;220H[K[63;220H145,20-69     56%[62;69H[1;62r[62;1H
+[1;63r[62;57HnumberFound = i;[63;220H[K[63;220H146,23-72     57%[62;72H[1;62r[62;1H
+[1;63r[62;57H[1mbreak[0m;[63;220H[K[63;220H147,13-62     57%[62;62H[1;62r[62;1H
+[1;63r[62;49H}[63;220H[K[63;220H148,7-49      58%[62;49H[1;62r[62;1H
+[1;63r[62;41H}[63;220H[K[63;220H149,6-41      59%[62;41H[1;62r[62;1H
+[1;63r[62;33H}[63;220H[K[63;220H150,6-40      59%[62;40H[1;62r[62;1H
+[1;63r[62;33H[1mif[0m (found == [4mtrue[m){[63;220H[K[63;220H151,27-80     60%[62;80H[1;62r[62;1H
+[1;63r[62;41Hcout << [4m"What would you like to do?[m[1m\n[0m[4m 1-Checkout Book[m[1m\n[0m[4m 2-Return Book[m[1m\n[0m[4m 3-Hold Book[m[1m\n[0m[4m 4-Remove Hold"[m << endl;[63;220H[K[63;220H152,63-98     61%[62;98H[1;62r[62;1H
+[1;63r[62;41Hcin >> updateToBook;[63;220H[K[63;220H153,26-61     61%[62;61H[1;62r[62;1H
+[1;63r[62;41H[1mswitch[0m (updateToBook) {[63;220H[K[63;220H154,28-63     62%[62;63H[1;62r[62;1H
+[1;63r[62;49H[1mcase[0m [4m1[m:[63;220H[K[63;220H155,13-55     63%[62;55H[1;62r[62;1H
+[1;63r[62;57H[1mif[0m (s[numberFound].copies > s[numberFound].checkOuts){[63;220H[K[63;220H156,49-98     63%[62;98H[1;62r[62;1H
+[1;63r[62;65Hs[numberFound].checkOuts =      s[numberFound].checkOuts + [4m1[m;[63;220H[K[63;220H157,38-98     64%[62;98H[1;62r[62;1H
+[1;63r[62;65Hcout << [4m"Book checked out"[m << endl;[63;220H[K[63;220H158,42-98     65%[62;98H[1;62r[62;1H
+[1;63r[62;57H} [1melse[0m {[63;220H[K[63;220H159,15-64     65%[62;64H[1;62r[62;1H
+[1;63r[62;65Hcout << [4m"All copies checked out"[m << endl;[63;220H[K[63;220H160,42-98     66%[62;98H[1;62r[62;1H
+[1;63r[62;57H}[63;220H[K[63;220H161,8-57      67%[62;57H[1;62r[62;1H
+[1;63r[62;57H[1mbreak[0m;[63;220H[K[63;220H162,13-62     68%[62;62H[1;62r[62;1H
+[1;63r[62;49H[1mcase[0m [4m2[m:[63;220H[K[63;220H163,13-55     68%[62;55H[1;62r[62;1H
+[1;63r[62;57H[1mif[0m (s[numberFound].checkOuts >= [4m1[m){[63;220H[K[63;220H164,42-91     69%[62;91H[1;62r[62;1H
+[1;63r[62;65Hs[numberFound].checkOuts--;[63;220H[K[63;220H165,36-96     70%[62;96H[1;62r[62;1H
+[1;63r[62;65Hcout << [4m"Book returned"[m << endl;[63;220H[K[63;220H166,41-104    70%[62;104H[1;62r[62;1H
+[1;63r[62;57H} [1melse[0m {[63;220H[K[63;220H167,15-64     71%[62;64H[1;62r[62;1H
+[1;63r[62;65Hcout << [4m"Double check that you still have teh book checked out"[m << endl;[63;220H[K[63;220H168,42-98     72%[62;98H[1;62r[62;1H
+[1;63r[62;57H}[63;220H[K[63;220H169,8-57      72%[62;57H[1;62r[62;1H
+[1;63r[62;57H[1mbreak[0m;[63;220H[K[63;220H170,13-62     73%[62;62H[1;62r[62;1H
+[1;63r[62;49H[1mcase[0m [4m3[m:[63;220H[K[63;220H171,13-55     74%[62;55H[1;62r[62;1H
+[1;63r[62;57Hs[numberFound].holds++;[63;220H[K[63;220H172,30-79     74%[62;79H[1;62r[62;1H
+[1;63r[62;57Hcout << [4m"Hold Added"[m << endl;[63;220H[K[63;220H173,36-85     75%[62;85H[1;62r[62;1H
+[1;63r[62;57H[1mbreak[0m;[63;220H[K[63;220H174,13-62     76%[62;62H[1;62r[62;1H
+[1;63r[62;49H[1mcase[0m [4m4[m:[63;220H[K[63;220H175,13-55     76%[62;55H[1;62r[62;1H
+[1;63r[62;57H[1mif[0m (s[numberFound].holds >= [4m1[m){[63;220H[K[63;220H176,41-104    77%[62;104H[1;62r[62;1H
+[1;63r[62;65Hs[numberFound].holds--;[63;220H[K[63;220H177,31-87     78%[62;87H[1;62r[62;1H
+[1;63r[62;65Hcout << [4m"Hold Removed"[m << endl;[63;220H[K[63;220H178,39-95     78%[62;95H[1;62r[62;1H
+[1;63r[62;57H} [1melse[0m {[63;220H[K[63;220H179,15-64     79%[62;64H[1;62r[62;1H
+[1;63r[62;65Hcout << [4m"No holds to remove"[m << endl;[63;220H[K[63;220H180,42-98     80%[62;98H[1;62r[62;1H
+[1;63r[62;57H}[63;220H[K[63;220H181,8-57      80%[62;57H[1;62r[62;1H
+[1;63r[62;57H[1mbreak[0m;[63;220H[K[63;220H182,13-62     81%[62;62H[1;62r[62;1H
+[1;63r[62;49H[1mdefault[0m:[63;220H[K[63;220H183,14-56     82%[62;56H[1;62r[62;1H
+[1;63r[62;57Hcout << [4m"Invalid selection"[m << endl;[63;220H[K[63;220H184,43-92     82%[62;92H[1;62r[62;1H
+[1;63r[62;57Hcin.clear();[63;220H[K[63;220H185,19-68     83%[62;68H[1;62r[62;1H
+[1;63r[62;57Hcin.ignore([4m100[m, [1m'\n'[0m);[63;220H[K[63;220H186,30-79     84%[62;79H[1;62r[62;1H
+[1;63r[62;57H[1mbreak[0m;[63;220H[K[63;220H187,14-63     85%[62;63H[1;62r[62;1H
+[1;63r[62;49H}[63;220H[K[63;220H188,9-64      85%[62;64H[1;62r[62;1H
+[1;63r[62;33H} [1melse[0m {[63;220H[K[63;220H189,12-40     86%[62;40H[1;62r[62;1H
+[1;63r[62;41Hcin.clear();[63;220H[K[63;220H190,17-52     87%[62;52H[1;62r[62;1H
+[1;63r[62;41Hcin.ignore([4m100[m, [1m'\n'[0m);[63;220H[K[63;220H191,27-62     87%[62;62H[1;62r[62;1H
+[1;63r[62;41Hcout << [4m"Invalid entry"[m << endl;[63;220H[K[63;220H192,37-72     88%[62;72H[1;62r[62;1H
+[1;63r[62;33H}[63;220H[K[63;220H193,5-33      89%[62;33H[1;62r[62;1H
+[1;63r[62;33H[1mbreak[0m;[63;220H[K[63;220H194,10-38     89%[62;38H[1;62r[62;1H
+[1;63r[62;17H[1mcase[0m [4m5[m:[63;220H[K[63;220H195,10-24     90%[62;24H[1;62r[62;1H
+[1;63r[62;25Hcout << [4m"goodbye"[m << endl;[63;220H[K[63;220H196,29-50     91%[62;50H[1;62r[62;1H
+[1;63r[62;25H[1mbreak[0m;[63;220H[K[63;220H197,9-30      91%[62;30H[1;62r[62;1H
+[1;63r[62;17H[1mdefault[0m:[63;220H[K[63;220H198,10-24     92%[62;24H[1;62r[62;1H
+[1;63r[62;25Hcout << [4m"Invalid selection"[m << endl;[63;220H[K[63;220H199,39-60     93%[62;60H[1;62r[62;1H
+[1;63r[62;25Hcin.clear();[63;220H[K[63;220H200,15-36     93%[62;36H[1;62r[62;1H
+[1;63r[62;25Hcin.ignore([4m100[m, [1m'\n'[0m);[63;220H[K[63;220H201,26-47     94%[62;47H[1;62r[62;1H
+[1;63r[62;25H[1mbreak[0m;[63;220H[K[63;220H202,9-30      95%[62;30H[1;62r[62;1H
+[1;63r[62;17H}[63;220H[K[63;220H203,3-17      95%[62;17H[1;62r[62;1H
+[1;63r[62;9H} [1mwhile[0m (action != [4m5[m);[63;220H[K[63;220H204,23-30     96%[62;30H[1;62r[62;1H
+[1;63r[63;220H[K[63;220H205,0-1[7C97%[62;1H[1;62r[62;1H
+[1;63r[63;220H[K[63;220H206,0-1[7C97%[62;1H[1;62r[62;1H
+[1;63r[62;9HbookList.close();[63;220H[K[63;220H207,18-25     98%[62;25H[1;62r[62;1H
+[1;63r[62;9H[1mreturn[0m [4m0[m;[63;220H[K[63;220H208,10-17     99%[62;17H[1;62r[62;1H
+[1;63r[62;1H}[63;220H[K[63;220H209,1[9CBot[62;1H
+[?1l>[63;220H[K[63;1Hdaniel.siegel@syccuxas01:~/cs162/projects/project2> g++ -o proj2 project2.cpp 
+daniel.siegel@syccuxas01:~/cs162/projects/project2> ./proj2 
 
 *********Main Menu*********
 1 - Print Catalog
@@ -73,8 +188,8 @@ Number of Holds: 0
 Enter choice: 
 2
 Name of Book? 
-Charles Dickens
-Book Charles Dickens Not Found
+G Bad Title
+Book Bad Title Not Found
 
 *********Main Menu*********
 1 - Print Catalog
@@ -85,7 +200,7 @@ Book Charles Dickens Not Found
 Enter choice: 
 2
 Name of Book? 
-Great Ep xpectations
+Great Expectations
 -----10-----
 Title: Great Expectations
 Author: Charles Dickens
@@ -100,19 +215,7 @@ Number of Holds: 0
 4 - Do Action
 5 - Quit
 Enter choice: 
-3 2 3
-Name of Author? 
-Charles dickens
-Book by Author Charles dickens Not Found
-
-*********Main Menu*********
-1 - Print Catalog
-2 - Search by Title
-3 - Search by Author
-4 - Do Action
-5 - Quit
-Enter choice: 
-4 3
+3
 Name of Author? 
 Charles Dickens
 -----10-----
@@ -121,6 +224,23 @@ Author: Charles Dickens
 Number of Copies: 2
 Number Checked out: 0
 Number of Holds: 0
+-----30-----
+Title: A Tale of Two Cities
+Author: Charles Dickens
+Number of Copies: 3
+Number Checked out: 2
+Number of Holds: 0
+
+*********Main Menu*********
+1 - Print Catalog
+2 - Search by Title
+3 - Search by Author
+4 - Do Action
+5 - Quit
+Enter choice: 
+3
+Name of Author? 
+Mark Twain
 -----20-----
 Title: Huckleberry Finn
 Author: Mark Twain
@@ -176,27 +296,6 @@ Book checked out
 Enter choice: 
 4
 Enter id of Book or -1 to display all books: 
--1
-%%%%%%% Book Catalog %%%%%%%
------10-----
-Title: Great Expectations
-Author: Charles Dickens
-Number of Copies: 2
-Number Checked out: 1
-Number of Holds: 0
------20-----
-Title: Huckleberry Finn
-Author: Mark Twain
-Number of Copies: 1
-Number Checked out: 1
-Number of Holds: 5
------30-----
-Title: A Tale of Two Cities
-Author: Charles Dickens
-Number of Copies: 3
-Number Checked out: 2
-Number of Holds: 0
-Enter id of Book
 10
 What would you like to do?
  1-Checkout Book
@@ -215,27 +314,6 @@ Book checked out
 Enter choice: 
 4
 Enter id of Book or -1 to display all books: 
--1
-%%%%%%% Book Catalog %%%%%%%
------10-----
-Title: Great Expectations
-Author: Charles Dickens
-Number of Copies: 2
-Number Checked out: 2
-Number of Holds: 0
------20-----
-Title: Huckleberry Finn
-Author: Mark Twain
-Number of Copies: 1
-Number Checked out: 1
-Number of Holds: 5
------30-----
-Title: A Tale of Two Cities
-Author: Charles Dickens
-Number of Copies: 3
-Number Checked out: 2
-Number of Holds: 0
-Enter id of Book
 10
 What would you like to do?
  1-Checkout Book
@@ -252,7 +330,7 @@ All copies checked out
 4 - Do Action
 5 - Quit
 Enter choice: 
-4
+5 4
 Enter id of Book or -1 to display all books: 
 -1
 %%%%%%% Book Catalog %%%%%%%
@@ -261,45 +339,6 @@ Title: Great Expectations
 Author: Charles Dickens
 Number of Copies: 2
 Number Checked out: 2
-Number of Holds: 0
------20-----
-Title: Huckleberry Finn
-Author: Mark Twain
-Number of Copies: 1
-Number Checked out: 1
-Number of Holds: 5
------30-----
-Title: A Tale of Two Cities
-Author: Charles Dickens
-Number of Copies: 3
-Number Checked out: 2
-Number of Holds: 0
-Enter id of Book
-10
-What would you like to do?
- 1-Checkout Book
- 2-Return Book
- 3-Hold Book
- 4-Remove Hold
-2
-Book returned
-
-*********Main Menu*********
-1 - Print Catalog
-2 - Search by Title
-3 - Search by Author
-4 - Do Action
-5 - Quit
-Enter choice: 
-4
-Enter id of Book or -1 to display all books: 
--1
-%%%%%%% Book Catalog %%%%%%%
------10-----
-Title: Great Expectations
-Author: Charles Dickens
-Number of Copies: 2
-Number Checked out: 1
 Number of Holds: 0
 -----20-----
 Title: Huckleberry Finn
@@ -332,14 +371,32 @@ Hold Added
 Enter choice: 
 4
 Enter id of Book or -1 to display all books: 
+10
+What would you like to do?
+ 1-Checkout Book
+ 2-Return Book
+ 3-Hold Book
+ 4-Remove Hold
+3
+Hold Added
+
+*********Main Menu*********
+1 - Print Catalog
+2 - Search by Title
+3 - Search by Author
+4 - Do Action
+5 - Quit
+Enter choice: 
+4
+Enter id of Book or -1 to display all books: 
 -1
 %%%%%%% Book Catalog %%%%%%%
 -----10-----
 Title: Great Expectations
 Author: Charles Dickens
 Number of Copies: 2
-Number Checked out: 1
-Number of Holds: 1
+Number Checked out: 2
+Number of Holds: 2
 -----20-----
 Title: Huckleberry Finn
 Author: Mark Twain
@@ -375,8 +432,8 @@ Enter choice:
 Title: Great Expectations
 Author: Charles Dickens
 Number of Copies: 2
-Number Checked out: 1
-Number of Holds: 0
+Number Checked out: 2
+Number of Holds: 1
 -----20-----
 Title: Huckleberry Finn
 Author: Mark Twain
@@ -402,4 +459,4 @@ goodbye
 daniel.siegel@syccuxas01:~/cs162/projects/project2> exit
 exit
 
-Script done on Sat 22 Apr 2017 02:44:15 PM PDT
+Script done on Sun 23 Apr 2017 02:47:12 PM PDT
