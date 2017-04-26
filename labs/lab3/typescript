@@ -1,0 +1,82 @@
+Script started on Tue 25 Apr 2017 06:48:22 PM PDT
+]0;pi@pi-machine: ~/Documents/cs162/labs/lab3pi@pi-machine:~/Documents/cs162/labs/lab3$ vi lab3.cpp 
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;39r[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[39;1H"lab3.cpp" 55L, 1370C[>c[1;1H[34m//Dan Siegel
+//Lab3[m
+[35m#include [m[31m<iostream>[m
+[35m#include [m[31m<fstream>[m
+[35m#include [m[31m<cstring>[m
+[35m#include [m[31m<sstream>[m
+[35m#include [m[31m<iomanip>[m
+
+[33musing[m [32mnamespace[m std;
+
+[32mstruct[m book {[12;17H[32mint[m id;[13;17H[32mchar[m title[[31m250[m];[14;17H[32mchar[m author[[31m250[m];[15;17H[32mdouble[m price;[16;9H};
+
+[32mint[m main() {[19;9H[32mint[m lineCount = [31m0[m;[20;9H[32mint[m numberOfBooks;[21;9H[32mchar[m line[[31m250[m], compare[[31m250[m];[22;9H[32mbool[m found = [31mfalse[m;[23;9Hifstream bookCounter([31m"books.txt"[m);[24;17H[33mwhile[m(bookCounter.getline(line, [31m250[m, [35m'\n'[m)){[25;25HlineCount++;[26;17H}[27;9HbookCounter.close();[28;9HnumberOfBooks = (lineCount / [31m3[m);[29;9H[32mstruct[m book s[numberOfBooks];[30;9Hifstream bookList([31m"books.txt"[m);[31;9Hofstream sales([31m"sales.txt"[m);[32;9H[33mfor[m ([32mint[m i = [31m0[m; i < numberOfBooks; i++){[33;17HbookList.getline(s[i].title, [31m250[m, [35m'\n'[m);[34;17HbookList.getline(s[i].author, [31m250[m, [35m'\n'[m);[35;17HbookList >> s[i].price;[36;17HbookList.ignore([31m250[m, [35m'\n'[m);[37;17Hcout << s[i].title << [31m"[m[35m\n[m[31mauthor "[m << s[i].author << [31m"[m[35m\n[m[31mprice "[m << s[i].price << endl;[38;17Hcout << [31m"&&&&&&&&&&&&&&&&&&&&&&7"[m << endl;[39;132H1,1[11CTop]2;lab3.cpp (~/Documents/cs162/labs/lab3) - VIM]1;lab3.cpp[1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[39;132H2[2;1H[?12l[?25h[?25l[39;132H3[3;1H[?12l[?25h[?25l[39;132H4[4;1H[?12l[?25h[?25l[39;132H5[5;1H[?12l[?25h[?25l[39;132H6[6;1H[?12l[?25h[?25l[39;132H7[7;1H[?12l[?25h[?25l[39;132H8,0-1[8;1H[?12l[?25h[?25l[39;132H9,1  [9;1H[?12l[?25h[?25l[39;132H10,0-1[10;1H[?12l[?25h[?25l[39;133H1,1  [11;1H[?12l[?25h[?25l[39;133H2,1-8[12;8H[?12l[?25h[?25l[39;133H3[13;8H[?12l[?25h[?25l[39;133H4[14;8H[?12l[?25h[?25l[39;133H5[15;8H[?12l[?25h[?25l[39;133H6[16;8H[?12l[?25h[?25l[39;133H7,0-1[17;1H[?12l[?25h[?25l[39;133H8,1  [18;1H[?12l[?25h[?25l[39;133H9,1-8[19;8H[?12l[?25h[?25l[39;132H20[20;8H[?12l[?25h[?25l[39;133H1[21;8H[?12l[?25h[?25l[39;133H2[22;8H[?12l[?25h[?25l[39;133H3[23;8H[?12l[?25h[?25l[39;133H4[24;8H[?12l[?25h[?25l[39;133H5[25;8H[?12l[?25h[?25l[39;133H6[26;8H[?12l[?25h[?25l[39;133H7[27;8H[?12l[?25h[?25l[39;133H8[28;8H[?12l[?25h[?25l[39;133H9[29;8H[?12l[?25h[?25l[39;132H30[30;8H[?12l[?25h[?25l[39;133H1[31;8H[?12l[?25h[?25l[39;133H2[32;8H[?12l[?25h[?25l[39;133H3[33;8H[?12l[?25h[?25l[39;133H4[34;8H[?12l[?25h[?25l[39;133H5[35;8H[?12l[?25h[?25l[39;133H6[36;8H[?12l[?25h[?25l[39;133H7[37;8H[?12l[?25h[?25l[39;133H8[38;8H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[39;1H[K[39;132H39,1-8[9C5%[38;8H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[38;9H}[39;132H[K[39;132H40,1-8[8C11%[38;8H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[38;9Hcout << [31m"Total number of books: "[m << numberOfBooks << endl;[39;132H[K[39;132H41,1-8[8C17%[38;8H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[38;9Hcout << [31m"Reducing prices..."[m << endl;[39;132H[K[39;132H42,1-8[8C23%[38;8H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[38;9Hcout << fixed << setprecision([31m2[m);[39;132H[K[39;132H43,1-8[8C29%[38;8H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[38;9H[33mfor[m ([32mint[m i = [31m0[m; i < numberOfBooks; i++){[39;132H[K[39;132H44,1-8[8C35%[38;8H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[38;17Hs[i].price = s[i].price * [31m0.8[m;[39;132H[K[39;132H45,1-8[8C41%[38;8H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[38;17Hcout << s[i].title << [31m" is now "[m << s[i].price << endl;[39;132H[K[39;132H46,1-8[8C47%[38;8H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[38;17Hsales << s[i].title << [35m'\n'[m << s[i].author << [35m'\n'[m << s[i].price << endl;[39;132H[K[39;132H47,1-8[8C52%[38;8H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[38;9H}[39;132H[K[39;132H48,1-8[8C58%[38;8H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[39;132H[K[39;132H49,0-1[8C64%[38;1H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[38;9Hcout << [35m'\n'[m << [31m"Prices have been written to sales.txt"[m << endl;[39;132H[K[39;132H50,1-8[8C70%[38;8H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[39;132H[K[39;132H51,0-1[8C76%[38;1H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[38;9Hsales.close();[39;132H[K[39;132H52,1-8[8C82%[38;8H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[38;9HbookList.close();[39;132H[K[39;132H53,1-8[8C88%[38;8H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[38;9H[33mreturn[m [31m0[m;[39;132H[K[39;132H54,1-8[8C94%[38;8H[?12l[?25h[?25l[1;1H[32mint[m main() [46m{[m
+        [32mint[m lineCount = [31m0[m;[3;13HnumberOfBooks[4;9H[32mchar[m line[[31m250[m], compare[[31m250[m];[5;9H[32mbool[m found = [31mfalse[m;[5;28H[K[6;9Hifstream bookCounter([31m"books.txt"[m);[7;9H        [33mwhile[m(bookCounter.getline(line, [31m250[m, [35m'\n'[m)){[8;17H        lineCount++;[8;37H[K[9;17H}[9;25H[K[10;9HbookCounter.close();[11;9HnumberOfBooks = (lineCount / [31m3[m);[12;9H[32mstruct[m book s[numberOfBooks];[12;38H[K[13;9Hifstream bookList([31m"books.txt"[m);[14;9Ho[8Csales([31m"sales.txt"[m);[14;37H[K[15;9H[33mfor[m ([32mint[m i = [31m0[m; i < numberOfBooks; i++){[16;9H        bookList.getline(s[i].title, [31m250[m, [35m'\n'[m);[17;39Hauthor, [31m250[m, [35m'\n'[m);[18;25H >> s[i].price;[18;40H[K[19;25H.ignore([31m250[m, [35m'\n'[m);[20;17Hcout << s[i].title << [31m"[m[35m\n[m[31mauthor "[m << s[i].author << [31m"[m[35m\n[m[31mprice "[m << s[i].price << endl;[21;25H[31m"&&&&&&&&&&&&&&&&&&&&&&7[m[5Cendl;[21;59H[K[22;17H[K[23;9H}[24;9Hcout << [31m"Total number of books: "[m << numberOfBooks << endl;[25;18H[31mReducing prices..."[m << endl;[25;46H[K[26;17Hfixed << setprecision([31m2[m);[26;42H[K[27;9H[33mfor[m ([32mint[m i = [31m0[m; i < numberOfBooks; i++){[28;9H        s[i].price = s[i].price * [31m0.8[m;[28;47H[K[29;17Hcout << s[i].title << [31m" is now "[m << s[i].price << endl;[30;17Hsales << s[i].title << [35m'\n'[m << s[i].author << [35m'\n'[m << s[i].price << endl;[31;9H}[31;17H[K[32;9H[K[33;9Hcout << [35m'\n'[m << [31m"Prices have been written to sales.txt"[m << endl;[34;9H[K[35;9Hsales.close();[36;9HbookList.close();[37;9H[33mreturn[m [31m0[m;[37;18H[K[38;1H[46m}[m[38;9H[K[39;133H5,1  [8CBot[38;1H[?12l[?25h
+]2;pi@pi-machine: ~/Documents/cs162/labs/lab3]1;pi@pi-machine: ~/Documents/cs162/labs/lab3[39;132H[K[39;1H[?1l>[?1049l]0;pi@pi-machine: ~/Documents/cs162/labs/lab3pi@pi-machine:~/Documents/cs162/labs/lab3$ g++ -o lab3 lab3.cpp 
+]0;pi@pi-machine: ~/Documents/cs162/labs/lab3pi@pi-machine:~/Documents/cs162/labs/lab3$ ./lab3 
+The Husband's Secret
+author Liane Moriarty
+price 9.99
+&&&&&&&&&&&&&&&&&&&&&&7
+All the Light We Cannot See
+author Anthony Doerr
+price 10.99
+&&&&&&&&&&&&&&&&&&&&&&7
+Yes Please
+author Amy Poehler
+price 17.39
+&&&&&&&&&&&&&&&&&&&&&&7
+What If?: Serious Scientific Answers
+author Randall Munroe
+price 14.4
+&&&&&&&&&&&&&&&&&&&&&&7
+The Book Thief
+author Markus Zusak
+price 8.52
+&&&&&&&&&&&&&&&&&&&&&&7
+Orphan Train
+author Christina Baker Kline
+price 6.99
+&&&&&&&&&&&&&&&&&&&&&&7
+Big Little Lies
+author Liane Moriarty
+price 3.99
+&&&&&&&&&&&&&&&&&&&&&&7
+Gray Mountain
+author John Grisham
+price 9.99
+&&&&&&&&&&&&&&&&&&&&&&7
+Total number of books: 8
+Reducing prices...
+The Husband's Secret is now 7.99
+All the Light We Cannot See is now 8.79
+Yes Please is now 13.91
+What If?: Serious Scientific Answers is now 11.52
+The Book Thief is now 6.82
+Orphan Train is now 5.59
+Big Little Lies is now 3.19
+Gray Mountain is now 7.99
+
+Prices have been written to sales.txt
+]0;pi@pi-machine: ~/Documents/cs162/labs/lab3pi@pi-machine:~/Documents/cs162/labs/lab3$ exit
+exit
+
+Script done on Tue 25 Apr 2017 06:49:00 PM PDT
