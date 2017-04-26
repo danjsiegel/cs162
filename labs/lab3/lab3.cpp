@@ -15,10 +15,10 @@ struct book {
 	};
 
 int lineRecognition(char getLineData[250]){
-	int lineDataAsInt;
+	double lineDataAsDbl;
 	istringstream iss(getLineData);
-	iss >> lineDataAsInt;
-	return lineDataAsInt;
+	iss >> lineDataAsDbl;
+	return lineDataAsDbl;
 }
 
 int main() {
@@ -42,8 +42,8 @@ int main() {
 		s[i].id = id;
 		bookList.getline(s[i].title, 250, '\n');
 		bookList.getline(s[i].author, 250, '\n');
-		bookList.getline(line, 250, '\n');//price
-		s[i].price = lineRecognition(line);
+		bookList >> s[i].price;
+		bookList.ignore(250, '\n');
 		id++;
 		cout << " book " << s[i].id << " title: " << s[i].title << " author " << s[i].author << " price " << s[i].price << endl;
 	}
