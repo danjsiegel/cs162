@@ -24,36 +24,33 @@ int lineRecognition(char getLineData[250]){
 int main() {
 	int id = 1;
 	int lineCount = 0;
+	int numberOfBooks;
 	char line[250], compare[250];
 	bool found = false;
 	ifstream bookCounter("books.txt");
-		while(getline(bookCounter, line)){
+		while(bookCounter.getline(line, 250, '\n')){
 			lineCount++;
 		}
 	bookCounter.close();
-	cout << "lines" << line << endl;
-	/*
-	struct book s[numOfBooks];//reading from lines is not triggering next line. Need to move bookList >> s[i].id to a getline and put bach in as sstream.
+	numberOfBooks = (lineCount / 3);
+	cout << numberOfBooks << endl;
+	
+	struct book s[numberOfBooks];
 	ifstream bookList("books.txt");
 
-	for (int i = 0; i < numOfBooks; i++){
-		bookList.getline(line, 250, '\n');
+	for (int i = 0; i < numberOfBooks; i++){
 		s[i].id = id;
 		bookList.getline(s[i].title, 250, '\n');
 		bookList.getline(s[i].author, 250, '\n');
-		bookList.getline(line, 250, '\n');//copies
-		s[i].copies = lineRecognition(line);
-		bookList.getline(line, 250, '\n');//checkouts
-		s[i].checkOuts = lineRecognition(line);
-		bookList.getline(line, 250, '\n');//holds
-		s[i].holds = lineRecognition(line);
+		bookList.getline(line, 250, '\n');//price
+		s[i].price = lineRecognition(line);
 		id++;
+		cout << " book " << s[i].id << " title: " << s[i].title << " author " << s[i].author << " price " << s[i].price << endl;
 	}
 
-	do {
 
 
 
-	bookList.close(); */
+	bookList.close(); 
 	return 0;
 }
