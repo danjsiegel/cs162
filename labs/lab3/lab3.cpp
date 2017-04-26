@@ -44,7 +44,7 @@ int main() {
 	for (int i = 0; i < numberOfBooks; i++){
 		s[i].price = s[i].price * 0.8;
 		cout << s[i].title << " is now " << s[i].price << endl;
-		sales << s[i].title << '\n' << s[i].author << '\n' << s[i].price << endl;
+		sales << fixed << setprecision(2) << s[i].title << '\n' << s[i].author << '\n' << s[i].price << endl;
 	}
 
 	cout << '\n' << "Prices have been written to sales.txt" << endl;
