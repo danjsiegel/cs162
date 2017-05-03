@@ -128,7 +128,43 @@ using namespace std;
 
 // PLEASE PUT YOUR FUNCTIONS BELOW THIS LINE
 
+void printArray(int array[], int count){
+	for (int i = 0; i < count; i++){
+	cout << array[i] << endl;
+	}
+}
+void remove(int find, int num, int array[], int &count){
+	bool found = false;
+	int foundIteration, numberLeft;
+	
+	for (int i = 0; i < count; i++){
+		if (array[i] == find){
+			found = true;
+			foundIteration = i;			
+			break;	
+		}
+	}
+	if (found == true){
+		numberLeft = count - (foundIteration + num + 1);
+		cout << "found with " << numberLeft << endl;
+		int tempCount = numberLeft + (foundIteration);
+		int tempArray[tempCount];
+		for (int i = 0; i < foundIteration; i++){
+			tempArray[i] = array[i];		
+		}
+		for (int i = (foundIteration + num); i < count; i++){
+			tempArray[i] = array[i];
+		}
+		for (int i = 0; i < tempCount; i++){
+			cout << "temp" << tempArray[i] << " ";
+		}
+		//count = tempCount;
+	} else {
+		cout << "not found" << endl;
+	}
+	
 
+}
 
 //  END OF FUNCTIONS
 
