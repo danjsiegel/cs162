@@ -135,7 +135,7 @@ void printArray(int array[], int count){
 }
 void remove(int find, int num, int array[], int &count){
 	bool found = false;
-	int foundIteration, numberLeft;
+	int foundIteration, numberLeft, tempNum;
 	
 	for (int i = 0; i < count; i++){
 		if (array[i] == find){
@@ -146,21 +146,23 @@ void remove(int find, int num, int array[], int &count){
 	}
 	if (found == true){
 		numberLeft = count - (foundIteration + num + 1);
-		cout << "found with " << numberLeft << endl;
-		int tempCount = numberLeft + (foundIteration);
+		int tempCount = numberLeft + (foundIteration + 1);
 		int tempArray[tempCount];
-		for (int i = 0; i < foundIteration; i++){
-			tempArray[i] = array[i];		
+		for (int i = 0; i < (foundIteration + 1); i++){ //up to found iteration
+			tempNum = array[i];
+			tempArray[i] = tempNum;		
 		}
 		for (int i = (foundIteration + num); i < count; i++){
-			tempArray[i] = array[i];
+			tempNum = array[i];
+			tempArray[i] = tempNum;	
+		}
+		for (int i = 0; i < count; i++){ //clear array
+			array[i] = 0;
 		}
 		for (int i = 0; i < tempCount; i++){
-			cout << "temp" << tempArray[i] << " ";
+			array[i] = tempArray[i]; 
 		}
-		//count = tempCount;
-	} else {
-		cout << "not found" << endl;
+		count = tempCount;
 	}
 	
 
