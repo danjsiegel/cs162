@@ -1,18 +1,19 @@
 //Header File for Catalog Class
-#include "books.h"
 #ifndef CATALOG_H
 #define CATALOG_H
+#include "books.h"
+
+
+class books; 
 
 class catalog {
   public:
-    void menu(){
-      cout << "\n*********"  << "Main Menu" << "*********" << endl;
-		    cout << "1 - Print Catalog\n" << "2 - Search by Title\n" << "3 - Search by Author\n" << "4 - Do Action\n" << "5 - Quit\n" << "Enter choice: " << endl;
-    }
+	catalog();//constructor
+    void menu();
   private:
-    const char libraryfile = 'library.txt'
-    const int maxBooks = 100;
-    books booklist[maxBooks]; //Declares array of class books
+	char* library;    
+	int maxBooks;
+	int numberOfBooks; 
 };
 
 #endif
