@@ -9,10 +9,19 @@ books::books(){ //constructor
 }
 
 //Printing Functions
-void printBook(){
-	
+void books::printBook(){
+	cout << "-----" << id << "-----" << endl;
+	cout << "Title: " << title << endl;
+	cout << "Author: " << author << endl;
+	cout << "Number of Copies: " << copies << endl;
+	cout << "Number of Holds: " << holds << endl;
+	cout << "-------------------------" << endl;
 }
-
+//Returning functions
+//Return ID
+int books::returnID(){
+	return id; 
+}
 //mutator functions:
 //Assign all data to a book
 void books::assignBook(int newID, char newTitle[], char newAuthor[], int newCopies, int newCheckOuts, int newHolds){
@@ -22,5 +31,8 @@ void books::assignBook(int newID, char newTitle[], char newAuthor[], int newCopi
 	copies = newCopies;
 	checkOuts = newCheckOuts;
 	holds = newHolds;	
-	}
-
+}
+//change ID
+void books::changeID(int newID){
+	id = newID;
+}

@@ -9,6 +9,18 @@
 
 using namespace std;
 
+void callFunction(int selection, catalog& usersClass){
+	switch(selection){
+		case 1:	usersClass.printAllBooks(); //print catalog 
+				break;
+		case 2:	usersClass.newBook();//add new book	
+		case 3:	
+			usersClass.updateBook();
+			break; /*
+		case 4: */ //quit and write to file
+	}
+}
+
 int main() {
 	int choice;
 	catalog catalog1;
@@ -16,17 +28,17 @@ int main() {
 		catalog1.menu();
 		cin >> choice; 
 		if (choice > 0 && choice < 5){
-			cout << "invoke action functions and then display the menu" << endl;
-			/*switch(choice):
-				case 1:	//print catalog
-				case 2:	//add new book	
-				case 3:	//modify book
-				case 4: */ //quit and write to file
+			callFunction(choice, catalog1);
+			if (choice != 4){
+				cin.clear();
+				cin.ignore();
+			}
 		} else {
 			cout << "invalid selection, try again" << endl;
+			cin.clear();
+			cin.ignore();
 		}
-		cin.clear();
-		cin.ignore();
+
 	} while (choice != 4);
 
 	return 0;
