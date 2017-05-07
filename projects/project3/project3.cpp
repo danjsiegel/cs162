@@ -15,9 +15,9 @@ void callFunction(int selection, catalog& usersClass){
 				break;
 		case 2:	usersClass.newBook();//add new book	
 		case 3:	
-			usersClass.updateBook();
-			break; /*
-		case 4: */ //quit and write to file
+			usersClass.updateBook();//Update book functions
+			break; 
+		case 4: usersClass.writeFile(); //quit and write to file
 	}
 }
 
@@ -40,6 +40,5 @@ int main() {
 		}
 
 	} while (choice != 4);
-
 	return 0;
 }

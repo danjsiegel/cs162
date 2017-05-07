@@ -14,6 +14,7 @@ class catalog {
 	void newBook();
 	void idCompare(int bookNumber, bool &foundflag, int userNumber, int tempCompare, int &bookFoundAn);
 	void updateBook();
+	void writeFile();
   private:
 	char tempTitle[250];
 	char tempAuthor[250];   

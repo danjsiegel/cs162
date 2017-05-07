@@ -21,6 +21,7 @@ catalog::catalog(){ //constructor
 		libraryBooks >> tempCopies >> tempCheckOuts >> tempHolds; 
 		booklist[i].assignBook(tempID, tempTitle, tempAuthor, tempCopies, tempCheckOuts, tempHolds);
 	}
+	libraryBooks.close();
 }
 
 void catalog::printAllBooks(){
@@ -34,33 +35,96 @@ void catalog::menu(){
 	cout << "1 - Print Catalog\n" << "2 - Add New Book\n" << "3 - Modify a Book\n" << "4 - Quit\n" << "Enter choice: " << endl;
 }
 
+void catalog::writeFile(){
+	ofstream newLibrary("newlibrary.txt");
+	newLibrary << numberOfBooks << '\n';
+	for (int i=0; i < numberOfBooks; i++){
+		booklist[i].returnAllVar(tempID, tempTitle, tempAuthor, tempCopies, tempCheckOuts, tempHolds);
+		newLibrary << tempID << '\n' << tempTitle << '\n' << tempAuthor << '\n' << tempCopies << '\n' << tempCheckOuts << '\n' << tempHolds << '\n';
+	}
+	cout << "*** Catalog Written Out ***" << endl;
+	newLibrary.close();
+}
+
 void catalog::updateBook(){
-	int bookToModify, updateAction, tempIDtoCompare, newID, bookFound;	
+	int bookToModify, updateAction, tempIDtoCompare, newID, bookFoundIteration, bookWorkingOn;	
 	bool bookFound = false;
 	bool updateIDvalid = false;  
 	do {
-		cout << "enter ID of book: (or enter -1 to see a list of books) or 0 to exit";
+		cout << "enter ID of book: (or enter -1 to see a list of books) or 0 to exit ";
 		cin >> bookToModify;
-		idCompare(numberOfBooks, bookFound, bookToModify, tempIDtoCompare, bookFound);
-	
+		idCompare(numberOfBooks, bookFound, bookToModify, tempIDtoCompare, bookFoundIteration);
 		while (bookFound == true && updateAction != 7){
+			bookWorkingOn = bookFoundIteration;
 			cout << "Which field to change?\n" << "1 - ID\n" << "2 - Title\n" << "3 - Author\n" << "4 - Copies\n" << "5 - Checkouts\n" << "6 - Holds\n" << "7 - Quit" << endl;
 			cin >> updateAction;		
 			switch(updateAction){
 				case 1:
 					cout << "New Book ID? ";
-					cin >> newID;
-					
+					do {
+						updateIDvalid = false;					
+						cin >> newID;
+						idCompare(numberOfBooks, updateIDvalid, newID, tempIDtoCompare, bookFoundIteration);
+						if (updateIDvalid == true){
+							cout << "Pick another number, that one is being used" << endl;
+							cin.clear();
+							cin.ignore();							
+						}
+					} while (updateIDvalid == true);
+					booklist[bookWorkingOn].changeID(newID);
 					break;
 				case 2:
+					cout << "Title of book?"; 
+					cin.clear();
+					cin.ignore();	
+					cin.getline(tempTitle, 250);
+					booklist[bookWorkingOn].changeTitle(tempTitle);
 					break;
 				case 3:
+					cout << "Author of book?"; 
+					cin.clear();
+					cin.ignore();	
+					cin.getline(tempAuthor, 250);
+					booklist[bookWorkingOn].changeAuthor(tempAuthor);
 					break;
 				case 4:
+					cout << "New Number of Copies: ";
+					tempCopies = -1;
+					while (tempCopies < 0){
+						cin >> tempCopies;
+						if (!tempCopies || tempCopies < 0){
+						cout << "Enter a valid number of copies: " << endl;
+					 	cin.clear();
+						cin.ignore();
+						} 					
+					}
+					booklist[bookWorkingOn].changeCopies(tempCopies);
 					break;
 				case 5:
+					cout << "New Number of Checkouts: " << endl;
+					tempCheckOuts = -1;
+					while (tempCheckOuts < 0){
+						cin >> tempCheckOuts;
+						if (!tempCopies || tempCheckOuts < 0){
+						cout << "Enter a valid number of checkouts " << endl;
+					 	cin.clear();
+						cin.ignore();
+						} 					
+					}
+					booklist[bookWorkingOn].changeCheckouts(tempCheckOuts);
 					break;
 				case 6:
+					cout << "New Number of Holds: " << endl;
+					tempHolds = -1;
+					while (tempHolds < 0){
+						cin >> tempHolds;
+						if (!tempHolds || tempHolds < 0){
+						cout << "enter a valid number of Holds " << endl;
+					 	cin.clear();
+						cin.ignore();
+						} 					
+					}
+					booklist[bookWorkingOn].changeHolds(tempHolds);
 					break;
 				case 7:
 					break;
@@ -96,12 +160,10 @@ void catalog::newBook(){
 	}
 	idCompare(numberOfBooks, idExists, requestedID, tempCompareID, foundAt);
 	while (idExists == true){
+		cout << "ID already taken. Enter unique ID. " << endl;
 		cin >> requestedID;
 		idExists = false;
 		idCompare(numberOfBooks, idExists, requestedID, tempCompareID, foundAt);
-		if (idExists == true){
-			cout << "ID already taken. Enter unique ID. " << endl;
-		}
 	}
 	
 	tempID = requestedID;
@@ -132,7 +194,7 @@ void catalog::idCompare(int bookNumber, bool &foundflag, int userNumber, int tem
 		tempCompare = booklist[i].returnID();
 		if (tempCompare == userNumber){
 			foundflag = true;
-			bookFoundIn = i;
+			bookFoundAn = i;
 			break;
 		}
 	}
