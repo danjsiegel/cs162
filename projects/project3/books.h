@@ -1,3 +1,5 @@
+//Dan Siegel
+//Project 3
 //Header File for Books Class
 #ifndef BOOKS_H
 #define BOOKS_H

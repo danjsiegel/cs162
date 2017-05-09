@@ -1,4 +1,7 @@
+//Dan Siegel
+//Project 3
 //Implementation File for Catalog Class
+
 #include <iostream>
 #include <fstream>
 #include <cstring>
@@ -8,20 +11,26 @@
 using namespace std; 
 
 catalog::catalog(){ //constructor
-
+	numberOfBooks = 0;
 	ifstream libraryBooks("library.txt");
-	libraryBooks >> numberOfBooks;
-	for (int i = 0; i < numberOfBooks; i++){
-		libraryBooks >> tempID;
-		libraryBooks.clear();
-		libraryBooks.ignore(100, '\n');
-		libraryBooks.getline(tempTitle, 250, '\n');
-		libraryBooks.getline(tempAuthor, 250, '\n');
-		libraryBooks.clear();
-		libraryBooks >> tempCopies >> tempCheckOuts >> tempHolds; 
-		booklist[i].assignBook(tempID, tempTitle, tempAuthor, tempCopies, tempCheckOuts, tempHolds);
+	if(libraryBooks){ //if file opens correctly, read in contents. 
+		libraryBooks >> numberOfBooks;
+		for (int i = 0; i < numberOfBooks; i++){
+			libraryBooks >> tempID;
+			libraryBooks.clear();
+			libraryBooks.ignore(100, '\n');
+			libraryBooks.getline(tempTitle, 250, '\n');
+			libraryBooks.getline(tempAuthor, 250, '\n');
+			libraryBooks.clear();
+			libraryBooks >> tempCopies >> tempCheckOuts >> tempHolds; 
+			booklist[i].assignBook(tempID, tempTitle, tempAuthor, tempCopies, tempCheckOuts, tempHolds);
+		}
+		libraryBooks.close();
+	} else {
+		for (int i = 0; i < 100; i++){		
+			booklist[i].books(); //if file does not open correctly, use library constructor
+		}
 	}
-	libraryBooks.close();
 }
 
 void catalog::printAllBooks(){

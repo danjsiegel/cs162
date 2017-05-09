@@ -1,3 +1,5 @@
+//Dan Siegel
+//Project 3
 #include <iostream>
 #include <cstring>
 #include "books.h"

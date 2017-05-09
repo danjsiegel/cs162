@@ -1,3 +1,5 @@
+//Dan Siegel
+//Project 3
 //Header File for Catalog Class
 #ifndef CATALOG_H
 #define CATALOG_H
