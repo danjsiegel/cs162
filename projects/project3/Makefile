@@ -1,6 +1,6 @@
 
-output: project3.o catalog.o books.o
-	g++  project3.o catalog.o books.o -o output
+output: project3.o catalog.o book.o
+	g++  project3.o catalog.o book.o -o output
 
 project3.o: project3.cpp
 	g++ -c project3.cpp
@@ -8,8 +8,8 @@ project3.o: project3.cpp
 catalog.o: catalog.cpp catalog.h
 	g++ -c catalog.cpp
 
-books.o: books.cpp books.h
-	g++ -c books.cpp
+book.o: book.cpp book.h
+	g++ -c book.cpp
 clean:
-	rm *.o output
+	rm -rf *.o
 

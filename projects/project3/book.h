@@ -1,12 +1,12 @@
 //Dan Siegel
 //Project 3
-//Header File for Books Class
-#ifndef BOOKS_H
-#define BOOKS_H
+//Header File for Book Class
+#ifndef BOOK_H
+#define BOOK_H
 
-class books {
+class Book {
   public:
-    books();
+    book();
 	void assignBook(int newID, char newTitle[], char newAuthor[], int newCopies, int newCheckOuts, int newHolds);
 	void printBook();
 	void changeID(int newID);

@@ -6,13 +6,16 @@
 #include <fstream>
 #include <cstring>
 #include "catalog.h"
-#include "books.h"
+#include "book.h"
 
 using namespace std; 
 
 catalog::catalog(){ //constructor
 	numberOfBooks = 0;
 	ifstream libraryBooks("library.txt");
+	for (int i = 0; i < 100; i++){		
+			booklist[i].book(); //if file does not open correctly, use library constructor
+	}		
 	if(libraryBooks){ //if file opens correctly, read in contents. 
 		libraryBooks >> numberOfBooks;
 		for (int i = 0; i < numberOfBooks; i++){
@@ -26,11 +29,8 @@ catalog::catalog(){ //constructor
 			booklist[i].assignBook(tempID, tempTitle, tempAuthor, tempCopies, tempCheckOuts, tempHolds);
 		}
 		libraryBooks.close();
-	} else {
-		for (int i = 0; i < 100; i++){		
-			booklist[i].books(); //if file does not open correctly, use library constructor
-		}
-	}
+	} 
+	
 }
 
 void catalog::printAllBooks(){

@@ -3,10 +3,10 @@
 //Header File for Catalog Class
 #ifndef CATALOG_H
 #define CATALOG_H
-#include "books.h"
+#include "book.h"
 
 
-class books; 
+class Book; 
 
 class catalog {
   public:
@@ -22,7 +22,7 @@ class catalog {
 	char tempAuthor[250];   
 	int tempID, tempCopies, tempCheckOuts, tempHolds;
 	int numberOfBooks; 
-	books booklist[100];
+	book booklist[100];
 		
 };
 

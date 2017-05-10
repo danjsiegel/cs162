@@ -2,17 +2,17 @@
 //Project 3
 #include <iostream>
 #include <cstring>
-#include "books.h"
+#include "Book.h"
 
 using namespace std;
 
-books::books(){ //constructor
+Book::book(){ //constructor
 	
 }
 
 //Printing Functions
 //Print All Variables 
-void books::printBook(){
+void book::printBook(){
 	cout << "-----" << id << "-----" << endl;
 	cout << "Title: " << title << endl;
 	cout << "Author: " << author << endl;
@@ -22,11 +22,11 @@ void books::printBook(){
 }
 //Return functions
 //Return ID
-int books::returnID(){
+int Book::returnID(){
 	return id; 
 }
 
-void books::returnAllVar(int &currentid, char currentTitle[], char currentAuthor[], int &currentCopies, int &currentCheckouts, int &currentHolds){
+void Book::returnAllVar(int &currentid, char currentTitle[], char currentAuthor[], int &currentCopies, int &currentCheckouts, int &currentHolds){
 	currentid = id;
 	strcpy(currentTitle, title);
 	strcpy(currentAuthor, author);
@@ -35,10 +35,10 @@ void books::returnAllVar(int &currentid, char currentTitle[], char currentAuthor
 	currentHolds = holds;	
 	
 }
-//void books::returnAllBookVariables(){}
+//void Book::returnAllBookVariables(){}
 //mutator functions:
 //Assign all data to a book
-void books::assignBook(int newID, char newTitle[], char newAuthor[], int newCopies, int newCheckOuts, int newHolds){
+void Book::assignBook(int newID, char newTitle[], char newAuthor[], int newCopies, int newCheckOuts, int newHolds){
 	id = newID; 
 	strcpy(title, newTitle);
 	strcpy(author, newAuthor);
@@ -47,27 +47,27 @@ void books::assignBook(int newID, char newTitle[], char newAuthor[], int newCopi
 	holds = newHolds;	
 }
 //change ID
-void books::changeID(int newID){
+void Book::changeID(int newID){
 	id = newID;
 }
 //change Title
-void books::changeTitle(char newTitle[]){
+void Book::changeTitle(char newTitle[]){
 	strcpy(title, newTitle);
 }
 //change Author
-void books::changeAuthor(char newAuthor[]){
+void Book::changeAuthor(char newAuthor[]){
 	strcpy(author, newAuthor);
 }
 //ChangeCopies
-void books::changeCopies(int newCopies){
+void Book::changeCopies(int newCopies){
 	copies = newCopies;
 }
 //Change Checkouts
-void books::changeCheckouts(int newCheckOuts){
+void Book::changeCheckouts(int newCheckOuts){
 	checkOuts = newCheckOuts;
 }
 //changeHolds
-void books::changeHolds(int newHolds){
+void Book::changeHolds(int newHolds){
 	holds = newHolds;
 }
 
