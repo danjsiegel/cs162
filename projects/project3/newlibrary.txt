@@ -1,7 +1,19 @@
-1
-1
-Test1
-Test1
-1
+3
+10
+Great Expectations
+Charles Dickens
+2
 0
+0
+20
+Huckleberry Finn
+Mark Twain
+1
+1
+5
+30
+A tale of 3 cities
+Charles Dickens
+3
+2
 0

@@ -13,8 +13,8 @@ using namespace std;
 catalog::catalog(){ //constructor
 	numberOfBooks = 0;
 	ifstream libraryBooks("library.txt");
-	for (int i = 0; i < 100; i++){		
-			//booklist[i].book(); //if file does not open correctly, use library constructor
+	for (int i = 0; i < 99; i++){		
+		booklist[i].book();
 	}		
 	if(libraryBooks){ //if file opens correctly, read in contents. 
 		libraryBooks >> numberOfBooks;

@@ -1,5 +1,5 @@
 //Dan Siegel
-//Project 3
+//lab4
 #include <iostream>
 #include <cstring>
 #include "book.h"
@@ -7,10 +7,9 @@
 using namespace std;
 
 void Book::book(){ 
-	//char blank[1] = {'\0'};	
 	id = 0;
-	//strcpy(blank, title);
-	//strcpy(blank, author);
+	strcpy("NA", title);
+	strcpy("NA", author);
 	copies = 0;
 	checkOuts = 0;
 	holds = 0;
