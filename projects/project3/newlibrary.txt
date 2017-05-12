@@ -1,11 +1,11 @@
-3
+4
 10
-Great Expectations
-Charles Dickens
-2
-2
+Huck Finn
+Sam Clemens
+4
+4
 0
-20
+60
 Huckleberry Finn
 Mark Twain
 1
@@ -16,4 +16,10 @@ A Tale of Two Cities
 Charles Dickens
 3
 2
+0
+40
+War and Peace
+Leo tolstoy
+3
+0
 0

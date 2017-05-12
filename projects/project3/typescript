@@ -1,6 +1,22 @@
-Script started on Thu 11 May 2017 07:03:53 PM PDT
-]0;pi@pi-machine: ~/Documents/cs162/projects/project3pi@pi-machine:~/Documents/cs162/projects/project3$ vi book..[Kcpp 
-[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;39r[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[39;1H"book.cpp" 79L, 1750C[>c[1;1H[34m//Dan Siegel
+Script started on Thu 11 May 2017 07:22:18 PM PDT
+]0;pi@pi-machine: ~/Documents/cs162/projects/project3pi@pi-machine:~/Documents/cs162/projects/project3$ vi project3.cpp 
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;39r[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[39;1H"project3.cpp" 44L, 826C[>c[1;1H[34m//Dan Siegel
+//Project 3[m
+[35m#include [m[31m<iostream>[m
+[35m#include [m[31m<fstream>[m
+[35m#include [m[31m<cstring>[m
+[35m#include [m[31m"book.h"[m
+[35m#include [m[31m"catalog.h"[m
+
+
+[33musing[m [32mnamespace[m std;
+
+[32mvoid[m callFunction([32mint[m selection, catalog& usersClass){[13;9H[33mswitch[m(selection){[14;17H[33mcase[m [31m1[m: usersClass.printAllBooks(); [34m//print catalog [m[15;33H[33mbreak[m;[16;17H[33mcase[m [31m2[m: usersClass.newBook();[34m//add new book     [m[17;17H[33mcase[m [31m3[m:[18;25HusersClass.updateBook();[34m//Update book functions[m[19;25H[33mbreak[m;[20;17H[33mcase[m [31m4[m: usersClass.writeFile(); [34m//quit and write to file[m[21;9H}
+}
+
+[32mint[m main() {[25;9H[32mint[m choice;[26;9Hcatalog catalog1;[27;9H[33mdo[m {[28;17Hcatalog1.menu();[29;17Hcin >> choice;[30;17H[33mif[m (choice > [31m0[m && choice < [31m5[m){[31;25HcallFunction(choice, catalog1);[32;25H[33mif[m (choice != [31m4[m){[33;33Hcin.clear();[34;33Hcin.ignore();[35;25H}[36;17H} [33melse[m {[37;25Hcout << [31m"invalid selection, try again"[m << endl;[38;25Hcin.clear();[39;56H1,1[11CTop]2;project3.cpp (~/Documents/cs162/projects/project3) - VIM]1;project3.cpp[1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[39;1H[K[39;1H:[?12l[?25hq[?25l[?12l[?25h![?25l[?12l[?25h[?25l]2;pi@pi-machine: ~/Documents/cs162/projects/project3]1;pi@pi-machine: ~/Documents/cs162/projects/project3[39;1H[K[39;1H[?1l>[?12l[?25h[?1049l]0;pi@pi-machine: ~/Documents/cs162/projects/project3pi@pi-machine:~/Documents/cs162/projects/project3$ vi book.
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;39r[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[39;1H"book." [New File][>c[2;1H[1m[34m~                                                                        [3;1H~                                                                        [4;1H~                                                                        [5;1H~                                                                        [6;1H~                                                                        [7;1H~                                                                        [8;1H~                                                                        [9;1H~                                                                        [10;1H~                                                                        [11;1H~                                                                        [12;1H~                                                                        [13;1H~                                                                        [14;1H~                                                                        [15;1H~                                                                        [16;1H~                                                                        [17;1H~                                                                        [18;1H~                                                                        [19;1H~                                                                        [20;1H~                                                                        [21;1H~                                                                        [22;1H~                                                                        [23;1H~                                                                        [24;1H~                                                                        [25;1H~                                                                        [26;1H~                                                                        [27;1H~                                                                        [28;1H~                                                                        [29;1H~                                                                        [30;1H~                                                                        [31;1H~                                                                        [32;1H~                                                                        [33;1H~                                                                        [34;1H~                                                                        [35;1H~                                                                        [36;1H~                                                                        [37;1H~                                                                        [38;1H~                                                                        [m[39;56H0,0-1[9CAll]2;book. (~/Documents/cs162/projects/project3) - VIM]1;book.[1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[39;1H[K[39;1H:[?12l[?25hq[?25l[?12l[?25h![?25l[?12l[?25h[?25l]2;pi@pi-machine: ~/Documents/cs162/projects/project3]1;pi@pi-machine: ~/Documents/cs162/projects/project3[39;1H[K[39;1H[?1l>[?12l[?25h[?1049l]0;pi@pi-machine: ~/Documents/cs162/projects/project3pi@pi-machine:~/Documents/cs162/projects/project3$ vi book.cpp 
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;39r[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[39;1H"book.cpp" 82L, 1795C[>c[1;1H[34m//Dan Siegel
 //Project 3[m
 [35m#include [m[31m<iostream>[m
 [35m#include [m[31m<cstring>[m
@@ -19,9 +35,11 @@ Book::Book(){[10;9Hid = [31m0[m;[11;9Hstrcpy(title, [31m"[m[35m\0[m[31m
 //Return ID[m
 [32mint[m Book::returnID(){[31;9H[33mreturn[m id;
 }
+[32mint[m Book::returnCopies(){[34;9H[33mreturn[m copies;
+}
 
-[32mvoid[m Book::returnAllVar([32mint[m &currentid, [32mchar[m currentTitle[], [32mchar[m currentt[35;1HAuthor[], [32mint[m &currentCopies, [32mint[m &currentCheckouts, [32mint[m &currentHolds){[36;9Hcurrentid = id;[37;9Hstrcpy(currentTitle, title);[38;9Hstrcpy(currentAuthor, author);[39;56H1,1[11CTop]2;book.cpp (~/Documents/cs162/projects/project3) - VIM]1;book.cpp[1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[39;1H[K[39;1H:[?12l[?25hq[?25l[?12l[?25h![?25l[?12l[?25h[?25l]2;pi@pi-machine: ~/Documents/cs162/projects/project3]1;pi@pi-machine: ~/Documents/cs162/projects/project3[39;1H[K[39;1H[?1l>[?12l[?25h[?1049l]0;pi@pi-machine: ~/Documents/cs162/projects/project3pi@pi-machine:~/Documents/cs162/projects/project3$ vi book.cpp [K[K[K[Kh
-[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;39r[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[39;1H"book.h" 29L, 742C[>c[1;1H[34m//Dan Siegel
+[32mvoid[m Book::returnAllVar([32mint[m &currentid, [32mchar[m currentTitle[], [32mchar[m currentt[38;1HAuthor[], [32mint[m &currentCopies, [32mint[m &currentCheckouts, [32mint[m &currentHolds){[39;56H1,1[11CTop]2;book.cpp (~/Documents/cs162/projects/project3) - VIM]1;book.cpp[1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[39;1H[K[39;1H:[?12l[?25hq[?25l[?12l[?25h![?25l[?12l[?25h[?25l]2;pi@pi-machine: ~/Documents/cs162/projects/project3]1;pi@pi-machine: ~/Documents/cs162/projects/project3[39;1H[K[39;1H[?1l>[?12l[?25h[?1049l]0;pi@pi-machine: ~/Documents/cs162/projects/project3pi@pi-machine:~/Documents/cs162/projects/project3$ vi book.cpp [K[K[K[Kh
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;39r[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[39;1H"book.h" 30L, 763C[>c[1;1H[34m//Dan Siegel
 //Project 3
 //Header File for Book Class[m
 [35m#ifndef BOOK_H
@@ -29,8 +47,8 @@ Book::Book(){[10;9Hid = [31m0[m;[11;9Hstrcpy(title, [31m"[m[35m\0[m[31m
 
 [32mclass[m Book {
   [33mpublic[m:
-    Book();[10;9H[32mvoid[m assignBook([32mint[m newID, [32mchar[m newTitle[], [32mchar[m newAuthor[], [32mintt[m[11;1H newCopies, [32mint[m newCheckOuts, [32mint[m newHolds);[12;9H[32mvoid[m printBook();[13;9H[32mvoid[m changeID([32mint[m newID);[14;9H[32mvoid[m changeTitle([32mchar[m newTitle[]);[15;9H[32mvoid[m changeAuthor([32mchar[m newAuthor[]);[16;9H[32mvoid[m changeCopies([32mint[m newCopies);[17;9H[32mvoid[m changeCheckouts([32mint[m newCheckOuts);[18;9H[32mvoid[m changeHolds([32mint[m newHolds);[19;9H[32mint[m returnID();[20;9H[32mvoid[m returnAllVar([32mint[m &currentid, [32mchar[m currentTitle[], [32mchar[m curree[21;1HntAuthor[], [32mint[m &currentCopies, [32mint[m &currentCheckouts, [32mint[m &currentHolds))[22;1H;
-  [33mprivate[m:[24;9H[32mint[m id;
+    Book();[10;9H[32mvoid[m assignBook([32mint[m newID, [32mchar[m newTitle[], [32mchar[m newAuthor[], [32mintt[m[11;1H newCopies, [32mint[m newCheckOuts, [32mint[m newHolds);[12;9H[32mvoid[m printBook();[13;9H[32mvoid[m changeID([32mint[m newID);[14;9H[32mvoid[m changeTitle([32mchar[m newTitle[]);[15;9H[32mvoid[m changeAuthor([32mchar[m newAuthor[]);[16;9H[32mvoid[m changeCopies([32mint[m newCopies);[17;9H[32mvoid[m changeCheckouts([32mint[m newCheckOuts);[18;9H[32mvoid[m changeHolds([32mint[m newHolds);[19;9H[32mint[m returnID();[20;9H[32mint[m returnCopies();[21;9H[32mvoid[m returnAllVar([32mint[m &currentid, [32mchar[m currentTitle[], [32mchar[m curree[22;1HntAuthor[], [32mint[m &currentCopies, [32mint[m &currentCheckouts, [32mint[m &currentHolds))[23;1H;
+  [33mprivate[m:[25;9H[32mint[m id;
     [32mchar[m title[[31m250[m];
     [32mchar[m author[[31m250[m];
     [32mint[m copies;
@@ -39,7 +57,7 @@ Book::Book(){[10;9Hid = [31m0[m;[11;9Hstrcpy(title, [31m"[m[35m\0[m[31m
 };
 
 [35m#endif[m
-[1m[34m~                                                                        [34;1H~                                                                        [35;1H~                                                                        [36;1H~                                                                        [37;1H~                                                                        [38;1H~                                                                        [m[39;56H1,1[11CAll]2;book.h (~/Documents/cs162/projects/project3) - VIM]1;book.h[1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[39;1H[K[39;1H:[?12l[?25hq[?25l[?12l[?25h![?25l[?12l[?25h[?25l]2;pi@pi-machine: ~/Documents/cs162/projects/project3]1;pi@pi-machine: ~/Documents/cs162/projects/project3[39;1H[K[39;1H[?1l>[?12l[?25h[?1049l]0;pi@pi-machine: ~/Documents/cs162/projects/project3pi@pi-machine:~/Documents/cs162/projects/project3$ vi catalog.h
+[1m[34m~                                                                        [35;1H~                                                                        [36;1H~                                                                        [37;1H~                                                                        [38;1H~                                                                        [m[39;56H1,1[11CAll]2;book.h (~/Documents/cs162/projects/project3) - VIM]1;book.h[1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[39;1H[K[39;1H:[?12l[?25hq[?25l[?12l[?25h![?25l[?12l[?25h[?25l]2;pi@pi-machine: ~/Documents/cs162/projects/project3]1;pi@pi-machine: ~/Documents/cs162/projects/project3[39;1H[K[39;1H[?1l>[?12l[?25h[?1049l]0;pi@pi-machine: ~/Documents/cs162/projects/project3pi@pi-machine:~/Documents/cs162/projects/project3$ vi catalog.h 
 [?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;39r[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[39;1H"catalog.h" 29L, 528C[>c[1;1H[34m//Dan Siegel
 //Project 3
 //Header File for Catalog Class[m
@@ -58,8 +76,8 @@ Book::Book(){[10;9Hid = [31m0[m;[11;9Hstrcpy(title, [31m"[m[35m\0[m[31m
 };
 
 [35m#endif[m
-[1m[34m~                                                                        [32;1H~                                                                        [33;1H~                                                                        [34;1H~                                                                        [35;1H~                                                                        [36;1H~                                                                        [37;1H~                                                                        [38;1H~                                                                        [m[39;56H1,1[11CAll]2;catalog.h (~/Documents/cs162/projects/project3) - VIM]1;catalog.h[1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[39;1H[K[39;1H:[?12l[?25hq[?25l[?12l[?25h![?25l[?12l[?25h[?25l]2;pi@pi-machine: ~/Documents/cs162/projects/project3]1;pi@pi-machine: ~/Documents/cs162/projects/project3[39;1H[K[39;1H[?1l>[?12l[?25h[?1049l]0;pi@pi-machine: ~/Documents/cs162/projects/project3pi@pi-machine:~/Documents/cs162/projects/project3$ vi catalog.h[Kcpp 
-[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;39r[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[39;1H"catalog.cpp" 207L, 6073C[>c[1;1H[34m//Dan Siegel
+[1m[34m~                                                                        [32;1H~                                                                        [33;1H~                                                                        [34;1H~                                                                        [35;1H~                                                                        [36;1H~                                                                        [37;1H~                                                                        [38;1H~                                                                        [m[39;56H1,1[11CAll]2;catalog.h (~/Documents/cs162/projects/project3) - VIM]1;catalog.h[1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[39;1H[K[39;1H:[?12l[?25hq[?25l[?12l[?25h![?25l[?12l[?25h[?25l]2;pi@pi-machine: ~/Documents/cs162/projects/project3]1;pi@pi-machine: ~/Documents/cs162/projects/project3[39;1H[K[39;1H[?1l>[?12l[?25h[?1049l]0;pi@pi-machine: ~/Documents/cs162/projects/project3pi@pi-machine:~/Documents/cs162/projects/project3$ vi catalog.h [K[Kc[[[K[Kpp
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;39r[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[39;1H"catalog.cpp" 215L, 6466C[>c[1;1H[34m//Dan Siegel
 //Project 3
 //Implementation File for Catalog Class[m
 
@@ -75,24 +93,10 @@ catalog::catalog(){ [34m//constructor[m[14;9HnumberOfBooks = [31m0[m;[15;9
 
 }
 
-[32mvoid[m catalog::printAllBooks(){[36;9Hcout << [31m"[m[35m%%%%%%[m[31m Book Catalog [m[35m%%%%%%[m[31m"[m << endl;[37;9H[33mfor[m ([32mint[m i = [31m0[m; i < numberOfBooks; i++){[38;9Hbooklist[i].printBook();[39;56H1,1[11CTop]2;catalog.cpp (~/Documents/cs162/projects/project3) - VIM]1;catalog.cpp[1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[39;1H[K[39;1H:[?12l[?25hq[?25l[?12l[?25h![?25l[?12l[?25h[?25l]2;pi@pi-machine: ~/Documents/cs162/projects/project3]1;pi@pi-machine: ~/Documents/cs162/projects/project3[39;1H[K[39;1H[?1l>[?12l[?25h[?1049l]0;pi@pi-machine: ~/Documents/cs162/projects/project3pi@pi-machine:~/Documents/cs162/projects/project3$ vi project3.cpp 
-[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;39r[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[39;1H"project3.cpp" 44L, 826C[>c[1;1H[34m//Dan Siegel
-//Project 3[m
-[35m#include [m[31m<iostream>[m
-[35m#include [m[31m<fstream>[m
-[35m#include [m[31m<cstring>[m
-[35m#include [m[31m"book.h"[m
-[35m#include [m[31m"catalog.h"[m
-
-
-[33musing[m [32mnamespace[m std;
-
-[32mvoid[m callFunction([32mint[m selection, catalog& usersClass){[13;9H[33mswitch[m(selection){[14;17H[33mcase[m [31m1[m: usersClass.printAllBooks(); [34m//print catalog [m[15;33H[33mbreak[m;[16;17H[33mcase[m [31m2[m: usersClass.newBook();[34m//add new book     [m[17;17H[33mcase[m [31m3[m:[18;25HusersClass.updateBook();[34m//Update book functions[m[19;25H[33mbreak[m;[20;17H[33mcase[m [31m4[m: usersClass.writeFile(); [34m//quit and write to file[m[21;9H}
-}
-
-[32mint[m main() {[25;9H[32mint[m choice;[26;9Hcatalog catalog1;[27;9H[33mdo[m {[28;17Hcatalog1.menu();[29;17Hcin >> choice;[30;17H[33mif[m (choice > [31m0[m && choice < [31m5[m){[31;25HcallFunction(choice, catalog1);[32;25H[33mif[m (choice != [31m4[m){[33;33Hcin.clear();[34;33Hcin.ignore();[35;25H}[36;17H} [33melse[m {[37;25Hcout << [31m"invalid selection, try again"[m << endl;[38;25Hcin.clear();[39;56H1,1[11CTop]2;project3.cpp (~/Documents/cs162/projects/project3) - VIM]1;project3.cpp[1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[39;1H[K[39;1H:[?12l[?25hq[?25l[?12l[?25h![?25l[?12l[?25h[?25l]2;pi@pi-machine: ~/Documents/cs162/projects/project3]1;pi@pi-machine: ~/Documents/cs162/projects/project3[39;1H[K[39;1H[?1l>[?12l[?25h[?1049l]0;pi@pi-machine: ~/Documents/cs162/projects/project3pi@pi-machine:~/Documents/cs162/projects/project3$ make
-make: 'output' is up to date.
-]0;pi@pi-machine: ~/Documents/cs162/projects/project3pi@pi-machine:~/Documents/cs162/projects/project3$ /[K./output 
+[32mvoid[m catalog::printAllBooks(){[36;9Hcout << [31m"[m[35m%%%%%%[m[31m Book Catalog [m[35m%%%%%%[m[31m"[m << endl;[37;9H[33mfor[m ([32mint[m i = [31m0[m; i < numberOfBooks; i++){[38;9Hbooklist[i].printBook();[39;56H1,1[11CTop]2;catalog.cpp (~/Documents/cs162/projects/project3) - VIM]1;catalog.cpp[1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[39;1H[K[39;1H:[?12l[?25hq[?25l[?12l[?25h![?25l[?12l[?25h[?25l]2;pi@pi-machine: ~/Documents/cs162/projects/project3]1;pi@pi-machine: ~/Documents/cs162/projects/project3[39;1H[K[39;1H[?1l>[?12l[?25h[?1049l]0;pi@pi-machine: ~/Documents/cs162/projects/project3pi@pi-machine:~/Documents/cs162/projects/project3$ make
+g++ -c catalog.cpp
+g++  project3.o catalog.o book.o -o output
+]0;pi@pi-machine: ~/Documents/cs162/projects/project3pi@pi-machine:~/Documents/cs162/projects/project3$ ./output 
 
 *********Main Menu*********
 1 - Print Catalog
@@ -128,14 +132,14 @@ Number of Holds: 0
 4 - Quit
 Enter choice: 
 2
-ID of book? 20
+ID of book? 2- 0
 ID already taken. Enter unique ID. 
 40
 Title of book?War and Peace
-Author name?Leo Tolstoy
-Number of copies?-3
-Invalid number of copies
-Number of copies? 3
+Author name?Leo tolstoy
+Number of copies?3
+enter ID of book: (or enter -1 to see a list of books) or 0 to exit 1
+Invalid Entry
 enter ID of book: (or enter -1 to see a list of books) or 0 to exit 0
 
 *********Main Menu*********
@@ -166,7 +170,7 @@ Number of Holds: 0
 -------------------------
 -----40-----
 Title: War and Peace
-Author: Leo Tolstoy
+Author: Leo tolstoy
 Number of Copies: 3
 Number of Holds: 0
 -------------------------
@@ -210,7 +214,7 @@ Which field to change?
 6 - Holds
 7 - Quit
 3
-Author of book?samuel clemens
+Author of book?Sam Clemens
 Which field to change?
 1 - ID
 2 - Title
@@ -220,8 +224,21 @@ Which field to change?
 6 - Holds
 7 - Quit
 4
-New Number of Copies: -4
+New Number of Copies: -5
 Enter a valid number of copies: 
+4
+Which field to change?
+1 - ID
+2 - Title
+3 - Author
+4 - Copies
+5 - Checkouts
+6 - Holds
+7 - Quit
+5
+New Number of Checkouts: 
+8
+Only 4 number of copies
 4
 Which field to change?
 1 - ID
@@ -239,19 +256,156 @@ Which field to change?
 3 - Modify a Book
 4 - Quit
 Enter choice: 
+1
+%%%%%% Book Catalog %%%%%%
+-----10-----
+Title: Huck Finn
+Author: Sam Clemens
+Number of Copies: 4
+Number of Holds: 0
+-------------------------
+-----60-----
+Title: Huckleberry Finn
+Author: Mark Twain
+Number of Copies: 1
+Number of Holds: 5
+-------------------------
+-----30-----
+Title: A Tale of Two Cities
+Author: Charles Dickens
+Number of Copies: 3
+Number of Holds: 0
+-------------------------
+-----40-----
+Title: War and Peace
+Author: Leo tolstoy
+Number of Copies: 3
+Number of Holds: 0
+-------------------------
+
+*********Main Menu*********
+1 - Print Catalog
+2 - Add New Book
+3 - Modify a Book
+4 - Quit
+Enter choice: 
+^[[D    
 4
 *** Catalog Written Out ***
-]0;pi@pi-machine: ~/Documents/cs162/projects/project3pi@pi-machine:~/Documents/cs162/projects/project3$ ./output [5Pmake
+]0;pi@pi-machine: ~/Documents/cs162/projects/project3pi@pi-machine:~/Documents/cs162/projects/project3$ vi newlibrary.txt 
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;39r[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[39;1H"newlibrary.txt" 25L, 151C[>c[1;1H4
+10
+Huck Finn
+Sam Clemens
+4
+4
+0
+60
+Huckleberry Finn
+Mark Twain
+1
+1
+5
+30
+A Tale of Two Cities
+Charles Dickens
+3
+2
+0
+40
+War and Peace
+Leo tolstoy
+3
+0
+0
+[1m[34m~                                                                        [27;1H~                                                                        [28;1H~                                                                        [29;1H~                                                                        [30;1H~                                                                        [31;1H~                                                                        [32;1H~                                                                        [33;1H~                                                                        [34;1H~                                                                        [35;1H~                                                                        [36;1H~                                                                        [37;1H~                                                                        [38;1H~                                                                        [m[39;56H1,1[11CAll]2;newlibrary.txt (~/Documents/cs162/projects/project3) - VIM]1;newlibrary.txt[1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[39;1H[K[39;1H:[?12l[?25hq[?25l[?12l[?25h![?25l[?12l[?25h[?25l]2;pi@pi-machine: ~/Documents/cs162/projects/project3]1;pi@pi-machine: ~/Documents/cs162/projects/project3[39;1H[K[39;1H[?1l>[?12l[?25h[?1049l]0;pi@pi-machine: ~/Documents/cs162/projects/project3pi@pi-machine:~/Documents/cs162/projects/project3$ exit
+exit
+
+Script done on Thu 11 May 2017 07:25:43 PM PDT
+[m [31m2[m: usersClass.newBook();[34m//add new book     [m[17;17H[33mcase[m [31m3[m:[18;25HusersClass.updateBook();[34m//Update book functions[m[19;25H[33mbreak[m;[20;17H[33mcase[m [31m4[m: usersClass.writeFile(); [34m//quit and write to file[m[21;9H}
+}
+
+[32mint[m main() {[25;9H[32mint[m choice;[26;9Hcatalog catalog1;[27;9H[33mdo[m {[28;17Hcatalog1.menu();[29;17Hcin >> choice;[30;17H[33mif[m (choice > [31m0[m && choice < [31m5[m){[31;25HcallFunction(choice, catalog1);[32;25H[33mif[m (choice != [31m4[m){[33;33Hcin.clear();[34;33Hcin.ignore();[35;25H}[36;17H} [33melse[m {[37;25Hcout << [31m"invalid selection, try again"[m << endl;[38;25Hcin.clear();[39;56H1,1[11CTop]2;project3.cpp (~/Documents/cs162/projects/project3) - VIM]1;project3.cpp[1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[39;1H[K[39;1H:[?12l[?25hq[?25l[?12l[?25h![?25l[?12l[?25h[?25l]2;pi@pi-machine: ~/Documents/cs162/projects/project3]1;pi@pi-machine: ~/Documents/cs162/projects/project3[39;1H[K[39;1H[?1l>[?12l[?25h[?1049l]0;pi@pi-machine: ~/Documents/cs162/projects/project3pi@pi-machine:~/Documents/cs162/projects/project3$ vi book.
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;39r[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[39;1H"book." [New File][>c[2;1H[1m[34m~                                                                        [3;1H~                                                                        [4;1H~                                                                        [5;1H~                                                                        [6;1H~                                                                        [7;1H~                                                                        [8;1H~                                                                        [9;1H~                                                                        [10;1H~                                                                        [11;1H~                                                                        [12;1H~                                                                        [13;1H~                                                                        [14;1H~                                                                        [15;1H~                                                                        [16;1H~                                                                        [17;1H~                                                                        [18;1H~                                                                        [19;1H~                                                                        [20;1H~                                                                        [21;1H~                                                                        [22;1H~                                                                        [23;1H~                                                                        [24;1H~                                                                        [25;1H~                                                                        [26;1H~                                                                        [27;1H~                                                                        [28;1H~                                                                        [29;1H~                                                                        [30;1H~                                                                        [31;1H~                                                                        [32;1H~                                                                        [33;1H~                                                                        [34;1H~                                                                        [35;1H~                                                                        [36;1H~                                                                        [37;1H~                                                                        [38;1H~                                                                        [m[39;56H0,0-1[9CAll]2;book. (~/Documents/cs162/projects/project3) - VIM]1;book.[1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[39;1H[K[39;1H:[?12l[?25hq[?25l[?12l[?25h![?25l[?12l[?25h[?25l]2;pi@pi-machine: ~/Documents/cs162/projects/project3]1;pi@pi-machine: ~/Documents/cs162/projects/project3[39;1H[K[39;1H[?1l>[?12l[?25h[?1049l]0;pi@pi-machine: ~/Documents/cs162/projects/project3pi@pi-machine:~/Documents/cs162/projects/project3$ vi book.cpp 
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;39r[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[39;1H"book.cpp" 82L, 1795C[>c[1;1H[34m//Dan Siegel
+//Project 3[m
+[35m#include [m[31m<iostream>[m
+[35m#include [m[31m<cstring>[m
+[35m#include [m[31m"book.h"[m
+
+[33musing[m [32mnamespace[m std;
+
+Book::Book(){[10;9Hid = [31m0[m;[11;9Hstrcpy(title, [31m"[m[35m\0[m[31m"[m);[12;9Hstrcpy(author, [31m"[m[35m\0[m[31m"[m);[13;9Hcopies = [31m0[m;[14;9HcheckOuts = [31m0[m;[15;9Hholds = [31m0[m;
+}
+
+[34m//Printing Functions
+//Print All Variables [m
+[32mvoid[m Book::printBook(){[21;9Hcout << [31m"-----"[m << id << [31m"-----"[m << endl;[22;9Hcout << [31m"Title: "[m << title << endl;[23;9Hcout << [31m"Author: "[m << author << endl;[24;9Hcout << [31m"Number of Copies: "[m << copies << endl;[25;9Hcout << [31m"Number of Holds: "[m << holds << endl;[26;9Hcout << [31m"-------------------------"[m << endl;
+}
+[34m//Return functions
+//Return ID[m
+[32mint[m Book::returnID(){[31;9H[33mreturn[m id;
+}
+[32mint[m Book::returnCopies(){[34;9H[33mreturn[m copies;
+}
+
+[32mvoid[m Book::returnAllVar([32mint[m &currentid, [32mchar[m currentTitle[], [32mchar[m currentt[38;1HAuthor[], [32mint[m &currentCopies, [32mint[m &currentCheckouts, [32mint[m &currentHolds){[39;56H1,1[11CTop]2;book.cpp (~/Documents/cs162/projects/project3) - VIM]1;book.cpp[1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[39;1H[K[39;1H:[?12l[?25hq[?25l[?12l[?25h![?25l[?12l[?25h[?25l]2;pi@pi-machine: ~/Documents/cs162/projects/project3]1;pi@pi-machine: ~/Documents/cs162/projects/project3[39;1H[K[39;1H[?1l>[?12l[?25h[?1049l]0;pi@pi-machine: ~/Documents/cs162/projects/project3pi@pi-machine:~/Documents/cs162/projects/project3$ vi book.cpp [K[K[K[Kh
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;39r[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[39;1H"book.h" 30L, 763C[>c[1;1H[34m//Dan Siegel
+//Project 3
+//Header File for Book Class[m
+[35m#ifndef BOOK_H
+#define BOOK_H[m
+
+[32mclass[m Book {
+  [33mpublic[m:
+    Book();[10;9H[32mvoid[m assignBook([32mint[m newID, [32mchar[m newTitle[], [32mchar[m newAuthor[], [32mintt[m[11;1H newCopies, [32mint[m newCheckOuts, [32mint[m newHolds);[12;9H[32mvoid[m printBook();[13;9H[32mvoid[m changeID([32mint[m newID);[14;9H[32mvoid[m changeTitle([32mchar[m newTitle[]);[15;9H[32mvoid[m changeAuthor([32mchar[m newAuthor[]);[16;9H[32mvoid[m changeCopies([32mint[m newCopies);[17;9H[32mvoid[m changeCheckouts([32mint[m newCheckOuts);[18;9H[32mvoid[m changeHolds([32mint[m newHolds);[19;9H[32mint[m returnID();[20;9H[32mint[m returnCopies();[21;9H[32mvoid[m returnAllVar([32mint[m &currentid, [32mchar[m currentTitle[], [32mchar[m curree[22;1HntAuthor[], [32mint[m &currentCopies, [32mint[m &currentCheckouts, [32mint[m &currentHolds))[23;1H;
+  [33mprivate[m:[25;9H[32mint[m id;
+    [32mchar[m title[[31m250[m];
+    [32mchar[m author[[31m250[m];
+    [32mint[m copies;
+    [32mint[m checkOuts;
+    [32mint[m holds;
+};
+
+[35m#endif[m
+[1m[34m~                                                                        [35;1H~                                                                        [36;1H~                                                                        [37;1H~                                                                        [38;1H~                                                                        [m[39;56H1,1[11CAll]2;book.h (~/Documents/cs162/projects/project3) - VIM]1;book.h[1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[39;1H[K[39;1H:[?12l[?25hq[?25l[?12l[?25h![?25l[?12l[?25h[?25l]2;pi@pi-machine: ~/Documents/cs162/projects/project3]1;pi@pi-machine: ~/Documents/cs162/projects/project3[39;1H[K[39;1H[?1l>[?12l[?25h[?1049l]0;pi@pi-machine: ~/Documents/cs162/projects/project3pi@pi-machine:~/Documents/cs162/projects/project3$ vi catalog.h 
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;39r[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[39;1H"catalog.h" 29L, 528C[>c[1;1H[34m//Dan Siegel
+//Project 3
+//Header File for Catalog Class[m
+[35m#ifndef CATALOG_H
+#define CATALOG_H
+#include [m[31m"book.h"[m
+
+
+[32mclass[m Book;
+
+[32mclass[m catalog {
+  [33mpublic[m:[13;9Hcatalog();
+    [32mvoid[m menu();[15;9H[32mvoid[m printAllBooks();[16;9H[32mvoid[m newBook();[17;9H[32mvoid[m idCompare([32mint[m bookNumber, [32mbool[m &foundflag, [32mint[m userNumber, [32mii[18;1Hnt[m tempCompare, [32mint[m &bookFoundAn);[19;9H[32mvoid[m updateBook();[20;9H[32mvoid[m writeFile();
+  [33mprivate[m:[22;9H[32mchar[m tempTitle[[31m250[m];[23;9H[32mchar[m tempAuthor[[31m250[m];[24;9H[32mint[m tempID, tempCopies, tempCheckOuts, tempHolds;[25;9H[32mint[m numberOfBooks;[26;9HBook booklist[[31m100[m];
+
+};
+
+[35m#endif[m
+[1m[34m~                                                                        [32;1H~                                                                        [33;1H~                                                                        [34;1H~                                                                        [35;1H~                                                                        [36;1H~                                                                        [37;1H~                                                                        [38;1H~                                                                        [m[39;56H1,1[11CAll]2;catalog.h (~/Documents/cs162/projects/project3) - VIM]1;catalog.h[1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[39;1H[K[39;1H:[?12l[?25hq[?25l[?12l[?25h![?25l[?12l[?25h[?25l]2;pi@pi-machine: ~/Documents/cs162/projects/project3]1;pi@pi-machine: ~/Documents/cs162/projects/project3[39;1H[K[39;1H[?1l>[?12l[?25h[?1049l]0;pi@pi-machine: ~/Documents/cs162/projects/project3pi@pi-machine:~/Documents/cs162/projects/project3$ vi catalog.h [K[Kc[[[K[Kpp
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;39r[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[39;1H"catalog.cpp" 215L, 6466C[>c[1;1H[34m//Dan Siegel
+//Project 3
+//Implementation File for Catalog Class[m
+
+[35m#include [m[31m<iostream>[m
+[35m#include [m[31m<fstream>[m
+[35m#include [m[31m<cstring>[m
+[35m#include [m[31m"catalog.h"[m
+[35m#include [m[31m"book.h"[m
+
+[33musing[m [32mnamespace[m std;
+
+catalog::catalog(){ [34m//constructor[m[14;9HnumberOfBooks = [31m0[m;[15;9Hifstream libraryBooks([31m"library.txt"[m);[16;9H[33mif[m(libraryBooks){ [34m//if file opens correctly, read in contents. [m[17;17HlibraryBooks >> numberOfBooks;[18;17H[33mfor[m ([32mint[m i = [31m0[m; i < numberOfBooks; i++){[19;25HlibraryBooks >> tempID;[20;25HlibraryBooks.clear();[21;25HlibraryBooks.ignore([31m100[m, [35m'\n'[m);[22;25HlibraryBooks.getline(tempTitle, [31m250[m, [35m'\n'[m);[23;25HlibraryBooks.getline(tempAuthor, [31m250[m, [35m'\n'[m);[24;25HlibraryBooks.clear();[25;25HlibraryBooks >> tempCopies >> tempCheckOuts >> tee[26;1HmpHolds;[27;25Hbooklist[i].assignBook(tempID, tempTitle, tempAutt[28;1Hhor, tempCopies, tempCheckOuts, tempHolds);[29;17H}[30;17HlibraryBooks.close();[31;9H}
+
+}
+
+[32mvoid[m catalog::printAllBooks(){[36;9Hcout << [31m"[m[35m%%%%%%[m[31m Book Catalog [m[35m%%%%%%[m[31m"[m << endl;[37;9H[33mfor[m ([32mint[m i = [31m0[m; i < numberOfBooks; i++){[38;9Hbooklist[i].printBook();[39;56H1,1[11CTop]2;catalog.cpp (~/Documents/cs162/projects/project3) - VIM]1;catalog.cpp[1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[39;1H[K[39;1H:[?12l[?25hq[?25l[?12l[?25h![?25l[?12l[?25h[?25l]2;pi@pi-machine: ~/Documents/cs162/projects/project3]1;pi@pi-machine: ~/Documents/cs162/projects/project3[39;1H[K[39;1H[?1l>[?12l[?25h[?1049l]0;pi@pi-machine: ~/Documents/cs162/projects/project3pi@pi-machine:~/Documents/cs162/projects/project3$ make
 g++ -c catalog.cpp
-[01m[Kcatalog.cpp:[m[K In member function ‘[01m[Kvoid catalog::updateBook()[m[K’:
-[01m[Kcatalog.cpp:112:6:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[KtempCheckOuts[m[K’
-      tempCheckOuts = -1;
-[01;32m[K      ^[m[K
-Makefile:9: recipe for target 'catalog.o' failed
-make: *** [catalog.o] Error 1
-]0;pi@pi-machine: ~/Documents/cs162/projects/project3pi@pi-machine:~/Documents/cs162/projects/project3$ make
-g++ -c catalog.cpp
-g++ -c book.cpp
 g++  project3.o catalog.o book.o -o output
 ]0;pi@pi-machine: ~/Documents/cs162/projects/project3pi@pi-machine:~/Documents/cs162/projects/project3$ ./output 
 
@@ -288,39 +442,49 @@ Number of Holds: 0
 3 - Modify a Book
 4 - Quit
 Enter choice: 
-3
-enter ID of book: (or enter -1 to see a list of books) or 0 to exit 10
-Which field to change?
-1 - ID
-2 - Title
-3 - Author
-4 - Copies
-5 - Checkouts
-6 - Holds
-7 - Quit
-5
-New Number of Checkouts: 
-3
-Enter a valid number of checkouts 
-4
-Enter a valid number of checkouts 
 2
-Enter a valid number of checkouts 
+ID of book? 2- 0
+ID already taken. Enter unique ID. 
+40
+Title of book?War and Peace
+Author name?Leo tolstoy
+Number of copies?3
+enter ID of book: (or enter -1 to see a list of books) or 0 to exit 1
+Invalid Entry
+enter ID of book: (or enter -1 to see a list of books) or 0 to exit 0
+
+*********Main Menu*********
+1 - Print Catalog
+2 - Add New Book
+3 - Modify a Book
+4 - Quit
+Enter choice: 
 1
-Enter a valid number of checkouts 
-2
-Enter a valid number of checkouts 
-222
-Enter a valid number of checkouts 
-2
-Enter a valid number of checkouts 
-^C
-]0;pi@pi-machine: ~/Documents/cs162/projects/project3pi@pi-machine:~/Documents/cs162/projects/project3$ ./output [5Pmake
-g++ -c catalog.cpp
-g++  project3.o catalog.o book.o -o output
-]0;pi@pi-machine: ~/Documents/cs162/projects/project3pi@pi-machine:~/Documents/cs162/projects/project3$ ./.
-bash: ./.: Is a directory
-]0;pi@pi-machine: ~/Documents/cs162/projects/project3pi@pi-machine:~/Documents/cs162/projects/project3$ ./.[Koutput 
+%%%%%% Book Catalog %%%%%%
+-----10-----
+Title: Great Expectations
+Author: Charles Dickens
+Number of Copies: 2
+Number of Holds: 0
+-------------------------
+-----20-----
+Title: Huckleberry Finn
+Author: Mark Twain
+Number of Copies: 1
+Number of Holds: 5
+-------------------------
+-----30-----
+Title: A Tale of Two Cities
+Author: Charles Dickens
+Number of Copies: 3
+Number of Holds: 0
+-------------------------
+-----40-----
+Title: War and Peace
+Author: Leo tolstoy
+Number of Copies: 3
+Number of Holds: 0
+-------------------------
 
 *********Main Menu*********
 1 - Print Catalog
@@ -329,7 +493,51 @@ bash: ./.: Is a directory
 4 - Quit
 Enter choice: 
 3
-enter ID of book: (or enter -1 to see a list of books) or 0 to exit 10
+enter ID of book: (or enter -1 to see a list of books) or 0 to exit 20
+Which field to change?
+1 - ID
+2 - Title
+3 - Author
+4 - Copies
+5 - Checkouts
+6 - Holds
+7 - Quit
+1
+New Book ID? 10
+Pick another number, that one is being used
+60
+Which field to change?
+1 - ID
+2 - Title
+3 - Author
+4 - Copies
+5 - Checkouts
+6 - Holds
+7 - Quit
+2
+Title of book?Huck Finn
+Which field to change?
+1 - ID
+2 - Title
+3 - Author
+4 - Copies
+5 - Checkouts
+6 - Holds
+7 - Quit
+3
+Author of book?Sam Clemens
+Which field to change?
+1 - ID
+2 - Title
+3 - Author
+4 - Copies
+5 - Checkouts
+6 - Holds
+7 - Quit
+4
+New Number of Copies: -5
+Enter a valid number of copies: 
+4
 Which field to change?
 1 - ID
 2 - Title
@@ -340,12 +548,9 @@ Which field to change?
 7 - Quit
 5
 New Number of Checkouts: 
-3
-Only 0number of copies
-2
-Only 0number of copies
-0- 
-Enter a valid number of checkouts 
+8
+Only 4 number of copies
+4
 Which field to change?
 1 - ID
 2 - Title
@@ -353,4 +558,32 @@ Which field to change?
 4 - Copies
 5 - Checkouts
 6 - Holds
-7 - 
+7 - Quit
+7
+
+*********Main Menu*********
+1 - Print Catalog
+2 - Add New Book
+3 - Modify a Book
+4 - Quit
+Enter choice: 
+1
+%%%%%% Book Catalog %%%%%%
+-----10-----
+Title: Huck Finn
+Author: Sam Clemens
+Number of Copies: 4
+Number of Holds: 0
+-------------------------
+-----60-----
+Title: Huckleberry Finn
+Author: Mark Twain
+Number of Copies: 1
+Number of Holds: 5
+-------------------------
+-----30-----
+Title: A Tale of Two Cities
+Author: Charles Dickens
+Number of Copies: 3
+Number of Holds: 0
+--------
