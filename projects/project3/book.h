@@ -6,7 +6,7 @@
 
 class Book {
   public:
-    book();
+    void book();
 	void assignBook(int newID, char newTitle[], char newAuthor[], int newCopies, int newCheckOuts, int newHolds);
 	void printBook();
 	void changeID(int newID);

@@ -22,7 +22,7 @@ class catalog {
 	char tempAuthor[250];   
 	int tempID, tempCopies, tempCheckOuts, tempHolds;
 	int numberOfBooks; 
-	book booklist[100];
+	Book booklist[100];
 		
 };
 

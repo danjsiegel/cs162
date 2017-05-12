@@ -2,17 +2,22 @@
 //Project 3
 #include <iostream>
 #include <cstring>
-#include "Book.h"
+#include "book.h"
 
 using namespace std;
 
-Book::book(){ //constructor
-	
+void Book::book(){ 
+	id = 0;
+	strcpy("NA", title);
+	strcpy("NA", author);
+	copies = 0;
+	checkOuts = 0;
+	holds = 0;
 }
 
 //Printing Functions
 //Print All Variables 
-void book::printBook(){
+void Book::printBook(){
 	cout << "-----" << id << "-----" << endl;
 	cout << "Title: " << title << endl;
 	cout << "Author: " << author << endl;
