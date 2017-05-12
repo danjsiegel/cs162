@@ -6,7 +6,7 @@
 
 class Book {
   public:
-    void book();
+    Book();
 	void assignBook(int newID, char newTitle[], char newAuthor[], int newCopies, int newCheckOuts, int newHolds);
 	void printBook();
 	void changeID(int newID);
@@ -16,6 +16,7 @@ class Book {
 	void changeCheckouts(int newCheckOuts);
 	void changeHolds(int newHolds);
 	int returnID();
+	int returnCopies();
 	void returnAllVar(int &currentid, char currentTitle[], char currentAuthor[], int &currentCopies, int &currentCheckouts, int &currentHolds);
   private:
 	int id;

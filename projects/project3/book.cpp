@@ -6,11 +6,10 @@
 
 using namespace std;
 
-void Book::book(){ 
-	//char blank[1] = {'\0'};	
+Book::Book(){ 	
 	id = 0;
-	//strcpy(blank, title);
-	//strcpy(blank, author);
+	strcpy(title, "\0");
+	strcpy(author, "\0");
 	copies = 0;
 	checkOuts = 0;
 	holds = 0;
@@ -30,6 +29,9 @@ void Book::printBook(){
 //Return ID
 int Book::returnID(){
 	return id; 
+}
+int Book::returnCopies(){
+	return copies; 
 }
 
 void Book::returnAllVar(int &currentid, char currentTitle[], char currentAuthor[], int &currentCopies, int &currentCheckouts, int &currentHolds){

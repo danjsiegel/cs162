@@ -13,9 +13,6 @@ using namespace std;
 catalog::catalog(){ //constructor
 	numberOfBooks = 0;
 	ifstream libraryBooks("library.txt");
-	for (int i = 0; i < 99; i++){		
-		booklist[i].book();
-	}		
 	if(libraryBooks){ //if file opens correctly, read in contents. 
 		libraryBooks >> numberOfBooks;
 		for (int i = 0; i < numberOfBooks; i++){
@@ -111,19 +108,24 @@ void catalog::updateBook(){
 					break;
 				case 5:
 					cout << "New Number of Checkouts: " << endl;
+					tempCopies = booklist[bookWorkingOn].returnCopies();	
 					tempCheckOuts = -1;
 					while (tempCheckOuts < 0){
 						cin >> tempCheckOuts;
-						if (!tempCopies || tempCheckOuts < 0){
+						if (!tempCheckOuts || tempCheckOuts < 0){
 						cout << "Enter a valid number of checkouts " << endl;
 					 	cin.clear();
 						cin.ignore();
-						} 					
+						} else if (tempCheckOuts > tempCopies){
+							cout << "Only " << tempCopies << " number of copies" << endl;
+							tempCheckOuts = -1;
+						}
 					}
 					booklist[bookWorkingOn].changeCheckouts(tempCheckOuts);
 					break;
 				case 6:
 					cout << "New Number of Holds: " << endl;
+					tempCopies = booklist[bookWorkingOn].returnCopies();
 					tempHolds = -1;
 					while (tempHolds < 0){
 						cin >> tempHolds;
@@ -131,7 +133,10 @@ void catalog::updateBook(){
 						cout << "enter a valid number of Holds " << endl;
 					 	cin.clear();
 						cin.ignore();
-						} 					
+						} else if (tempHolds > tempCopies){
+							cout << "Only " << tempCopies << " number of copies" << endl;
+							tempCheckOuts = -1;
+						}					
 					}
 					booklist[bookWorkingOn].changeHolds(tempHolds);
 					break;

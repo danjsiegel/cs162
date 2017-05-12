@@ -3,7 +3,7 @@
 Great Expectations
 Charles Dickens
 2
-0
+2
 0
 20
 Huckleberry Finn
@@ -12,7 +12,7 @@ Mark Twain
 1
 5
 30
-A tale of 3 cities
+A Tale of Two Cities
 Charles Dickens
 3
 2
