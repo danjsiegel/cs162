@@ -1,0 +1,113 @@
+Script started on Thu 11 May 2017 06:59:38 PM PDT
+]0;pi@pi-machine: ~/Documents/cs162/labs/lab4pi@pi-machine:~/Documents/cs162/labs/lab4$ vi student.h 
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;39r[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[39;1H"student.h" 22L, 384C[>c[1;1H[34m//Dan Siegel
+//Lab4
+//Header File for Book Class[m
+[35m#ifndef STUDENT_H
+#define STUDENT_H[m
+
+[32mclass[m Student {
+  [33mpublic[m:[9;9HStudent();[10;9HStudent([32mchar[m first[], [32mchar[m last[], [32mdouble[m Ugpa);[11;9H[32mvoid[m setFirstName([32mchar[m fname[]);[12;9H[32mvoid[m setLastName([32mchar[m lname[]);[13;9H[32mvoid[m setGpa([32mdouble[m grade);[14;9H[32mvoid[m print();[15;9H[32mdouble[m getGpa();
+  [33mprivate[m:[17;9H[32mchar[m firstName[[31m200[m];[18;9H[32mchar[m lastName[[31m200[m];[19;9H[32mdouble[m gpa;
+};
+
+[35m#endif[m
+[1m[34m~                                                                        [24;1H~                                                                        [25;1H~                                                                        [26;1H~                                                                        [27;1H~                                                                        [28;1H~                                                                        [29;1H~                                                                        [30;1H~                                                                        [31;1H~                                                                        [32;1H~                                                                        [33;1H~                                                                        [34;1H~                                                                        [35;1H~                                                                        [36;1H~                                                                        [37;1H~                                                                        [38;1H~                                                                        [m[39;56H1,1[11CAll]2;student.h (~/Documents/cs162/labs/lab4) - VIM]1;student.h[1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[39;1H[K[39;1H:[?12l[?25hq[?25l[?12l[?25h![?25l[?12l[?25h[?25l]2;pi@pi-machine: ~/Documents/cs162/labs/lab4]1;pi@pi-machine: ~/Documents/cs162/labs/lab4[39;1H[K[39;1H[?1l>[?12l[?25h[?1049l]0;pi@pi-machine: ~/Documents/cs162/labs/lab4pi@pi-machine:~/Documents/cs162/labs/lab4$ vi student.h [K[Kcpp
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;39r[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[39;1H"student.cpp" 38L, 842C[>c[1;1H[34m//Dan Siegel
+//lab4[m
+[35m#include [m[31m<iostream>[m
+[35m#include [m[31m<cstring>[m
+[35m#include [m[31m"student.h"[m
+
+[33musing[m [32mnamespace[m std;
+
+Student::Student(){[10;9Hstrcpy(firstName, [31m"[m[35m\0[m[31m"[m);[11;9Hstrcpy(lastName, [31m"[m[35m\0[m[31m"[m);[12;9Hgpa = [31m0[m;
+}
+Student::Student([32mchar[m first[], [32mchar[m last[], [32mdouble[m Ugpa){[15;9Hstrcpy(firstName, first);[16;9Hstrcpy(lastName, last);[17;9Hgpa = Ugpa;
+}
+[32mvoid[m Student::setFirstName([32mchar[m fname[]){[20;9Hstrcpy(firstName, fname);
+}
+[32mvoid[m Student::setLastName([32mchar[m lname[]){[23;9Hstrcpy(lastName, lname);
+}
+[32mvoid[m Student::setGpa([32mdouble[m grade){[26;9H[33mif[m (!grade || (grade>[31m4[m) || (grade<[31m0[m)){[27;17Hcin.clear();[28;17Hcin.ignore();[29;17Hcout << [31m"invalid grade, grade needs to be between 0.0 andd[30;1H 4.0"[m;[31;9H} [33melse[m {gpa = grade;[32;9H}
+}
+[32mvoid[m Student::print(){[35;9Hcout << [31m"===== Student =====[m[35m\n[m[31m"[m << [31m"First Name: "[m << firstName <<<[36;1H [31m"[m[35m\n[m[31mLast Name: "[m << lastName << [31m"[m[35m\n[m[31m GPA: "[m << gpa << endl;
+}
+[32mdouble[m Student::getGpa(){[39;56H1,1[11CTop]2;student.cpp (~/Documents/cs162/labs/lab4) - VIM]1;student.cpp[1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[39;1H[K[39;1H:[?12l[?25hq[?25l[?12l[?25h![?25l[?12l[?25h[?25l]2;pi@pi-machine: ~/Documents/cs162/labs/lab4]1;pi@pi-machine: ~/Documents/cs162/labs/lab4[39;1H[K[39;1H[?1l>[?12l[?25h[?1049l]0;pi@pi-machine: ~/Documents/cs162/labs/lab4pi@pi-machine:~/Documents/cs162/labs/lab4$ vi Makefile 
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;39r[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[39;1H"Makefile" 12L, 199C[>c[2;1H[36mprog:[m studentmain.o student.o
+[31m        g++  studentmain.o student.o -o prog[m
+
+[36mstudentmain.o:[m studentmain.cpp
+[31m        g++ -c studentmain.cpp[m
+
+[36mstudent.o:[m student.cpp student.h
+[31m        g++ -c student.cpp[m
+[36mclean:[m
+[31m        rm -rf *.o[m
+
+[1m[34m~                                                                        [14;1H~                                                                        [15;1H~                                                                        [16;1H~                                                                        [17;1H~                                                                        [18;1H~                                                                        [19;1H~                                                                        [20;1H~                                                                        [21;1H~                                                                        [22;1H~                                                                        [23;1H~                                                                        [24;1H~                                                                        [25;1H~                                                                        [26;1H~                                                                        [27;1H~                                                                        [28;1H~                                                                        [29;1H~                                                                        [30;1H~                                                                        [31;1H~                                                                        [32;1H~                                                                        [33;1H~                                                                        [34;1H~                                                                        [35;1H~                                                                        [36;1H~                                                                        [37;1H~                                                                        [38;1H~                                                                        [m[39;56H1,0-1[9CAll]2;Makefile (~/Documents/cs162/labs/lab4) - VIM]1;Makefile[1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[39;1H[K[39;1H:[?12l[?25hq[?25l[?12l[?25h![?25l[?12l[?25h[?25l]2;pi@pi-machine: ~/Documents/cs162/labs/lab4]1;pi@pi-machine: ~/Documents/cs162/labs/lab4[39;1H[K[39;1H[?1l>[?12l[?25h[?1049l]0;pi@pi-machine: ~/Documents/cs162/labs/lab4pi@pi-machine:~/Documents/cs162/labs/lab4$ make
+g++ -c student.cpp
+g++  studentmain.o student.o -o prog
+]0;pi@pi-machine: ~/Documents/cs162/labs/lab4pi@pi-machine:~/Documents/cs162/labs/lab4$ ./prog 
+===== Student =====
+First Name: Penny
+Last Name: Hall
+ GPA: 3.5
+===== Student =====
+First Name: 
+Last Name: 
+ GPA: 0
+Changing stud1, First Name: 
+J Nancy
+===== Student =====
+First Name: Nancy
+Last Name: Hall
+ GPA: 3.5
+===== Student =====
+First Name: 
+Last Name: 
+ GPA: 0
+Changing stud2, First Name: 
+John
+===== Student =====
+First Name: Nancy
+Last Name: Hall
+ GPA: 3.5
+===== Student =====
+First Name: John
+Last Name: 
+ GPA: 0
+Changing stud2, Last Name: 
+Mack
+===== Student =====
+First Name: Nancy
+Last Name: Hall
+ GPA: 3.5
+===== Student =====
+First Name: John
+Last Name: Mack
+ GPA: 0
+Changing stud2, Enter new gpa: 3.5
+===== Student =====
+First Name: Nancy
+Last Name: Hall
+ GPA: 3.5
+===== Student =====
+First Name: John
+Last Name: Mack
+ GPA: 3.5
+changing stud1, Enter new gpa 4.6
+
+invalid grade, grade needs to be between 0.0 and 4.0===== Student =====
+First Name: Nancy
+Last Name: Hall
+ GPA: 3.5
+===== Student =====
+First Name: John
+Last Name: Mack
+ GPA: 3.5
+getting gpa of  stud1, 3.5
+]0;pi@pi-machine: ~/Documents/cs162/labs/lab4pi@pi-machine:~/Documents/cs162/labs/lab4$ exit
+exit
+
+Script done on Thu 11 May 2017 07:00:47 PM PDT

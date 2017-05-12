@@ -1,29 +1,22 @@
 //Dan Siegel
-//Project 3
+//Lab4
 //Header File for Book Class
-#ifndef BOOK_H
-#define BOOK_H
+#ifndef STUDENT_H
+#define STUDENT_H
 
-class Book {
+class Student {
   public:
-    void book();
-	void assignBook(int newID, char newTitle[], char newAuthor[], int newCopies, int newCheckOuts, int newHolds);
-	void printBook();
-	void changeID(int newID);
-	void changeTitle(char newTitle[]);
-	void changeAuthor(char newAuthor[]);
-	void changeCopies(int newCopies);
-	void changeCheckouts(int newCheckOuts);
-	void changeHolds(int newHolds);
-	int returnID();
-	void returnAllVar(int &currentid, char currentTitle[], char currentAuthor[], int &currentCopies, int &currentCheckouts, int &currentHolds);
+	Student();
+	Student(char first[], char last[], double Ugpa); 
+  	void setFirstName(char fname[]);
+	void setLastName(char lname[]);
+	void setGpa(double grade);
+	void print();
+	double getGpa(); 
   private:
-	int id;
-    char title[250];
-    char author[250];
-    int copies;
-    int checkOuts;
-    int holds;
+	char firstName[200];
+	char lastName[200];
+	double gpa;
 };
 
 #endif

@@ -2,78 +2,35 @@
 //lab4
 #include <iostream>
 #include <cstring>
-#include "book.h"
+#include "student.h"
 
 using namespace std;
 
-void Book::book(){ 
-	id = 0;
-	strcpy("NA", title);
-	strcpy("NA", author);
-	copies = 0;
-	checkOuts = 0;
-	holds = 0;
+Student::Student(){
+	strcpy(firstName, "\0");
+	strcpy(lastName, "\0");
+	gpa = 0;
 }
-
-//Printing Functions
-//Print All Variables 
-void Book::printBook(){
-	cout << "-----" << id << "-----" << endl;
-	cout << "Title: " << title << endl;
-	cout << "Author: " << author << endl;
-	cout << "Number of Copies: " << copies << endl;
-	cout << "Number of Holds: " << holds << endl;
-	cout << "-------------------------" << endl;
+Student::Student(char first[], char last[], double Ugpa){
+	strcpy(firstName, first);
+	strcpy(lastName, last);
+	gpa = Ugpa;
 }
-//Return functions
-//Return ID
-int Book::returnID(){
-	return id; 
+void Student::setFirstName(char fname[]){
+	strcpy(firstName, fname);
 }
-
-void Book::returnAllVar(int &currentid, char currentTitle[], char currentAuthor[], int &currentCopies, int &currentCheckouts, int &currentHolds){
-	currentid = id;
-	strcpy(currentTitle, title);
-	strcpy(currentAuthor, author);
-	currentCopies = copies;
-	currentCheckouts = checkOuts;
-	currentHolds = holds;	
-	
+void Student::setLastName(char lname[]){
+	strcpy(lastName, lname);
 }
-//void Book::returnAllBookVariables(){}
-//mutator functions:
-//Assign all data to a book
-void Book::assignBook(int newID, char newTitle[], char newAuthor[], int newCopies, int newCheckOuts, int newHolds){
-	id = newID; 
-	strcpy(title, newTitle);
-	strcpy(author, newAuthor);
-	copies = newCopies;
-	checkOuts = newCheckOuts;
-	holds = newHolds;	
+void Student::setGpa(double grade){
+	if (!grade || (grade>4) || (grade<0)){
+		cout << "invalid grade, grade needs to be between 0.0 and 4.0" << endl;
+	} else {gpa = grade;
+	}
 }
-//change ID
-void Book::changeID(int newID){
-	id = newID;
+void Student::print(){
+	cout << "===== Student =====\n" << "First Name: " << firstName << "\nLast Name: " << lastName << "\n GPA: " << gpa << endl;
 }
-//change Title
-void Book::changeTitle(char newTitle[]){
-	strcpy(title, newTitle);
+double Student::getGpa(){
+	return gpa;
 }
-//change Author
-void Book::changeAuthor(char newAuthor[]){
-	strcpy(author, newAuthor);
-}
-//ChangeCopies
-void Book::changeCopies(int newCopies){
-	copies = newCopies;
-}
-//Change Checkouts
-void Book::changeCheckouts(int newCheckOuts){
-	checkOuts = newCheckOuts;
-}
-//changeHolds
-void Book::changeHolds(int newHolds){
-	holds = newHolds;
-}
-
-
