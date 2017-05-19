@@ -1,0 +1,86 @@
+Script started on Thu 18 May 2017 09:36:19 PM PDT
+]0;pi@pi-machine: ~/Documents/cs162/labs/lab5pi@pi-machine:~/Documents/cs162/labs/lab5$ make
+g++ -c studentmain.cpp
+g++ -c student.cpp
+g++  studentmain.o student.o -o prog
+]0;pi@pi-machine: ~/Documents/cs162/labs/lab5pi@pi-machine:~/Documents/cs162/labs/lab5$ ./prog [K[K[K[K[K[K[Kvi studentmain.cpp [K
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;39r[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[39;1H"studentmain.cpp" 43L, 1018C[>c[1;1H[34m/* Dan Siegel
+Lab5
+ *
+ */[m
+
+[35m#include [m[31m<cstdlib>[m
+[35m#include [m[31m<iostream>[m
+[35m#include [m[31m<cstring>[m
+[35m#include [m[31m"student.h"[m
+
+[33musing[m [32mnamespace[m std;
+
+[32mint[m main(){[14;9H[32mchar[m name[[31m201[m];[15;9H[32mfloat[m g;[16;9H[32mint[m numbOfStudents;[17;9Hcout << [31m"Number of students: "[m;[18;9Hcin >> numbOfStudents;[19;9HStudent *list;[20;9Hlist = [33mnew[m Student[numbOfStudents];[21;9H[33mfor[m ([32mint[m i = [31m0[m; i < numbOfStudents; i++){[22;17Hcout << [31m"Student "[m << i << [31m" first name: "[m;[23;17Hcin.ignore([31m200[m,[35m'\n'[m);[24;17Hcin.get(name, [31m200[m, [35m'\n'[m);[25;17H(list+i)->setFirstName(name);[26;17Hcout << [31m"Student "[m << i << [31m" last name: "[m;[27;17Hcin.ignore([31m200[m,[35m'\n'[m);[28;17Hcin.get(name, [31m200[m);[29;17H(list+i)->setLastName(name);[30;17Hcout << [31m"Student "[m << i << [31m" GPA: "[m;[31;17Hcin >> g;[32;17H(list+i)->setGpa(g);[33;9H}[34;9Hcout << [31m"***Printing List of Students***"[m << endl;[35;9H[33mfor[m ([32mint[m i = [31m0[m; i < numbOfStudents; i++){[36;17Hcout << [31m"======Student======"[m << endl;[37;17Hcout << [31m"First Name: "[m << (list+i)->getFirstName() << endl;[38;17Hcout << [31m"Last Name: "[m << (list+i)->getLastName() << endl;[39;132H1,1[11CTop]2;studentmain.cpp (~/Documents/cs162/labs/lab5) - VIM]1;studentmain.cpp[1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[39;132H38,3-17[38;17H[?12l[?25h[?25l[39;1H[K[39;1H:[?12l[?25hq[?25l[?12l[?25h![?25l[?12l[?25h[?25l]2;pi@pi-machine: ~/Documents/cs162/labs/lab5]1;pi@pi-machine: ~/Documents/cs162/labs/lab5[39;1H[K[39;1H[?1l>[?12l[?25h[?1049l]0;pi@pi-machine: ~/Documents/cs162/labs/lab5pi@pi-machine:~/Documents/cs162/labs/lab5$ vi studentmain.cpp[K[K[K[K[K[K[K[K.cpp 
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;39r[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[39;1H"student.cpp" 44L, 769C[>c[1;1H[34m//Dan Siegel
+//lab4[m
+[35m#include [m[31m<iostream>[m
+[35m#include [m[31m<cstring>[m
+[35m#include [m[31m"student.h"[m
+
+[33musing[m [32mnamespace[m std;
+
+Student::Student(){[10;9HfirstName = [31mNULL[m;[11;9HlastName = [31mNULL[m;[12;9Hgpa = [31m0[m;
+}
+[32mvoid[m Student::setFirstName([32mchar[m fname[]){[15;9H[33mif[m (firstName != [31mNULL[m){[16;17H[33mdelete[m firstName;[17;9H}[18;9HfirstName = [33mnew[m [32mchar[m[strlen(fname) + [31m1[m];[19;9Hstrcpy(firstName, fname);
+}
+[32mvoid[m Student::setLastName([32mchar[m lname[]){[22;9H[33mif[m (lastName != [31mNULL[m){[23;17H[33mdelete[m lastName;[24;9H}[25;9HlastName = [33mnew[m [32mchar[m[strlen(lname) + [31m1[m];[26;9Hstrcpy(lastName, lname);
+}
+[32mvoid[m Student::setGpa([32mdouble[m grade){[29;9H[33mif[m (!grade || (grade>[31m4[m) || (grade<[31m0[m)){[30;17Hgpa = [31m0[m;[31;9H} [33melse[m {[32;17Hgpa = grade;[33;9H}
+}
+
+[32mconst[m [32mchar[m *Student::getFirstName(){[37;9H[33mreturn[m firstName;
+}[39;132H1,1[11CTop]2;student.cpp (~/Documents/cs162/labs/lab5) - VIM]1;student.cpp[1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[39;1H[K[39;1H:[?12l[?25hq[?25l[?12l[?25h![?25l[?12l[?25h[?25l]2;pi@pi-machine: ~/Documents/cs162/labs/lab5]1;pi@pi-machine: ~/Documents/cs162/labs/lab5[39;1H[K[39;1H[?1l>[?12l[?25h[?1049l]0;pi@pi-machine: ~/Documents/cs162/labs/lab5pi@pi-machine:~/Documents/cs162/labs/lab5$ vi student.cpp [K[K[K[K0[Ko
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;39r[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[39;1H"student.o" [noeol][converted] 14L, 2973C[>c[1;1H[34m^?[mELF[34m^A^A^A^@^@^@^@^@^@^@^@^@^A^@[m([34m^@^A^@^@^@^@^@^@^@^@^@^@^@[m,[34m^H^@^@^@^@^@^E[m4[34m^@^@^@^@^@[m([34m^@^P^@^M^@<90>[m´[34m<82>[m°[34m^@[m¯x`{h[34m^@[m"[34m^Z[m`{h[34m^@[m"Z`zhOð[34m^@^C[mOð[34m^@^D[mÂé[34m^B[m4{h[34m^^[2;1HX[mF[34m^H[m7½F[34m<90>[m¼pG[34m^@[m¿[34m<80>[mµ[34m<82>[m°[34m^@[m¯x`9`{h[34m^[[mh[34m^@[m+[34m^D[mÐ{h[34m^[[mh[34m^X[mFÿ÷þÿ8hÿ÷þÿ[34m^C[mF[34m^A[m3[34m^X[mFÿ÷þÿ[34m^C[mF[34m^Z[mF{h[34m^Z[m`{h[34m^[[mh9h[34m^X[mFÿ÷þÿ[34m^@[m¿[34m^H[m7½F[34m<80>[m½[34m<80>[mµ[34m<82>[m°[34m^@[m¯x`9`{h[h[34m^@[m+[34m^D[mÐ{h[h[34m^X[mFÿ [3;1H÷þÿ8hÿ÷þÿ[34m^C[mF[34m^A[m3[34m^X[mFÿ÷þÿ[34m^C[mF[34m^Z[mF{hZ`{h[h9h[34m^X[mFÿ÷þÿ[34m^@[m¿[34m^H[m7½F[34m<80>[m½[34m<90>[m´[34m<84>[m°[34m^@[m¯ø`[34m<87>[mí[34m^@^K<97>[mí[34m^@[m{µî@{ñî[34m^P[mú[34m^O[mÐ[34m<97>[mí[34m^@[m{±î[34m^@[mk´îÆ{ñî[34m^P[mú[34m^F[mÜ[34m<97>[mí[34m^@[m{µîÀ{ñî[34m^P[mú[34m^G[mÕúhh[4;1HOð[34m^@^C[mOð[34m^@^D[mÂé[34m^B[m4[34m^D[màúh×é[34m^@[m4Âé[34m^B[m4[34m^@[m¿[34m^P[m7½F[34m<90>[m¼pG[34m^@[m¿[34m<80>[m´[34m<83>[m°[34m^@[m¯x`{h[34m^[[mh[34m^X[mF[34m^L[m7½F]ø[34m^D[m{pG[34m<80>[m´[34m<83>[m°[34m^@[m¯x`{h[h[34m^X[mF[34m^L[m7½F]ø[34m^D[m{pG[34m<90>[m´[34m<82>[m°[34m^@[m¯x`{hÓé[34m^B[m4Dì[34m^W[m;°îGG[5;1H[34m^K^H[m7½F[34m<90>[m¼pG[34m^@[m¿[34m<80>[mµ[34m<82>[m°[34m^@[m¯x`9`{h[34m^A[m+[34m^X[mÑ;hOöÿr[34m<93>[mB[34m^S[mÑ@ò[34m^@^@[mÀò[34m^@^@[mÿ÷þÿ@ò[34m^@^B[mÀò[34m^@^B[m@ò[34m^@^A[mÀò[34m^@^A[m@ò[34m^@^@[mÀò[34m^@^@[mÿ÷þÿ[34m^@[m¿[34m^H[m7½F[34m<80>[m½[34m^@[m¿[34m<80>[mµ[34m^@[m¯Oöÿq[34m^A[m ÿ÷Óÿ[34m<88[6;1H0>[m½[34m^A<97>^A<81>[m°°[34m^H<84>^@^@^@^@^A<97>^A<81>[m°°[34m^H<84>^@^@^@^@^@^@^@^@^A^@^@^@[m0[34m^@^@^@^@^@^@^@[mx[34m^@^@^@^L^@^@^@[mÀ[34m^@^@^@^A^@^@^@[m [34m^A^@^@^A^@^@^@[m8[34m^A^@^@^A^@^@^^[7;1H@[mP[34m^A^@^@^A^@^@^@[mp[34m^A^@^@^A^@^@^@[m¼[34m^A^@^@^A^@^@^@^@^@^@^@^@[mGCC: (Ubuntu/Linaro 5.4.1-2ubuntu1~16.04) 5.4.1 20160904[34m^@[mA2[34m^@^@^@[maeabi[34m^@^A[m([34m^@^@^@^E[m7-A[34m^@^F
+^G[mA[34m^H^A[m [34m^B
+^D^R^D^T^A^U^A^W^C^X^A^Y^A^Z^B^\^A^^^F[m"[34m^A^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^A^@^@^@^@^@^@^@^@^@^@^@^D^@[mñÿ[34m^@^@^@^@^@^@^@^@^@^@^@^@^C^@^A^@^@^@^@^@@[10;1H^@^@^@^@^@^@^@^@^C^@^C^@^@^@^@^@^@^@^@^@^@^@^@^@^C^@^D^@^M^@^@^@^@^@^@^@^A^@^@^@^A^@^D^@^\^@^@^@^@^@^@^@^@^@^@^@^@^@^D^@^_^@^@^@^@^@^@^@^@^@^@^@^@^@^^[11;1HA^@^@^@^@^@^@^@^@^@^@^@^@^@^C^@^E^@^@^@^@^@^@^@^@^@^@^@^@^@^C^@^F^@^\^@^@^@^@^@^@^@^@^@^@^@^@^@^F^@^\^@^@^@^@^@^@^@^@^@^@^@^@^@^E^@[m"[34m^@^@^@[mq[34m^A^@^@[mJ[34m^@^^[12;1H@^@^B^@^A^@[mR[34m^@^@^@[m½[34m^A^@^@^P^@^@^@^B^@^A^@^@^@^@^@^@^@^@^@^@^@^@^@^C^@^H^@^\^@^@^@^@^@^@^@^@^@^@^@^@^@^H^@^@^@^@^@^@^@^@^@^@^@^@^@^C^@^K^@^@^@^@^@^@^@@[13;1H^@^@^@^@^@^@^C^@
+^@^@^@^@^@^@^@^@^@^@^@^@^@^C^@^L^@[ma[34m^@^@^@^A^@^@^@[m.[34m^@^@^@^R^@^A^@[mq[34m^@^@^@^A^@^@^@[m.[34m^@^@^@^R^@^A^@<81>^@^@^@[m1[34m^@^@^@[mH[34m^@^@^@^R^@^A^@<9e>^@^@^@^@^@^@^@^@^@^^[15;1H@^@^P^@^@^@[m¥[34m^@^@^@^@^@^@^@^@^@^@^@^P^@^@^@[m¬[34m^@^@^@^@^@^@^@^@^@^@^@^P^@^@^@[m²[34m^@^@^@^@^@^@^@^@^@^@^@^P^@^@^@[m¹[34m^@^@^@^@^@^@^@^@^@^@^@^P^@^@^@[mÐ[34m^@^@^@[my[34m^@^@^@@[m[16;1HH[34m^@^@^@^R^@^A^@[mì[34m^@^@^@[mÁ[34m^@^@^@[m^[34m^@^@^@^R^@^A^@^A^A^@^@[m![34m^A^@^@^X^@^@^@^R^@^A^@^]^A^@^@[m9[34m^A^@^@^X^@^@^@^R^@^A^@[m8[34m^A^@^@[mQ[34m^A^@^@^^^@^@^@^R^@^A^@[mM[34m^A^@^@^@^@^@@[17;1H^@^@^@^@^@^P^@^@^@[me[34m^A^@^@^@^@^@^@^@^@^@^@^P^B^@^@[mr[34m^A^@^@^@^@^@^@^@^@^@^@^P^@^@^@<8a>^A^@^@^@^@^@^@^@^@^@^@^P^@^@^@^@[mstudent.cpp[34m^@[m_ZStL8__ioinit[34m^@[m$d[34m^@@[m[18;1H$t[34m^@[m_Z41__static_initialization_and_destruction_0ii[34m^@[m_GLOBAL__sub_I__ZN7StudentC2Ev[34m^@[m_ZN7StudentC1Ev[34m^@[m_ZN7Student12setFirstNameEPc[34m^@[m_ZdlPv[34m^@[mstrlen[34m^@[m__[19;1HZnaj[34m^@[mstrcpy[34m^@[m__aeabi_unwind_cpp_pr1[34m^@[m_ZN7Student11setLastNameEPc[34m^@[m_ZN7Student6setGpaEd[34m^@[m_ZN7Student12getFirstNameEv[34m^@[m_ZN7Student11getLastNameEv[34m^@[m_ZNN[20;1H7Student6getGpaEv[34m^@[m_ZNSt8ios_base4InitC1Ev[34m^@[m__dso_handle[34m^@[m_ZNSt8ios_base4InitD1Ev[34m^@[m__aeabi_atexit[34m^@^@^@^@[mH[34m^@^@^@
+^V^@^@[mN[34m^@^@^@
+^W^@^@[mX[34m^@^@^@
+^X^@^@[ml[34m^@^@^@
+^Y^@^@<90>^@^@^@
+^V^@^@<96>^@^@^@
+^W^@^@[m [34m^@^@^@
+^X^@^@[m´[34m^@^@^@
+^Y^@^@<8a>^A^@^@[m/[34m^E^@^@<8e>^A^@^@[m0[34m^E^@^@<92>^A^@^@
+[m [34m^@^@<96>^A^@^@[m/![34m^@^@<9a>^A^@^@[m0![34m^@^@<9e>^A^@^@[m/"[34m^@^@[m¢[34m^A^@^@[m0"[34m^@^@[m¦[34m^A^@^@[m/[34m^E^@^@[mª[34m^A^@^@[m0[34m^E^@^@[m®[34m^A^@^@[m
+#[34m^@^@^@^@^@^@[m*[34m^B^@^@^H^@^@^@[m*[34m^B^@^@^H^@^@^@^@^Z^@^@^L^@^@^@[m*[34m^H^@^@^P^@^@^@[m*[34m^B^@^@^T^@^@^@[m*[34m^H^@^@^X^@^@^@[m*[34m^B^@^@[m [34m^@^@^@[m*[34m^B^@^@[m([34m^@^@^@[m*[34m^B^@^@[m0[34m^@^@^@[m*[34m^BB[31;1H^@^@[m8[34m^@^@^@[m*[34m^B^@^@[m@[34m^@^@^@[m*[34m^B^@^@^@^@^@^@^B^M^@^@^@[m.symtab[34m^@[m.strtab[34m^@[m.shstrtab[34m^@[m.rel.text[34m^@[m.data[34m^@[m.bss[34m^@[m.ARM.extab[34m^@[m.rel.ARM.exidx[34m^@[m.rel.init_array[34m^@[m..[32;1Hcomment[34m^@[m.note.GNU-stack[34m^@[m.ARM.attributes[34m^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^_^@^@^@^A^@^@^@^F^@^@^@@[33;1H^@^@^@^@[m4[34m^@^@^@[mÌ[34m^A^@^@^@^@^@^@^@^@^@^@^D^@^@^@^@^@^@^@^[^@^@^@[m   [34m^@^@^@[m@[34m^@^@^@^@^@^@^@[m°[34m^F^@^@<90>^@^@^@^N^@^@^@^A^@^@^@^D^@^@^@^H^@^@^@[m%[34m^@^@^@^A^@^@^^[34;1H@^C^@^@^@^@^@^@^@^@^B^@^@^@^@^@^@^@^@^@^@^@^@^@^@^A^@^@^@^@^@^@^@[m+[34m^@^@^@^H^@^@^@^C^@^@^@^@^@^@^@^@^B^@^@^A^@^@^@^@^@^@^@^@^@^@^@^D^@^@^@^@^@^@^@[m0[34m^@^@@[35;1H^@^A^@^@^@^B^@^@^@^@^@^@^@^@^B^@^@^X^@^@^@^@^@^@^@^@^@^@^@^D^@^@^@^@^@^@^@[m?[34m^@^@^@^A^@^@[mp[34m<82>^@^@^@^@^@^@^@^X^B^@^@[mH[34m^@^@^@^A^@^@^@^@^@^@^@^D^@^@^@^@^@@[36;1H^@^@[m;[34m^@^@^@[7C^@^@^@[m@[34m^@^@^@^@^@^@^@[m@[34m^G^@^@[m`[34m^@^@^@^N^@^@^@^F^@^@^@^D^@^@^@^H^@^@^@[mN[34m^@^@^@^N^@^@^@^C^@^@^@^@^@^@^@[m`[34m^B^@^@^D^@^@^@^@^@^@^@^@^@^@^@^DD[37;1H^@^@^@^@^@^@^@[mJ[34m^@^@^@[8C^@^@^@[m@[34m^@^@^@^@^@^@^@[m [34m^G^@^@^H^@^@^@^N^@^@^@^H^@^@^@^D^@^@^@^H^@^@^@[mZ[34m^@^@^@^A^@^@^@[m0[34m^@^@^@^@^@^@^@[md[34m^B^@^@[m:[34m^@^@^@^@^@^@^@@[38;1H^@^@^@^@^A^@^@^@^A^@^@^@[mc[34m^@^@^@^A^@^@^@^@^@^@^@^@^@^@^@<9e>^B^@^@^@^@^@^@^@^@^@^@^@^@^@^@^A^@^@^@^@^@^@^@[ms[34m^@^@^@^C^@^@[mp[34m^@^@^@^@^@^@^@^@<9e>^B^@^@[m3[34m^@^[m[30;1H[1m[34m@                                                                                                                                                    [31;1H@                                                                                                                                                    [32;1H@                                                                                                                                                    [33;1H@                                                                                                                                                    [34;1H@                                                                                                                                                    [35;1H@                                                                                                                                                    [36;1H@                                                                                                                                                    [37;1H@                                                                                                                                                    [38;1H@                                                                                                                                                    [m[39;132H1,1[11CTop]2;student.o (~/Documents/cs162/labs/lab5) - VIM]1;student.o[1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[39;1H[K[39;1H:[?12l[?25hq[?25l[?12l[?25h![?25l[?12l[?25h[?25l]2;pi@pi-machine: ~/Documents/cs162/labs/lab5]1;pi@pi-machine: ~/Documents/cs162/labs/lab5[39;1H[K[39;1H[?1l>[?12l[?25h[?1049l]0;pi@pi-machine: ~/Documents/cs162/labs/lab5pi@pi-machine:~/Documents/cs162/labs/lab5$ ./prog 
+Number of students: 3 4
+Student 0 first name: Mart y
+Student 0 last name: Killian
+Student 0 GPA: 3.1
+Student 1 first name: Bob
+Student 1 last name: McLarin
+Student 1 GPA: 2.7 8
+Student 2 first name: Vince
+Student 2 last name: Carter
+Student 2 GPA: 3.4
+Student 3 first name: Linda
+Student 3 last name: Franklin
+Student 3 GPA: 4.0
+***Printing List of Students***
+======Student======
+First Name: Mary
+Last Name: Killian
+GPA: 3.1
+======Student======
+First Name: Bob
+Last Name: McLarin
+GPA: 2.8
+======Student======
+First Name: Vince
+Last Name: Carter
+GPA: 3.4
+======Student======
+First Name: Linda
+Last Name: Franklin
+GPA: 4
+]0;pi@pi-machine: ~/Documents/cs162/labs/lab5pi@pi-machine:~/Documents/cs162/labs/lab5$ exit
+exit
+
+Script done on Thu 18 May 2017 09:38:10 PM PDT
