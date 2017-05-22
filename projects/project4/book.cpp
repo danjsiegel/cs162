@@ -31,27 +31,22 @@ const void Book::printBook(){
 int Book::returnID(){
 	return id; 
 }
+int Book::returnCheckOuts(){
+	return checkOuts;
+}
 int Book::returnCopies(){
 	return copies; 
 }
-
+int Book::returnHolds(){
+	return holds; 
+	}
 void Book::returnAuthor(char temporary[]){
 	strcpy(temporary, author);
 }
 
 void Book::returnTitle(char temporary[]){
-	strcpy(currentTitle, title);
+	strcpy(temporary, title);
 	}
-
-const void Book::returnAllVar(int &currentid, char currentTitle[], char currentAuthor[], int &currentCopies, int &currentCheckouts, int &currentHolds){
-	currentid = id;
-	strcpy(currentTitle, title);
-	strcpy(currentAuthor, author);
-	currentCopies = copies;
-	currentCheckouts = checkOuts;
-	currentHolds = holds;	
-	
-}
 //void Book::returnAllBookVariables(){}
 //mutator functions:
 //Assign all data to a book
@@ -73,11 +68,19 @@ void Book::assignBook(int newID, char newTitle[], char newAuthor[], int newCopie
 }
 //Change Checkouts
 void Book::changeCheckouts(int newCheckOuts){
-	checkOuts = newCheckOuts;
+	if (newCheckOuts == 1){	
+		checkOuts++;
+	} else {
+		checkOuts--;
+	}
 }
 //changeHolds
 void Book::changeHolds(int newHolds){
-	holds = newHolds;
+	if (newHolds == 1){
+		holds++;
+	} else {
+		holds--;
+	}
 }
 
 

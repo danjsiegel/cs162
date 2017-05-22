@@ -12,13 +12,15 @@ class Catalog {
 	~Catalog();
     void menu();
 	void activity(int uActivity);
+	void updateBook();
 	const void printAllBooks();
 	const void searchByAuthor();
-  private:
-	char tempTitle[250];
-	char tempAuthor[250];   
+	const void searchByTitle();
+	void writeFile();
+  private:  
 	int tempID, tempCopies, tempCheckOuts, tempHolds, numberOfBooks; 
 	Book *booklist;
+	bool found;
 		
 };
 

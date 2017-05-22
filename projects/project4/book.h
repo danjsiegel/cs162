@@ -13,9 +13,10 @@ class Book {
 	void changeHolds(int newHolds);
 	int returnID();
 	int returnCopies();
-	const char returnTitle();
+	int returnCheckOuts();
+	int returnHolds();
+	void returnTitle(char temporary[]);
 	void returnAuthor(char emporary[]);
-	const void returnAllVar(int &currentid, char currentTitle[], char currentAuthor[], int &currentCopies, int &currentCheckouts, int &currentHolds);
   private:
 	int id;
     char *title;
