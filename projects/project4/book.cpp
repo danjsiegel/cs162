@@ -14,7 +14,10 @@ Book::Book(){
 	checkOuts = 0;
 	holds = 0;
 }
-
+Book::~Book(){
+	delete title;
+	delete author;
+}
 //Printing Functions
 //Print All Variables 
 const void Book::printBook(){

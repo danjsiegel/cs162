@@ -7,6 +7,7 @@
 class Book {
   public:
     Book();
+	~Book();
 	void assignBook(int newID, char newTitle[], char newAuthor[], int newCopies, int newCheckOuts, int newHolds);
 	const void printBook();
 	void changeCheckouts(int newCheckOuts);
