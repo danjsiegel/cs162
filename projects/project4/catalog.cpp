@@ -27,14 +27,16 @@ Catalog::Catalog(){ //constructor
 			libraryBooks.clear();
 			libraryBooks >> tempCopies >> tempCheckOuts >> tempHolds; 
 			(booklist+i)->assignBook(tempID, tempTitle, tempAuthor, tempCopies, tempCheckOuts, tempHolds);
-		} 
+		}
+		delete tempTitle;
+		delete tempAuthor;
 	} else {
 			cout << "No library.txt" << endl;
 		}
 	libraryBooks.close();
 }
 Catalog::~Catalog(){
-	delete booklist;
+	delete [] booklist;
 }	
 const void Catalog::printAllBooks(){
 	cout << "%%%%%% Book Catalog %%%%%%" << endl;
@@ -121,46 +123,67 @@ void Catalog::updateBook(){
 		}
 	}	
 	if (found == true){				
+		updateFoundBook(numberFound[0]);
+	} else {
+		cout << "Book Not Found" << endl;		
+	}
+	delete actionToBook;
+	delete numberFound;
+}
+void Catalog::checkOutBook(int bookToCheckOut, int action){
+	if (action == 1 || action == 0){	
+		(booklist+bookToCheckOut)->changeCheckouts(action);
+		cout << "Book check Out action done" << endl;
+	} else if (action == 2){
+		(booklist+bookToCheckOut)->changeCheckouts(0);
+	}
+}
+void Catalog::holdBook(int bookToHold, int action){
+	if (action == 1 || action == 0){	
+		(booklist+bookToHold)->changeHolds(action);
+		cout << "Hold Action Done" << endl;
+	} 
+}
+void Catalog::updateFoundBook(int bookToUpdate){
 		cout << "What would you like to do?\n 1-Checkout Book\n 2-Return Book\n 3-Hold Book\n 4-Remove Hold" << endl;
-		cin >> actionToBook[1]; 
-		switch (actionToBook[1]) {
+		int actionToBook;
+		cin >> actionToBook; 
+		switch (actionToBook) {
 			case 1:
-				if ((booklist+numberFound[0])->returnCopies() > (booklist+numberFound[0])->returnCheckOuts()){
-					(booklist+numberFound[0])->changeCheckouts(1);
-					cout << "Book checked out" << endl;		
+				if ((booklist+bookToUpdate)->returnCopies() > (booklist+bookToUpdate)->returnCheckOuts()){
+					checkOutBook(bookToUpdate, 1);	
 				} else {
 					cout << "All copies checked out, do you want to place on hold?" << endl;
-					cout << "Enter 1 to add a new hold, enter 2 to skip checkout" << endl;
-					cin >> actionToBook[2];
-					if (actionToBook[2] == 1){
-						(booklist+numberFound[0])->changeHolds(1);
-						cout << "Hold Added" << endl;
-					}					
+					cout << "Enter 1 to add a new hold, enter 2 to skip" << endl;
+					cin >> actionToBook;
+					holdBook(bookToUpdate, actionToBook);					
 				}
 				break;
 			case 2:
-				if ((booklist+numberFound[0])->returnCheckOuts() >= 1){
-					(booklist+numberFound[0])->changeCheckouts(0);	
-					cout << "Book returned" << endl;						
+				if ((booklist+bookToUpdate)->returnCheckOuts() >= 1){
+					checkOutBook(bookToUpdate, 0);						
 				} else {
 					cout << "Double check that you still have the book checked out" << endl;
 				}
 				break;
 			case 3:
-				if ((booklist+numberFound[0])->returnCopies() > (booklist+numberFound[0])->returnCheckOuts()){
-					cout << "Copies available checking out instead" << endl;
-					(booklist+numberFound[0])->changeCheckouts(1);
-				} else if ((booklist+numberFound[0])->returnCheckOuts() >= 5){
+				if ((booklist+bookToUpdate)->returnCopies() > (booklist+bookToUpdate)->returnCheckOuts() && (booklist+bookToUpdate)->returnHolds() >= 5){
+					cout << "Copies available Do you Want to Checkout Instead? 1 to checkout any other number to hold" << endl;
+					cin >> actionToBook;					
+					if (actionToBook == 1){
+						checkOutBook(bookToUpdate, 1);
+					} else {
+						holdBook(bookToUpdate, 1);	
+					}
+				} else if ((booklist+bookToUpdate)->returnHolds() >= 5){
 					cout << "Maximum holds reached, check back in soon" << endl;			
 				} else {
-					cout << "Hold Added" << endl;
-					(booklist+numberFound[0])->changeHolds(1);
+					holdBook(bookToUpdate, 1);	
 				}
 				break;
 			case 4:
-				if ((booklist+numberFound[0])->returnHolds() >= 1){							
-					(booklist+numberFound[0])->changeHolds(0);
-					cout << "Hold Removed" << endl;
+				if ((booklist+bookToUpdate)->returnHolds() >= 1){							
+					holdBook(bookToUpdate, 0);	
 				} else {
 					cout << "No holds to remove" << endl;
 				}
@@ -170,12 +193,7 @@ void Catalog::updateBook(){
 				cin.clear();
 				cin.ignore(100, '\n'); 
 				break; 
-		}		
-	} else {
-		cout << "Book Not Found" << endl;		
-	}
-delete actionToBook;
-delete numberFound;
+		}	
 }
 void Catalog::activity(int uActivity){
 	switch(uActivity){

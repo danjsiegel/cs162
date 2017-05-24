@@ -16,6 +16,9 @@ class Catalog {
 	const void printAllBooks();
 	const void searchByAuthor();
 	const void searchByTitle();
+	void updateFoundBook(int bookToUpdate);
+	void checkOutBook(int bookToUpdate, int action);
+	void holdBook(int bookToHold, int action);
 	void writeFile();
   private:  
 	int tempID, tempCopies, tempCheckOuts, tempHolds, numberOfBooks; 
