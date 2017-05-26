@@ -15,15 +15,30 @@ struct Node{
 
 void addToList(char tempData[], Node* &headPtr){
 	Node *temp = new Node;
+	Node *lastNode = NULL;
 	strcpy(temp->data, tempData);
-	temp->next = headPtr;
-	headPtr=temp;
+	if (headPtr == NULL){
+		headPtr=temp;
+		return;
+	}
+	lastNode=headPtr;
+	while (lastNode->next!=NULL){
+		lastNode=lastNode->next;
+	}
+	temp->next=NULL;
+	lastNode->next = temp;
+}
+void transverseList(Node* &headPtr){
+	Node *transverse = headPtr;
+	while(transverse!=NULL){
+		cout << transverse->data << endl;
+		transverse = transverse->next;
+	}
 }
 int main(){
 	char *newData;
 	newData = new char[201];
 	Node *head = NULL;
-
 	cout << "Enter Data" << endl;
 	cin.getline(newData, 201);
 	addToList(newData, head);
@@ -33,12 +48,7 @@ int main(){
 			addToList(newData, head);
 		}
 	}
-	Node *transverse = head;
-	while(transverse!=NULL){
-	cout << transverse->data << endl;
-	transverse = transverse->next;
-	cout << transverse->data << endl;
-	}
+	transverseList(head);
 	delete [] newData;
 	return 0;
 }
