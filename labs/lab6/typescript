@@ -1,0 +1,56 @@
+Script started on Thu 25 May 2017 08:07:54 PM PDT
+]0;pi@pi-machine: ~/Documents/cs162/labs/lab6pi@pi-machine:~/Documents/cs162/labs/lab6$ vi main.cpp 
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;39r[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[39;1H"main.cpp" 55L, 999C[>c[1;1H[34m/* Dan Siegel
+Lab6
+ */[m
+
+[35m#include [m[31m<cstdlib>[m
+[35m#include [m[31m<iostream>[m
+[35m#include [m[31m<cstring>[m
+[35m#include [m[31m<stdlib.h>[m
+
+[33musing[m [32mnamespace[m std;
+[32mstruct[m Node{[12;9H[32mchar[m data[[31m201[m];[13;9HNode *next;
+};
+
+[32mvoid[m addToList([32mchar[m tempData[], Node* &headPtr){[17;9HNode *temp = [33mnew[m Node;[18;9HNode *lastNode = [31mNULL[m;[19;9Hstrcpy(temp->data, tempData);[20;9H[33mif[m (headPtr == [31mNULL[m){[21;17HheadPtr=temp;[22;17H[33mreturn[m;[23;9H}[24;9HlastNode=headPtr;[25;9H[33mwhile[m (lastNode->next!=[31mNULL[m){[26;17HlastNode=lastNode->next;[27;9H}[28;9Htemp->next=[31mNULL[m;[29;9HlastNode->next = temp;
+}
+[32mvoid[m transverseList(Node* &headPtr){[32;9HNode *transverse = headPtr;[33;9H[33mwhile[m(transverse!=[31mNULL[m){[34;17Hcout << transverse->data << endl;[35;17Htransverse = transverse->next;[36;9H}
+}
+[32mint[m main(){[39;132H1,1[11CTop]2;main.cpp (~/Documents/cs162/labs/lab6) - VIM]1;main.cpp[1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[39;132H2[2;1H[?12l[?25h[?25l[39;132H3[3;1H[?12l[?25h[?25l[39;132H4,0-1[4;1H[?12l[?25h[?25l[39;132H5,1  [5;1H[?12l[?25h[?25l[39;132H6[6;1H[?12l[?25h[?25l[39;132H7[7;1H[?12l[?25h[?25l[39;132H8[8;1H[?12l[?25h[?25l[39;132H9,0-1[9;1H[?12l[?25h[?25l[39;132H10,1 [10;1H[?12l[?25h[?25l[39;133H1[11;1H[?12l[?25h[?25l[39;133H2,1-8[12;8H[?12l[?25h[?25l[39;133H3[13;8H[?12l[?25h[?25l[11;12H[46m{
+
+
+}[m[39;133H4,1  [14;1H[?12l[?25h[?25l[11;12H{
+
+
+}[39;133H5,0-1[15;1H[?12l[?25h[?25l[39;133H6,1  [16;1H[?12l[?25h[?25l[39;133H7,1-8[17;8H[?12l[?25h[?25l[39;133H8[18;8H[?12l[?25h[?25l[39;133H9[19;8H[?12l[?25h[?25l[39;132H20[20;8H[?12l[?25h[?25l[39;133H1[21;8H[?12l[?25h[?25l[39;133H2[22;8H[?12l[?25h[?25l[39;133H3[23;8H[?12l[?25h[?25l[39;133H4[24;8H[?12l[?25h[?25l[39;133H5[25;8H[?12l[?25h[?25l[39;133H6[26;8H[?12l[?25h[?25l[39;133H7[27;8H[?12l[?25h[?25l[39;133H8[28;8H[?12l[?25h[?25l[39;133H9[29;8H[?12l[?25h[?25l[16;48H[46m{[30;1H}[m[39;132H30,1  [30;1H[?12l[?25h[?25l[16;48H{[30;1H}[39;133H1[31;1H[?12l[?25h[?25l[39;133H2,1-8[32;8H[?12l[?25h[?25l[39;133H3[33;8H[?12l[?25h[?25l[39;133H4[34;8H[?12l[?25h[?25l[39;133H5[35;8H[?12l[?25h[?25l[39;133H6[36;8H[?12l[?25h[?25l[31;36H[46m{[37;1H}[m[39;133H7,1  [37;1H[?12l[?25h[?25l[31;36H{[37;1H}[39;133H8[38;1H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[38;9H[32mchar[m *newData;[39;1H[K[39;132H39,1-8[9C5%[38;8H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[38;9HnewData = [33mnew[m [32mchar[m[[31m201[m];[39;132H[K[39;132H40,1-8[8C11%[38;8H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[38;9HNode *head = [31mNULL[m;[39;132H[K[39;132H41,1-8[8C17%[38;8H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[38;9Hcout << [31m"Enter Data"[m << endl;[39;132H[K[39;132H42,1-8[8C23%[38;8H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[38;9Hcin.getline(newData, [31m201[m);[39;132H[K[39;132H43,1-8[8C29%[38;8H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[38;9HaddToList(newData, head);[39;132H[K[39;132H44,1-8[8C35%[38;8H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[38;9H[33mwhile[m ((strcmp(newData, [31m"quit"[m)!=[31m0[m)){[39;132H[K[39;132H45,1-8[8C41%[38;8H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[38;17Hcin.getline(newData, [31m201[m);[39;132H[K[39;132H46,1-8[8C47%[38;8H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[38;17H[33mif[m ((strcmp(newData, [31m"quit"[m)!=[31m0[m)){[39;132H[K[39;132H47,1-8[8C52%[38;8H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[38;25HaddToList(newData, head);[39;132H[K[39;132H48,1-8[8C58%[38;8H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[38;17H}[39;132H[K[39;132H49,1-8[8C64%[38;8H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[38;9H}[39;132H[K[39;132H50,1-8[8C70%[38;8H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[38;9HtransverseList(head);[39;132H[K[39;132H51,1-8[8C76%[38;8H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[38;9H[33mdelete[m [] newData;[39;132H[K[39;132H52,1-8[8C82%[38;8H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[38;9H[33mreturn[m [31m0[m;[39;132H[K[39;132H53,1-8[8C88%[38;8H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[22;11H[46m{[38;1H}[m[39;132H[K[39;132H54,1[10C94%[38;1H[?12l[?25h[?25l[1;38r[38;1H
+[1;39r[21;11H{[37;1H}[39;132H[K[39;132H55,0-1[8CBot[38;1H[?12l[?25h[?25l[39;132H[K[39;1H:[?12l[?25hq[?25l[?12l[?25h![?25l[?12l[?25h[?25l]2;pi@pi-machine: ~/Documents/cs162/labs/lab6]1;pi@pi-machine: ~/Documents/cs162/labs/lab6[39;1H[K[39;1H[?1l>[?12l[?25h[?1049l]0;pi@pi-machine: ~/Documents/cs162/labs/lab6pi@pi-machine:~/Documents/cs162/labs/lab6$ vi main.cpp [7Pclear./output git clone https://github.com/danjsiegel/cs162.gitpull[K[3Pcd ..[2Ppwd[1Plscd ..git pull[4Pmakeclear[1Pmakegit pushcommit -m "updated to smaller functions" [Kadd .[K./output [5Pmake./output [5Pmakeexitsudo apt-get update && sudo apt-get upgradeexit[Kmake./output [5Pmake./output git add .commit -m "updated to smaller functions" push[K[4Pmakeclear[1Pmakegit pull[3Pcd ..[3Plspwdcd ..git pullclone https://github.com/danjsiegel/cs162.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./output [K[4Pclearvi main.cpp [Kg++ main.cpp in[K[K[K
+]0;pi@pi-machine: ~/Documents/cs162/labs/lab6pi@pi-machine:~/Documents/cs162/labs/lab6$ ./a.out 
+Enter Data
+test1
+test2
+test3
+quit
+test1
+test2
+test3
+]0;pi@pi-machine: ~/Documents/cs162/labs/lab6pi@pi-machine:~/Documents/cs162/labs/lab6$ exit
+exit
+
+Script done on Thu 25 May 2017 08:09:09 PM PDT
