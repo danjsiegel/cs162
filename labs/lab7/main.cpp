@@ -30,20 +30,20 @@ void addToList(Node* &headPtr){
 		headPtr=temp;
 	} else{
 		while (current->next != NULL){
-		previousNode=current;
-		current=current->next;
-		if (strcmp(current->data,tempData) >= 0){
-			previousNode->next = temp;
-			temp->next = current;
-			cout << "value added" << endl;
-			return;
+			previousNode=current;
+			current=current->next;
+			if (strcmp(current->data,tempData) >= 0){
+				previousNode->next = temp;
+				temp->next = current;
+				cout << "value added" << endl;
+				return;
 			}
 		}
-	}
-	if (current->next == NULL){
-		current->next = temp;
-		temp->next = NULL;
-	}
+		if (current->next == NULL){
+			current->next = temp;
+			temp->next = NULL;
+		}
+	} 	
 }
 
 void deleteFromList(Node* &headPtr){
@@ -76,6 +76,7 @@ void deleteFromList(Node* &headPtr){
 }
 void transverseList(Node* &headPtr){
 	Node *transverse = headPtr;
+	cout << "list:" << endl;
 	while(transverse!=NULL){
 		cout << transverse->data << endl;
 		transverse = transverse->next;
@@ -110,6 +111,7 @@ int main(){
 				break;
 			case 4:
 				cout << "goodbye" << endl;
+				deleteNodes(head);
 				break;
 			default:
 				cin.clear();
