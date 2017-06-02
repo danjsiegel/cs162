@@ -82,6 +82,16 @@ void transverseList(Node* &headPtr){
 	}
 	delete transverse;
 }
+void deleteNodes(Node* &headPtr){
+	Node *transverse = headPtr;
+	Node *last= NULL;
+	while(transverse!=NULL){
+		last = transverse;
+		transverse = transverse->next;
+		delete last;
+	}
+	delete transverse;
+}
 int main(){
 	int action = 0;
 	Node *head = NULL;
@@ -107,7 +117,6 @@ int main(){
 				break;
 			}
 	}
-	delete head;
 	return 0;
 }
 
