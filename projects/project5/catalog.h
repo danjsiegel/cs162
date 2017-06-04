@@ -18,18 +18,23 @@ class Catalog {
 			Node *next;
 		};
 		Node *head;
+		Node *current;
+		Node *temp;
+		Node *previous;
+		Node *deleteNode; 
 	
 	public:
 		Catalog();
+		~Catalog();
 		void menu();
 		void printList();
+		void deleteBook(int ID);
 		void menuSelection(int selection);
-		//void newBook();
+		void newBook();
 		//void idCompare(int bookNumber, bool &foundflag, int userNumber, int tempCompare, int &bookFoundAn);
-		//void updateBook();
-		//void writeFile();
+		void updateBook();
+		void writeFile();
 		void addToList(int id, char title[], char author[], int copies, int checkOuts, int holds);
-		void deleteNodes();
 
 };
 
