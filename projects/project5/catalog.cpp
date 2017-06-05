@@ -87,7 +87,7 @@ void Catalog::addToList(int id, char title[], char author[], int copies, int che
 		return;
 	} else {
 		head->data.returnTitle(returnTitle);
-		if (strcmp(returnTitle, title) >=0){
+		if (strcmp(returnTitle, title) >= 0){
 			temp->next = head;
 			head =temp;
 			return;
@@ -96,7 +96,7 @@ void Catalog::addToList(int id, char title[], char author[], int copies, int che
 				previous = current;
 				current=current->next;
 				current->data.returnTitle(returnTitle);
-				if (strcmp(title, returnTitle) >=0){
+				if (strcmp(returnTitle, title)  >= 0){
 						previous->next = temp;
 						temp->next = current;
 						return;	
@@ -223,13 +223,13 @@ void Catalog::updateBook(){
 	cin >> action;
 	switch(action){
 		case 1:
-			cout << "case 1" << endl;
+			newID();
 			break;	
 		case 2:
-			cout << "case 2" << endl;
+			changeTitle();
 			break;
 		case 3:
-			cout << "case 3" << endl;
+			changeAuthor();
 			break;
 		case 4:
 			cout << "case 4" << endl;
@@ -241,14 +241,112 @@ void Catalog::updateBook(){
 			cout << "case 6" << endl;
 			break;
 		case 7:
-			cout << "case 7" << endl;
+			cout << "Exiting Menu" << endl;
 			break;
 		default:
+			cout << "Not a valid choice" << endl;
 			cin.clear();
 			cin.ignore();
 
 	}
-
-
+}
+void Catalog::newID(){
+	int currentId;
+	cout << "Enter ID to change: " << endl;
+	cin >> tempID;
+	current = head;
+	previous= head;
+	currentId = head->data.returnID();
+	if (currentId == tempID){
+		cout << "Enter New ID: " << endl;
+		cin >> tempID;
+		current->data.changeID(tempID);
+		cout << "ID Changed" << endl;
+		return;
+	}
+	while (current->next != NULL && tempID != currentId){
+		previous = current;
+		current = current-> next;
+		currentId = current->data.returnID();
+		if (tempID == currentId){
+			cout << "Enter New ID: " << endl;
+			cin >> tempID;
+			current->data.changeID(tempID);
+			cout << "ID Changed" << endl;
+			return;
+		}
+	}
+	cout << "ID not found" << endl;
+	return;
+}
+void Catalog::changeTitle(){
+	int currentId;
+	cout << "ID of Book to change: ";
+	cin >> tempID; 
+	current = head;
+	previous= head;
+	char newTitle[250];
+	currentId = head->data.returnID();
+	if (currentId == tempID){
+		current->data.returnAllVar(tempID, tempTitle, tempAuthor, tempCopies, tempCheckOuts, tempHolds);
+		deleteBook(tempID);
+		cout << "New Title: ";
+		cin.clear();
+		cin.ignore();
+		cin.getline(newTitle, 250, '\n');
+		addToList(tempID, newTitle, tempAuthor, tempCopies, tempCheckOuts, tempHolds);
+		return;
+	}
+	while (current->next != NULL && tempID != currentId){
+		previous = current;
+		current = current-> next;
+		currentId = current->data.returnID();
+		if (tempID == currentId){
+			current->data.returnAllVar(tempID, tempTitle, tempAuthor, tempCopies, tempCheckOuts, tempHolds);
+			deleteBook(tempID);
+			cout << "New Title: ";
+			cin.clear();
+			cin.ignore();
+			cin.getline(newTitle, 250, '\n');
+			addToList(tempID, newTitle, tempAuthor, tempCopies, tempCheckOuts, tempHolds);
+			return;
+		}
+	}
+	cout << "Book Not Found" << endl;
+}
+void Catalog::changeAuthor(){
+	int currentId;
+	cout << "ID of Book to change: ";
+	cin >> tempID; 
+	current = head;
+	previous= head;
+	char newAuthor[250];
+	currentId = head->data.returnID();
+	if (currentId == tempID){
+		cout << "New Author: ";
+		cin.clear();
+		cin.ignore();
+		cin.getline(newAuthor, 250, '\n');
+		current->data.changeAuthor(newAuthor);
+		return;
+	}
+	while (current->next != NULL && tempID != currentId){
+		previous = current;
+		current = current-> next;
+		currentId = current->data.returnID();
+		if (tempID == currentId){
+			cout << "New Author: ";
+			cin.clear();
+			cin.ignore();
+			cin.getline(newAuthor, 250, '\n');
+			current->data.changeAuthor(newAuthor);
+			return;
+		}
+	}
+	cout << "Book Not Found" << endl;
+}
+void Catalog::changeCopies(){
 
 }
+
+

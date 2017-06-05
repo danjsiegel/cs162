@@ -35,7 +35,10 @@ class Catalog {
 		void updateBook();
 		void writeFile();
 		void addToList(int id, char title[], char author[], int copies, int checkOuts, int holds);
-
+		void newID();
+		void changeTitle();
+		void changeAuthor();
+		void changeCopies();
 };
 
 #endif
