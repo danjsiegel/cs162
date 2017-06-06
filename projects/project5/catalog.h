@@ -31,14 +31,16 @@ class Catalog {
 		void deleteBook(int ID);
 		void menuSelection(int selection);
 		void newBook();
-		//void idCompare(int bookNumber, bool &foundflag, int userNumber, int tempCompare, int &bookFoundAn);
+		void changeCheckouts(int currentID);
+		void changeHolds(int currentID);
 		void updateBook();
 		void writeFile();
 		void addToList(int id, char title[], char author[], int copies, int checkOuts, int holds);
-		void newID();
-		void changeTitle();
-		void changeAuthor();
-		void changeCopies();
+		void newID(int &currentID);
+		void changeTitle(int currentID);
+		void changeAuthor(int currentID);
+		void changeCopies(int currentID);
+		bool findID(int ID);
 };
 
 #endif
