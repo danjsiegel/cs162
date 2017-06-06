@@ -1,26 +1,20 @@
-5
+3
 30
 A Tale of Two Cities
 Charles Dickens
 3
 2
 0
-12
-AAA
-Dan
-6
-0
-0
-14
-Gantt 
-adfsd
-7
-0
-0
 10
 Great Expectations
 Charles Dickens
 2
+0
+0
+11
+Gzt Expectations
+Dan
+5
 0
 0
 20

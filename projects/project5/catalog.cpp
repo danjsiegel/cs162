@@ -117,7 +117,6 @@ void Catalog::addToList(int id, char title[], char author[], int copies, int che
 	}
 	if (current->next == NULL){
 				current->next = temp;
-				temp->next = NULL;
 				return;
 	}
 }
@@ -143,7 +142,7 @@ Catalog::~Catalog(){
 		}
 		delete last;
 	}
-	delete transverse;
+	delete transverse, current, previous, deleteNode;
 }
 
 void Catalog::deleteBook(int ID){
@@ -212,7 +211,7 @@ void Catalog::menuSelection(int selection){
 
 
 void Catalog::writeFile(){
-	ofstream newLibrary("newlibrary.txt");
+	ofstream newLibrary("library.txt");
 	newLibrary << numberOfBooks << '\n';
 	current = head;
 	while(current != NULL){

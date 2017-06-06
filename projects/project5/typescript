@@ -1,0 +1,392 @@
+Script started on Mon 05 Jun 2017 08:53:54 PM PDT
+]0;pi@pi-machine: ~/Documents/cs162/projects/project5pi@pi-machine:~/Documents/cs162/projects/project5$ exitgit push[4Pexit[Kvalgrind =[K--leak=c[K[K-check=full ./output 
+==17018== Memcheck, a memory error detector
+==17018== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==17018== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==17018== Command: ./output
+==17018== 
+
+disInstr(arm): unhandled instruction: 0xF1010200
+                 cond=15(0xF) 27:20=16(0x10) 4:4=0 3:0=0(0x0)
+==17018== valgrind: Unrecognised instruction at address 0x48596f4.
+==17018==    at 0x48596F4: ??? (in /usr/lib/arm-linux-gnueabihf/libarmmem.so)
+==17018== Your program just tried to execute an instruction that Valgrind
+==17018== did not recognise.  There are two possible reasons for this.
+==17018== 1. Your program has a bug and erroneously jumped to a non-code
+==17018==    location.  If you are running Memcheck and you just saw a
+==17018==    warning about a bad jump, it's probably your program's fault.
+==17018== 2. The instruction is legitimate but Valgrind doesn't handle it,
+==17018==    i.e. it's Valgrind's fault.  If you think this is the case or
+==17018==    you are not sure, please let us know and we'll try to fix it.
+==17018== Either way, Valgrind will now raise a SIGILL signal which will
+==17018== probably kill your program.
+==17018== 
+==17018== Process terminating with default action of signal 4 (SIGILL)
+==17018==  Illegal opcode at address 0x48596F4
+==17018==    at 0x48596F4: ??? (in /usr/lib/arm-linux-gnueabihf/libarmmem.so)
+*********Main Menu*********==17018== 
+==17018== HEAP SUMMARY:
+==17018==     in use at exit: 21,784 bytes in 4 blocks
+==17018==   total heap usage: 7 allocs, 3 frees, 31,352 bytes allocated
+==17018== 
+==17018== LEAK SUMMARY:
+==17018==    definitely lost: 0 bytes in 0 blocks
+==17018==    indirectly lost: 0 bytes in 0 blocks
+==17018==      possibly lost: 0 bytes in 0 blocks
+==17018==    still reachable: 21,784 bytes in 4 blocks
+==17018==         suppressed: 0 bytes in 0 blocks
+==17018== Reachable blocks (those to which a pointer was found) are not shown.
+==17018== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==17018== 
+==17018== For counts of detected and suppressed errors, rerun with: -v
+==17018== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+Illegal instruction (core dumped)
+]0;pi@pi-machine: ~/Documents/cs162/projects/project5pi@pi-machine:~/Documents/cs162/projects/project5$ make
+make: 'output' is up to date.
+]0;pi@pi-machine: ~/Documents/cs162/projects/project5pi@pi-machine:~/Documents/cs162/projects/project5$ ./output 
+
+*********Main Menu*********
+1 - Print Catalog
+2 - Add New Book
+3 - Modify a Book
+4 - Delete Book
+5 - Quit
+Enter choice: 
+1
+%%%%%% Book Catalog %%%%%%
+-----30-----
+Title: A Tale of Two Cities
+Author: Charles Dickens
+Number of Copies: 3
+Number of Holds: 0
+-------------------------
+-----10-----
+Title: Great Expectations
+Author: Charles Dickens
+Number of Copies: 2
+Number of Holds: 0
+-------------------------
+-----20-----
+Title: Huckleberry Finn
+Author: Mark Twain
+Number of Copies: 1
+Number of Holds: 5
+-------------------------
+
+*********Main Menu*********
+1 - Print Catalog
+2 - Add New Book
+3 - Modify a Book
+4 - Delete Book
+5 - Quit
+Enter choice: 
+2
+ID: 11 0
+ID already exists
+
+*********Main Menu*********
+1 - Print Catalog
+2 - Add New Book
+3 - Modify a Book
+4 - Delete Book
+5 - Quit
+Enter choice: 
+2
+ID: 12
+Title: Gann tt
+Author: Chart
+Number of Copies
+5
+value added
+
+*********Main Menu*********
+1 - Print Catalog
+2 - Add New Book
+3 - Modify a Book
+4 - Delete Book
+5 - Quit
+Enter choice: 
+1
+%%%%%% Book Catalog %%%%%%
+-----30-----
+Title: A Tale of Two Cities
+Author: Charles Dickens
+Number of Copies: 3
+Number of Holds: 0
+-------------------------
+-----12-----
+Title: Gantt
+Author: Chart
+Number of Copies: 5
+Number of Holds: 0
+-------------------------
+-----10-----
+Title: Great Expectations
+Author: Charles Dickens
+Number of Copies: 2
+Number of Holds: 0
+-------------------------
+-----20-----
+Title: Huckleberry Finn
+Author: Mark Twain
+Number of Copies: 1
+Number of Holds: 5
+-------------------------
+
+*********Main Menu*********
+1 - Print Catalog
+2 - Add New Book
+3 - Modify a Book
+4 - Delete Book
+5 - Quit
+Enter choice: 
+2
+ID: 11
+Title: Paretto
+Author: Principal
+Number of Copies
+7
+value added
+
+*********Main Menu*********
+1 - Print Catalog
+2 - Add New Book
+3 - Modify a Book
+4 - Delete Book
+5 - Quit
+Enter choice: 
+1
+%%%%%% Book Catalog %%%%%%
+-----30-----
+Title: A Tale of Two Cities
+Author: Charles Dickens
+Number of Copies: 3
+Number of Holds: 0
+-------------------------
+-----12-----
+Title: Gantt
+Author: Chart
+Number of Copies: 5
+Number of Holds: 0
+-------------------------
+-----10-----
+Title: Great Expectations
+Author: Charles Dickens
+Number of Copies: 2
+Number of Holds: 0
+-------------------------
+-----20-----
+Title: Huckleberry Finn
+Author: Mark Twain
+Number of Copies: 1
+Number of Holds: 5
+-------------------------
+-----11-----
+Title: Paretto
+Author: Principal
+Number of Copies: 7
+Number of Holds: 0
+-------------------------
+
+*********Main Menu*********
+1 - Print Catalog
+2 - Add New Book
+3 - Modify a Book
+4 - Delete Book
+5 - Quit
+Enter choice: 
+4
+Enter ID to Delete
+11
+
+*********Main Menu*********
+1 - Print Catalog
+2 - Add New Book
+3 - Modify a Book
+4 - Delete Book
+5 - Quit
+Enter choice: 
+1
+%%%%%% Book Catalog %%%%%%
+-----30-----
+Title: A Tale of Two Cities
+Author: Charles Dickens
+Number of Copies: 3
+Number of Holds: 0
+-------------------------
+-----12-----
+Title: Gantt
+Author: Chart
+Number of Copies: 5
+Number of Holds: 0
+-------------------------
+-----10-----
+Title: Great Expectations
+Author: Charles Dickens
+Number of Copies: 2
+Number of Holds: 0
+-------------------------
+-----20-----
+Title: Huckleberry Finn
+Author: Mark Twain
+Number of Copies: 1
+Number of Holds: 5
+-------------------------
+
+*********Main Menu*********
+1 - Print Catalog
+2 - Add New Book
+3 - Modify a Book
+4 - Delete Book
+5 - Quit
+Enter choice: 
+3
+ID of Book: 12
+What Field to change
+1 - ID
+2 - Title
+3 - Author
+4 - Copies
+5 - Checkouts
+6 - Holds
+7 - Quit
+Enter Choice: 
+1
+Enter New ID: 11
+ID Changed
+What Field to change
+1 - ID
+2 - Title
+3 - Author
+4 - Copies
+5 - Checkouts
+6 - Holds
+7 - Quit
+Enter Choice: 
+3
+New Author Name: Dan
+What Field to change
+1 - ID
+2 - Title
+3 - Author
+4 - Copies
+5 - Checkouts
+6 - Holds
+7 - Quit
+Enter Choice: 
+7
+Exiting Menu
+
+*********Main Menu*********
+1 - Print Catalog
+2 - Add New Book
+3 - Modify a Book
+4 - Delete Book
+5 - Quit
+Enter choice: 
+1
+%%%%%% Book Catalog %%%%%%
+-----30-----
+Title: A Tale of Two Cities
+Author: Charles Dickens
+Number of Copies: 3
+Number of Holds: 0
+-------------------------
+-----11-----
+Title: Gantt
+Author: Dan
+Number of Copies: 5
+Number of Holds: 0
+-------------------------
+-----10-----
+Title: Great Expectations
+Author: Charles Dickens
+Number of Copies: 2
+Number of Holds: 0
+-------------------------
+-----20-----
+Title: Huckleberry Finn
+Author: Mark Twain
+Number of Copies: 1
+Number of Holds: 5
+-------------------------
+
+*********Main Menu*********
+1 - Print Catalog
+2 - Add New Book
+3 - Modify a Book
+4 - Delete Book
+5 - Quit
+Enter choice: 
+3
+ID of Book: 11
+What Field to change
+1 - ID
+2 - Title
+3 - Author
+4 - Copies
+5 - Checkouts
+6 - Holds
+7 - Quit
+Enter Choice: 
+2
+New Title: Gzt Expectations
+What Field to change
+1 - ID
+2 - Title
+3 - Author
+4 - Copies
+5 - Checkouts
+6 - Holds
+7 - Quit
+Enter Choice: 
+7
+Exiting Menu
+
+*********Main Menu*********
+1 - Print Catalog
+2 - Add New Book
+3 - Modify a Book
+4 - Delete Book
+5 - Quit
+Enter choice: 
+1
+%%%%%% Book Catalog %%%%%%
+-----30-----
+Title: A Tale of Two Cities
+Author: Charles Dickens
+Number of Copies: 3
+Number of Holds: 0
+-------------------------
+-----10-----
+Title: Great Expectations
+Author: Charles Dickens
+Number of Copies: 2
+Number of Holds: 0
+-------------------------
+-----11-----
+Title: Gzt Expectations
+Author: Dan
+Number of Copies: 5
+Number of Holds: 0
+-------------------------
+-----20-----
+Title: Huckleberry Finn
+Author: Mark Twain
+Number of Copies: 1
+Number of Holds: 5
+-------------------------
+
+*********Main Menu*********
+1 - Print Catalog
+2 - Add New Book
+3 - Modify a Book
+4 - Delete Book
+5 - Quit
+Enter choice: 
+5
+*** Catalog Written Out ***
+]0;pi@pi-machine: ~/Documents/cs162/projects/project5pi@pi-machine:~/Documents/cs162/projects/project5$ exit
+exit
+
+Script done on Mon 05 Jun 2017 08:56:55 PM PDT
